@@ -14,5 +14,9 @@ set incsearch
 set background=dark
 set tags=tags;/
 set number
+set tabstop=2
+set shiftwidth=2
+set expandtab
 
+let g:CommandTMaxFiles=1000000
 let mapleader=","
