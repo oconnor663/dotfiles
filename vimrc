@@ -12,5 +12,7 @@ set ruler
 set hlsearch
 set incsearch
 set background=dark
+set tags=tags;/
+set number
 
 let mapleader=","
