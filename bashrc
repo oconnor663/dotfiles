@@ -5,6 +5,18 @@
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+  . /etc/bashrc
+fi
+
+# Source Facebook definitions
+if [ -f /home/engshare/admin/scripts/master.bashrc ]; then
+  . /home/engshare/admin/scripts/master.bashrc
+fi
+
+alias ta='tmux attach'
+                    
 export EDITOR=vim
 export PS1='\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\[\033[31m\]`git branch 2> /dev/null | grep -e ^* | sed -r s/^\\\\\*\ \(.+\)$/[\\\\\1]\/`\[\033[00m\]\$ '
 

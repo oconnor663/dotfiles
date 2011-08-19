@@ -20,3 +20,8 @@ set expandtab
 
 let g:CommandTMaxFiles=1000000
 let mapleader=","
+
+syntax on
+filetype on
+filetype plugin on
+filetype indent on
