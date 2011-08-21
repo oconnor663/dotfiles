@@ -1,3 +1,7 @@
-ln -sf ~/dotfiles/vim ~/.vim 
-ln -sf ~/dotfiles/vimrc ~/.vimrc
-ln -sf ~/dotfiles/bashrc ~/.bashrc
+for file in `ls ~/dotfiles`
+do
+  if [ $file != install.sh ]
+  then
+    ln -sf ~/dotfiles/$file ~/.$file
+  fi
+done
