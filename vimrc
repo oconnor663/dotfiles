@@ -11,7 +11,6 @@ set smartcase
 set ruler
 set hlsearch
 set incsearch
-set background=dark
 set tags=tags;/
 set number
 set tabstop=2
@@ -25,3 +24,8 @@ syntax on
 filetype on
 filetype plugin on
 filetype indent on
+
+set background=dark
+let g:solarized_termtrans=1
+let g:solarized_termcolors=256
+colorscheme solarized

@@ -19,6 +19,7 @@ alias ta='tmux attach'
                     
 export EDITOR=vim
 export PS1='\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\[\033[31m\]`git branch 2> /dev/null | grep -e ^* | sed -r s/^\\\\\*\ \(.+\)$/[\\\\\1]\/`\[\033[00m\]\$ '
+export TERM=xterm-256color
 
 # don't put duplicate lines in the history. See bash(1) for more options
 # ... or force ignoredups and ignorespace
