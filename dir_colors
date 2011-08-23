@@ -370,6 +370,7 @@ EXEC 01;31  # Unix
 
 #############################################################################
 # Your customizations
+DIR 34
 
 # Unimportant text files
 # For universal scheme, use brightgreen 01;32
