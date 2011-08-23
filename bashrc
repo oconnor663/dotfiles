@@ -18,10 +18,15 @@ fi
 alias ta='tmux attach'
                     
 export EDITOR=vim
-export PS1='\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\[\033[31m\]`git branch 2> /dev/null | grep -e ^* | sed -r s/^\\\\\*\ \(.+\)$/[\\\\\1]\/`\[\033[00m\]\$ '
+export PS1="\[\e[0;36m\]\u@\h\[\e[m\] \[\e[0;34m\]\w\[\e[m\]\[\e[0;33m\]\$(parse_git_branch)\[\e[m\] \$ "
 export TERM=xterm-256color
 
 eval `dircolors ~/.dir_colors`
+
+parse_git_branch() {
+  # Keeps the preceding space
+  git branch 2> /dev/null | grep -e ^* | sed -r s/^\\*//
+}
 
 # don't put duplicate lines in the history. See bash(1) for more options
 # ... or force ignoredups and ignorespace
