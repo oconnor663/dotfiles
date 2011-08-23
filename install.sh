@@ -1,7 +1,13 @@
-for file in `ls ~/dotfiles`
+#!/bin/bash
+
+LINKED_FILES="\
+  bashrc\
+  dir_colors\
+  vim\
+  vimrc\
+  "
+
+for file in $LINKED_FILES
 do
-  if [ $file != install.sh ]
-  then
-    ln -sf ~/dotfiles/$file ~/.$file
-  fi
+  ln -sf ~/dotfiles/$file ~/.$file
 done
