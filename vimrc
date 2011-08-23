@@ -18,6 +18,7 @@ set shiftwidth=2
 set expandtab
 
 let g:CommandTMaxFiles=1000000
+let g:CommandTMatchWindowReverse=1
 let mapleader=","
 
 syntax on
