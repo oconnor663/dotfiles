@@ -5,6 +5,7 @@ LINKED_FILES="\
   dir_colors\
   vim\
   vimrc\
+  tmux.conf\
   "
 
 for file in $LINKED_FILES
