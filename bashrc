@@ -20,6 +20,7 @@ alias hl='hphpd -h localhost'
                     
 export EDITOR=vim
 export PS1="\[\e[0;36m\]\u@\h\[\e[m\] \[\e[0;34m\]\w\[\e[m\]\[\e[0;33m\]\$(parse_git_branch)\[\e[m\]\$ "
+export TERM=xterm-256color
 
 eval `dircolors ~/.dir_colors`
 
@@ -81,13 +82,6 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-# Fixes for using tmux and ssh-agent together
-if [ $TERM != 'screen' ]; then
-  # set up ssh agent forwarding
-  ln -sf $SSH_AUTH_SOCK /tmp/ssh-agent-$USER-screen
-  export SSH_AUTH_SOCK="/tmp/ssh-agent-$USER-screen"
-fi
-
-fix_ssh_agent() {
+fixsshagent() {
   export SSH_AUTH_SOCK=`ls -lt /tmp/ssh-*/agent.* | grep \`whoami\` | cut -d' ' -f10 | head -n 1`
 }

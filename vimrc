@@ -17,7 +17,6 @@ set tabstop=2
 set shiftwidth=2
 set expandtab
 
-let g:CommandTMaxFiles=1000000
 let g:CommandTMatchWindowReverse=1
 let mapleader=","
 
@@ -27,5 +26,4 @@ filetype plugin on
 filetype indent on
 
 set background=dark
-let g:solarized_termtrans=1
 colorscheme solarized
