@@ -3,6 +3,7 @@
 LINKED_FILES="\
   bashrc\
   dir_colors\
+  gitconfig\
   vim\
   vimrc\
   tmux.conf\
