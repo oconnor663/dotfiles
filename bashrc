@@ -83,5 +83,5 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
 fi
 
 fixsshagent() {
-  export SSH_AUTH_SOCK=`ls -lt /tmp/ssh-*/agent.* | grep \`whoami\` | cut -d' ' -f10 | head -n 1`
+  export SSH_AUTH_SOCK=`ls -lt /tmp/ssh-*/agent.* | grep \`whoami\` | awk '{print $9}' | head -n 1`
 }
