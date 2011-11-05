@@ -16,6 +16,7 @@ if [ -f /home/engshare/admin/scripts/master.bashrc ]; then
 fi
 
 alias ta='tmux attach'
+alias kta='ps aux | grep "tmux attach" | grep -v "grep" | awk "{print \$2}" | xargs kill -9'
 alias hl='hphpd -h localhost'
                     
 export EDITOR=vim
