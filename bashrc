@@ -18,6 +18,7 @@ fi
 alias ta='tmux attach'
 alias kta='ps aux | grep "tmux attach" | grep -v "grep" | awk "{print \$2}" | xargs kill -9'
 alias hl='hphpd -h localhost'
+alias gca='git commit -a --amend -C HEAD'
                     
 export EDITOR=vim
 export PS1="\[\e[0;36m\]\u@\h\[\e[m\] \[\e[0;34m\]\w\[\e[m\]\[\e[0;33m\]\$(parse_git_branch)\[\e[m\]\$ "
@@ -59,7 +60,7 @@ alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
-alias ll='ls -al'
+alias ll='ls -lh'
 alias la='ls -A'
 alias l='ls -CF'
 
