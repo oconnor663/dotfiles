@@ -11,6 +11,5 @@ LINKED_FILES="\
 
 for file in $LINKED_FILES
 do
-  rm ~/.$file
-  ln -s ~/dotfiles/$file ~/.$file
+  ln -sf ~/dotfiles/$file ~/.$file
 done
