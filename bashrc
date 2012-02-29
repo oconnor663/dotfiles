@@ -15,10 +15,11 @@ if [ -f /home/engshare/admin/scripts/master.bashrc ]; then
   . /home/engshare/admin/scripts/master.bashrc
 fi
 
-alias ta='tmux attach'
 alias kta='ps aux | grep "tmux attach" | grep -v "grep" | awk "{print \$2}" | xargs kill -9'
+alias ta='kta; tmux attach'
 alias hl='hphpd -h localhost'
 alias gca='git commit -a --amend -C HEAD'
+alias frb='git fetch; git rebase trunk; arc build'
                     
 export EDITOR=vim
 export PS1="\[\e[0;36m\]\u@\h\[\e[m\] \[\e[0;34m\]\w\[\e[m\]\[\e[0;33m\]\$(parse_git_branch)\[\e[m\]\$ "
