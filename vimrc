@@ -17,9 +17,6 @@ set tabstop=2
 set shiftwidth=2
 set expandtab
 
-let g:CommandTMatchWindowReverse=1
-let mapleader=","
-
 syntax on
 filetype on
 filetype plugin on
