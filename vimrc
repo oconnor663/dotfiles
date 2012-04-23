@@ -24,3 +24,6 @@ filetype indent on
 
 set background=dark
 colorscheme solarized
+
+" CtrlP should search from the current file's directory
+let g:ctrlp_working_path_mode = 1
