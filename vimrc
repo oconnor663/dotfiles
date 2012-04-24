@@ -17,13 +17,12 @@ set tabstop=2
 set shiftwidth=2
 set expandtab
 set list
-set listchars=trail:.
+set listchars=trail:·
 
-silent execute '!mkdir ~/.vim/_backup 2> /dev/null'
-silent execute '!mkdir ~/.vim/_temp 2> /dev/null'
-set backupdir=~/.vim/_backup//
-set directory=~/.vim/_temp//
+set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 
+let mapleader = ","
 map <Leader>t :NERDTreeToggle<CR>
 let NERDTreeShowBookmarks=1
 
