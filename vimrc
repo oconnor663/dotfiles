@@ -6,7 +6,7 @@ set hidden
 set history=1000
 set wildmenu
 set wildmode=list:longest
-set ignorecase 
+set ignorecase
 set smartcase
 set ruler
 set hlsearch
@@ -18,6 +18,11 @@ set shiftwidth=2
 set expandtab
 set list
 set listchars=trail:.
+
+silent execute '!mkdir ~/.vim/_backup 2> /dev/null'
+silent execute '!mkdir ~/.vim/_temp 2> /dev/null'
+set backupdir=~/.vim/_backup//
+set directory=~/.vim/_temp//
 
 syntax on
 filetype on

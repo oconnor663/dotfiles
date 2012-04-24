@@ -13,3 +13,6 @@ for file in $LINKED_FILES
 do
   ln -sf ~/dotfiles/$file ~/.$file
 done
+
+mkdir ~/.vim/_backup
+mkdir ~/.vim/_temp
