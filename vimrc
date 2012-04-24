@@ -25,6 +25,13 @@ set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 let mapleader = ","
 map <Leader>t :NERDTreeToggle<CR>
 let NERDTreeShowBookmarks=1
+" quit vim if NERDTree is the last thing open
+autocmd bufenter * if (winnr("$") == 1 &&
+                     \ exists("b:NERDTreeType") &&
+                     \ b:NERDTreeType == "primary")
+                   \ | q | endif
+
+let g:ctrlp_cmd = 'CtrlPMRUFiles'
 
 inoremap kj <ESC>
 
