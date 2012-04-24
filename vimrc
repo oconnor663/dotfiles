@@ -18,6 +18,7 @@ set shiftwidth=2
 set expandtab
 set list
 set listchars=trail:·
+set autochdir
 
 " custom key mappings
 let mapleader = ","
