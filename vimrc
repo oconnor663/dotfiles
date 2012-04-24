@@ -24,6 +24,11 @@ silent execute '!mkdir ~/.vim/_temp 2> /dev/null'
 set backupdir=~/.vim/_backup//
 set directory=~/.vim/_temp//
 
+map <Leader>t :NERDTreeToggle<CR>
+let NERDTreeShowBookmarks=1
+
+inoremap kj <ESC>
+
 syntax on
 filetype on
 filetype plugin on
