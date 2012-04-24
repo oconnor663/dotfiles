@@ -19,10 +19,17 @@ set expandtab
 set list
 set listchars=trail:·
 
-set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
-set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
-
+" custom key mappings
 let mapleader = ","
+noremap \ ,
+noremap <C-l> :let @/ = ""<CR><C-l>
+inoremap kj <ESC>
+
+" Solarized color scheme
+set background=dark
+colorscheme solarized
+
+" NERDTree settings
 map <Leader>t :NERDTreeToggle<CR>
 let NERDTreeShowBookmarks=1
 " quit vim if NERDTree is the last thing open
@@ -31,17 +38,17 @@ autocmd bufenter * if (winnr("$") == 1 &&
                      \ b:NERDTreeType == "primary")
                    \ | q | endif
 
+" CtrlP settings
 let g:ctrlp_cmd = 'CtrlPMRUFiles'
+" CtrlP should search from the current file's directory
+let g:ctrlp_working_path_mode = 1
 
-inoremap kj <ESC>
-
+" Syntax highlighting
 syntax on
 filetype on
 filetype plugin on
 filetype indent on
 
-set background=dark
-colorscheme solarized
-
-" CtrlP should search from the current file's directory
-let g:ctrlp_working_path_mode = 1
+" Store all backup files centrally
+set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
