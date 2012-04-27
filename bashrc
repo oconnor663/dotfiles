@@ -76,6 +76,18 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-fs() {
-  export SSH_AUTH_SOCK=`ls -lt /tmp/ssh-*/agent.* | grep \`whoami\` | awk '{print $9}' | head -n 1`
+function fixauth() {
+  if [[ -n $TMUX ]]; then
+    #TMUX gotta love it
+    eval $(tmux showenv | grep -vE "^-" | awk -F = '{print "export "$1"=\""$2"\""}')
+  fi
 }
+
+# hook for preexec
+preexec () { fixauth; }
+preexec_invoke_exec () {
+      [ -n "$COMP_LINE" ] && return  # do nothing if completing
+          local this_command=`history 1 | sed -e "s/^[ ]*[0-9]*[ ]*//g"`;
+              preexec "$this_command"
+}
+trap 'preexec_invoke_exec' DEBUG
