@@ -24,7 +24,6 @@ set autochdir
 let mapleader = ","
 noremap \ ,
 noremap <C-l> :let @/ = ""<CR><C-l>
-inoremap kj <ESC>
 
 " Solarized color scheme
 set background=dark
