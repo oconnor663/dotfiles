@@ -28,6 +28,7 @@ noremap <C-l> :let @/ = ""<CR><C-l>
 " Solarized color scheme
 set background=dark
 colorscheme solarized
+let g:solarized_termcolors=256
 
 " NERDTree settings
 map <Leader>t :NERDTreeToggle<CR>

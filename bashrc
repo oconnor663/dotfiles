@@ -23,7 +23,8 @@ alias frb='git fetch; git rebase trunk; arc build'
 
 export EDITOR=vim
 export PS1="\[\e[0;36m\]\u@\h\[\e[m\] \[\e[0;34m\]\w\[\e[m\] \[\e[0;33m\]\$(__git_ps1 %s)\[\e[m\]\$ "
-export TERM=xterm-256color
+# do not override $TERM if we're running in tmux
+if [ -z $TMUX ]; then export TERM=xterm-256color; fi
 
 eval `dircolors ~/.dir_colors`
 
