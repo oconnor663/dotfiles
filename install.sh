@@ -14,12 +14,12 @@ LINKED_FILES="\
 
 for file in $LINKED_FILES
 do
-  ln -sf $path/$file ~/.$file
+  ln -sfn $path/$file ~/.$file
 done
 
 mkdir -p ~/.vim-tmp
 
-if [ -n `which gnome-terminal` ]
+if [ -n `which gnome-terminal 2> /dev/null` ]
 then
   $path/gnome-terminal-colors-solarized/set_dark.sh
 fi
