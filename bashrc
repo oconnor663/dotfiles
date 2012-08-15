@@ -20,15 +20,12 @@ else
   export PS1="\[\e[0;36m\]\u@\h\[\e[m\] \[\e[0;34m\]\w\[\e[m\] $ "
 fi
 
-# set $TERM to xterm-256color, unless we're in tmux AND screen-256color
-# is supported, in which case use that
-mkdir -p ~/.terminfo
-screen_supported=`toe -a | awk '{print $1}' | grep -x screen-256color`
-if [ -n "$TMUX" ] && [ -n "$screen_supported" ]
+if [ $TERM = xterm ]
+then
+  export TERM=xterm-256color
+elif [ $TERM = screen ]
 then
   export TERM=screen-256color
-else
-  export TERM=xterm-256color
 fi
 
 eval `dircolors ~/.dir_colors`
