@@ -3,9 +3,10 @@
 relative_path=`dirname $0`
 path=`cd "$relative_path"; pwd`
 
+ln -sfn "$path" ~/.dotfiles
+
 LINKED_FILES=(
   bashrc
-  dir_colors
   gitconfig
   vim
   vimrc

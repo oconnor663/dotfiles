@@ -24,7 +24,7 @@ then
   export TERM=screen-256color
 fi
 
-eval `dircolors ~/.dir_colors`
+eval `dircolors ~/.dotfiles/dir_colors`
 
 stty -ixon
 
