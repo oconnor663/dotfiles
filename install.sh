@@ -20,8 +20,7 @@ done
 
 mkdir -p ~/.vim-tmp
 
-which gnome-terminal 2> /dev/null
-if [ $? -eq 0 ]
+if which gnome-terminal &> /dev/null
 then
   "$path/gnome-terminal-colors-solarized/set_dark.sh"
 fi
