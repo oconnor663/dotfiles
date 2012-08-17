@@ -22,6 +22,9 @@ then
 elif [ $TERM = screen ]
 then
   export TERM=screen-256color
+elif [ $TERM = linux ]
+then
+  ~/.dotfiles/solarized-linux-console.sh
 fi
 
 eval `dircolors ~/.dotfiles/dir_colors`
