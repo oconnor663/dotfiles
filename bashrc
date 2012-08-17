@@ -65,3 +65,10 @@ preexec_invoke_exec () {
               preexec "$this_command"
 }
 trap 'preexec_invoke_exec' DEBUG
+
+# Load settings specific to this machine.
+local_bashrc=~/.bashrc.local
+if [ -e "$local_bashrc" ]
+then
+  source "$local_bashrc"
+fi
