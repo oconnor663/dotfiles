@@ -9,13 +9,6 @@ alias frb='git fetch; git rebase trunk; arc build'
 
 export EDITOR=vim
 
-if [[ `type -t __git_ps1` = function ]]
-then
-  export PS1="\[\e[0;36m\]\u@\h\[\e[m\] \[\e[0;34m\]\w\[\e[m\] \[\e[0;33m\]\$(__git_ps1 %s)\[\e[m\]\$ "
-else
-  export PS1="\[\e[0;36m\]\u@\h\[\e[m\] \[\e[0;34m\]\w\[\e[m\] $ "
-fi
-
 if [ $TERM = xterm ]
 then
   export TERM=xterm-256color
@@ -50,6 +43,16 @@ alias ll='ls -lh'
 alias la='ls -A'
 alias l='ls -CF'
 
+# git prompt, if it's available
+function safe_git_ps1() {
+  if [[ `type -t __git_ps1` = function ]]
+  then
+    __git_ps1 %s
+  fi
+}
+export PS1="\[\e[0;36m\]\u@\h\[\e[m\] \[\e[0;34m\]\w\[\e[m\] \[\e[0;33m\]\$(safe_git_ps1)\[\e[m\]\$ "
+
+# fixing ssh-agent issues in tmux
 function fixauth() {
   if [[ -n $TMUX ]]; then
     #TMUX gotta love it
