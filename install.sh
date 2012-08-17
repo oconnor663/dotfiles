@@ -8,6 +8,7 @@ ln -sfn "$path" ~/.dotfiles
 LINKED_FILES=(
   bashrc
   gitconfig
+  minttyrc
   vim
   vimrc
   tmux.conf
