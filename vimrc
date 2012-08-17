@@ -19,6 +19,7 @@ set expandtab
 set list
 set listchars=trail:·
 set autochdir
+set backspace=indent,eol,start
 
 " custom key mappings
 let mapleader = ","
