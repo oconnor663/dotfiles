@@ -8,6 +8,7 @@ alias gca='git commit -a --amend -C HEAD'
 alias frb='git fetch; git rebase trunk; arc build'
 
 export EDITOR=vim
+export PATH=$PATH:~/bin
 
 if [ $TERM = xterm ]
 then

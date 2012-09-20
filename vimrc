@@ -24,7 +24,7 @@ set backspace=indent,eol,start
 " custom key mappings
 let mapleader = ","
 noremap \ ,
-noremap <C-l> :let @/ = ""<CR><C-l>
+noremap <C-l> :nohlsearch<CR><C-l>
 
 " Solarized color scheme
 set background=dark
