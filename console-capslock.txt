@@ -1,0 +1,4 @@
+# To remap CapsLock to Control in the Linux console, add the following line to
+# /etc/rc.local:
+
+(dumpkeys | head -n 1; echo "keycode 58 = Control") | loadkeys
