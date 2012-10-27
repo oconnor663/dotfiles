@@ -1,9 +1,12 @@
 #!/bin/bash
 
 relative_path=`dirname $0`
-path=`cd "$relative_path"; pwd`
+ROOT=`cd "$relative_path"; pwd`
 
-ln -sfn "$path" ~/.dotfiles
+DOTFILES=~/.dotfiles
+DOTFILES_OLD=~/.dotfiles-old
+ln -snf "$ROOT" "$DOTFILES"
+mkdir -p "$DOTFILES_OLD"
 
 LINKED_FILES=(
   bashrc
@@ -14,14 +17,22 @@ LINKED_FILES=(
   tmux.conf
 )
 
-for file in ${LINKED_FILES[*]}
+for NAME in ${LINKED_FILES[*]}
 do
-  ln -sfn $path/$file ~/.$file
+  DEST=~/".$NAME"
+
+  # Copy existing dotfiles (but not symlinks) into the old directory
+  if [ -e "$DEST" -a ! -L "$DEST" ]
+  then
+    mv "$DEST" "$DOTFILES_OLD/$NAME"
+  fi
+
+  ln -sfn "$ROOT/$NAME" "$DEST"
 done
 
 mkdir -p ~/.vim-tmp
 
 if which gnome-terminal &> /dev/null
 then
-  "$path/gnome-terminal-colors-solarized/set_dark.sh"
+  "$ROOT/gnome-terminal-colors-solarized/set_dark.sh"
 fi
