@@ -15,6 +15,7 @@ LINKED_FILES=(
   vim
   vimrc
   tmux.conf
+  zshrc
 )
 
 for NAME in ${LINKED_FILES[*]}
