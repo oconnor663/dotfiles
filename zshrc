@@ -8,6 +8,23 @@ alias ll='la -lh'
 export EDITOR=vim
 export PATH=$PATH:~/bin
 
+# add emacs keybindings on top of vi mode
+bindkey -e
+binds=`bindkey -L`
+bindkey -v
+for bind in ${(@f)binds}; do eval $bind; done
+unset binds
+
+HISTFILE=$HOME/.zsh_history
+HISTSIZE=10000
+SAVEHIST=$HISTSIZE
+setopt extended_history
+setopt hist_ignore_dups
+setopt hist_ignore_space
+setopt hist_verify
+setopt inc_append_history
+setopt share_history
+
 if [ $TERM = xterm ]
 then
   export TERM=xterm-256color
