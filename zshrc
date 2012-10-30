@@ -26,6 +26,7 @@ setopt inc_append_history
 setopt share_history
 
 autoload -U compinit && compinit
+setopt complete_in_word
 zstyle ':completion:*' menu select
 # LS_COLORS set by dircolors above
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
@@ -40,6 +41,7 @@ fi
 setopt notify # immediate job notifications
 setopt extendedglob # crazy file globbing
 setopt autocd # cd without 'cd'
+setopt autopushd # cd works like pushd
 autoload -U zmv
 
 if [ $TERM = xterm ]
