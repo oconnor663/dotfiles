@@ -4,6 +4,7 @@ alias ls='ls --color=auto'
 alias la='ls -A'
 alias ll='la -lh'
 
+eval `dircolors ~/.dotfiles/dir_colors`
 export EDITOR=vim
 export PATH=$PATH:~/bin
 
@@ -14,6 +15,7 @@ bindkey -v
 for bind in ${(@f)binds}; do eval $bind; done
 unset binds
 
+# get shared history all working properly
 HISTFILE=$HOME/.zsh_history
 HISTSIZE=10000
 SAVEHIST=$HISTSIZE
@@ -23,9 +25,22 @@ setopt hist_ignore_space
 setopt inc_append_history
 setopt share_history
 
+autoload -U compinit && compinit
+zstyle ':completion:*' menu select
+# LS_COLORS set by dircolors above
+zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+# case-insensitive (all),partial-word and then substring completion
+if [ "x$CASE_SENSITIVE" = "xtrue" ]; then
+  zstyle ':completion:*' matcher-list 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+  unset CASE_SENSITIVE
+else
+  zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+fi
+
 setopt notify # immediate job notifications
-setopt extendedglob
-setopt autocd
+setopt extendedglob # crazy file globbing
+setopt autocd # cd without 'cd'
+autoload -U zmv
 
 if [ $TERM = xterm ]
 then
@@ -38,8 +53,6 @@ then
   ~/.dotfiles/solarized-linux-console.sh
 fi
 
-eval `dircolors ~/.dotfiles/dir_colors`
-
 # Load settings specific to this machine.
 local_zshrc=~/.zshrc.local
 if [ -e "$local_zshrc" ]
@@ -48,7 +61,6 @@ then
 fi
 
 setopt prompt_subst
-autoload colors && colors
 export PROMPT='%(?..%F{red}%? )%F{cyan}%m %F{blue}%~ %F{yellow}$(__git_prompt)%f'
 
 __git_prompt() {
