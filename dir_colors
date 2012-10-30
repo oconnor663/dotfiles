@@ -140,7 +140,7 @@ NORMAL 00
 # normal file
 FILE 00
 # directory
-DIR 36
+DIR 34 # blue, customized by Jack O'Connor, was 36 (teal)
 # symbolic link
 LINK 35
 
@@ -370,7 +370,6 @@ EXEC 01;31  # Unix
 
 #############################################################################
 # Your customizations
-DIR 34
 
 # Unimportant text files
 # For universal scheme, use brightgreen 01;32
