@@ -15,6 +15,10 @@ binds=`bindkey -L`
 bindkey -v
 for bind in ${(@f)binds}; do eval $bind; done
 unset binds
+# and drop into vim with v
+autoload -U edit-command-line
+zle -N edit-command-line
+bindkey -M vicmd v edit-command-line
 
 # get shared history all working properly
 HISTFILE=$HOME/.zsh_history
@@ -31,13 +35,9 @@ setopt complete_in_word
 zstyle ':completion:*' menu select
 # LS_COLORS set by dircolors above
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
-# case-insensitive (all),partial-word and then substring completion
-if [ "x$CASE_SENSITIVE" = "xtrue" ]; then
-  zstyle ':completion:*' matcher-list 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
-  unset CASE_SENSITIVE
-else
-  zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
-fi
+# case-insensitive (all), partial-word, and substring completion
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+
 
 setopt notify # immediate job notifications
 setopt extendedglob # crazy file globbing
