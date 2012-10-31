@@ -3,6 +3,7 @@ alias grep='grep --color=auto'
 alias ls='ls --color=auto'
 alias la='ls -A'
 alias ll='la -lh'
+alias git="noglob git" # zsh likes to swallow ^ characters
 
 eval `dircolors ~/.dotfiles/dir_colors`
 export EDITOR=vim
@@ -113,3 +114,15 @@ __git_branch() {
 
   echo $name
 }
+
+# http://superuser.com/a/161922/93400
+fancy-ctrl-z () {
+  if [[ $#BUFFER -eq 0 ]]; then
+    bg
+    zle redisplay
+  else
+    zle push-input
+  fi
+}
+zle -N fancy-ctrl-z
+bindkey '^Z' fancy-ctrl-z

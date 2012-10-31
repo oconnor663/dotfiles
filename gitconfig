@@ -3,3 +3,6 @@
 [color "diff"]
   meta = yellow
   frag = blue
+[user]
+	email = oconnor663@gmail.com
+	name = Jack O'Connor
