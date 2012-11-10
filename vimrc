@@ -44,6 +44,11 @@ let g:ctrlp_cmd = 'CtrlPMRUFiles'
 " CtrlP should search from the current file's directory
 let g:ctrlp_working_path_mode = 1
 
+" yankstack settings
+let g:yankstack_map_keys = 0 " our mappings only
+nmap <leader>p <Plug>yankstack_substitute_older_paste
+nmap <leader>P <Plug>yankstack_substitute_newer_paste
+
 " Syntax highlighting
 syntax on
 filetype on
