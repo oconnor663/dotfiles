@@ -7,6 +7,7 @@ alias git="noglob git" # zsh likes to swallow ^ characters
 alias gca="git commit -a --amend -C HEAD"
 alias ipython="ipython --no-confirm-exit"
 alias ipython3="ipython3 --no-confirm-exit"
+alias open="xdg-open"
 
 eval `dircolors ~/.dotfiles/dir_colors`
 export EDITOR=vim
