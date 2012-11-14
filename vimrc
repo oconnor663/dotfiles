@@ -17,7 +17,7 @@ set tabstop=2
 set shiftwidth=2
 set expandtab
 set list
-set listchars=trail:·
+set listchars=tab:»\ ,trail:·
 set autochdir
 set backspace=indent,eol,start
 
