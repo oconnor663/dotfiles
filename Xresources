@@ -1,0 +1,6 @@
+! allow Alt key shortcuts
+xterm*eightBitInput: false
+
+! set the font
+xterm*faceName: Ubuntu Mono
+xterm*faceSize: 12
