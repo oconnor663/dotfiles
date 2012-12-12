@@ -1,3 +1,14 @@
+if [ $TERM = xterm -o $TERM = rxvt-unicode-256color ]
+then
+  export TERM=xterm-256color
+elif [ $TERM = screen ]
+then
+  export TERM=screen-256color
+elif [ $TERM = linux ]
+then
+  ~/.dotfiles/solarized-linux-console.sh
+fi
+
 alias ta='tmux attach'
 alias grep='grep --color=auto'
 alias ls='ls --color=auto'
@@ -42,23 +53,11 @@ zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 # case-insensitive (all), partial-word, and substring completion
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 
-
 setopt notify # immediate job notifications
 setopt extendedglob # crazy file globbing
 setopt autocd # cd without 'cd'
 setopt autopushd # cd works like pushd
 autoload -U zmv
-
-if [ $TERM = xterm ]
-then
-  export TERM=xterm-256color
-elif [ $TERM = screen ]
-then
-  export TERM=screen-256color
-elif [ $TERM = linux ]
-then
-  ~/.dotfiles/solarized-linux-console.sh
-fi
 
 # Load settings specific to this machine.
 local_zshrc=~/.zshrc.local

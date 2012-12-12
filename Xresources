@@ -4,6 +4,18 @@ xterm*eightBitInput: false
 ! set the font
 xterm*faceName: Ubuntu Mono
 xterm*faceSize: 12
+URxvt*font: xft:Ubuntu Mono:pixelsize=16,style=regular
 
-!disable urxvt scroll bar
+! disable urxvt scroll bar
 URxvt.scrollBar: false
+
+! urxvt has bad default letter spacing for some reason
+URxvt.letterSpace: -1
+
+! Xft settings to make the font look nice
+! http://askubuntu.com/questions/22419/how-do-i-make-urxvt-render-xft-fonts
+Xft.dpi:        96
+Xft.antialias:  true
+Xft.rgba:       rgb
+Xft.hinting:    true
+Xft.hintstyle:  hintslight
