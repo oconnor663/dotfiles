@@ -4,3 +4,6 @@ xterm*eightBitInput: false
 ! set the font
 xterm*faceName: Ubuntu Mono
 xterm*faceSize: 12
+
+!disable urxvt scroll bar
+URxvt.scrollBar: false
