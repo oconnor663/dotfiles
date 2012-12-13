@@ -13,5 +13,8 @@ xset -b
 xrdb ~/.Xresources.solarized
 xrdb -merge ~/.Xresources
 
+# start VirtualBox services, if they exist
+command -v VBoxClient-all > /dev/null && VBoxClient-all
+
 # finally start Xmonad
 xmonad
