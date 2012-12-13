@@ -18,7 +18,6 @@ LINKED_FILES=(
   vimrc
   xinitrc
   xmonad
-  xmobarrc
   Xresources
   Xresources.solarized
   zshrc
