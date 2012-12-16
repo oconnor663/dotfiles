@@ -9,12 +9,11 @@ xsetroot -cursor_name left_ptr
 # disable the bell
 xset -b
 
-# load settings for the terminal
-xrdb ~/.Xresources.solarized
-xrdb -merge ~/.Xresources
-
 # start VirtualBox services, if they exist
 command -v VBoxClient-all > /dev/null && VBoxClient-all
+
+# gnome-terminal needs to be forced into the right hinting mode
+xrdb ~/.Xresources
 
 # finally start Xmonad
 xmonad

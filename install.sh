@@ -20,7 +20,6 @@ LINKED_FILES=(
   xmobarrc
   xmonad
   Xresources
-  Xresources.solarized
   zshrc
 )
 
