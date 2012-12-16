@@ -10,5 +10,5 @@ Config { bgColor = "#002b36"
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = "%StdinReader%}{%wlan0wi% | %battery% | %date%"
+       , template = "%StdinReader%}{%wlan0wi% | %battery% | %date% "
        }

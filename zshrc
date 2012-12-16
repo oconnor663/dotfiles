@@ -117,15 +117,3 @@ __git_branch() {
 
   echo $name
 }
-
-# http://superuser.com/a/161922/93400
-fancy-ctrl-z () {
-  if [[ $#BUFFER -eq 0 ]]; then
-    bg
-    zle redisplay
-  else
-    zle push-input
-  fi
-}
-zle -N fancy-ctrl-z
-bindkey '^Z' fancy-ctrl-z
