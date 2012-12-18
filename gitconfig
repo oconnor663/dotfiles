@@ -4,5 +4,7 @@
   meta = yellow
   frag = blue
 [user]
-	email = oconnor663@gmail.com
-	name = Jack O'Connor
+  name = Jack O'Connor
+  email = oconnor663@gmail.com
+[include]
+  path = ~/.gitconfig.local
