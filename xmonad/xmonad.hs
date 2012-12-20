@@ -16,8 +16,8 @@ toRemove x =
   [ (modMask x, xK_Return)
   ]
 toAdd x =
-  -- bind terminal to Alt-t, since we're going to remap Alt-Shift-Enter below
-  [ ((modMask x, xK_t), spawn "gnome-terminal")
+  -- bind terminal to Ctrl-Alt-t (a la Ubuntu), since we remap Alt-Shift-Enter below
+  [ ((modMask x .|. controlMask, xK_t), spawn "gnome-terminal")
   -- bind swapMaster to Alt-Shift-Enter, since we unbound Alt-Enter above
   , ((modMask x .|. shiftMask, xK_Return), windows W.swapMaster)
   ]
