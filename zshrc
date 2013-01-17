@@ -50,8 +50,8 @@ setopt complete_in_word
 zstyle ':completion:*' menu select
 # LS_COLORS set by dircolors above
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
-# case-insensitive (all), partial-word, and substring completion
-zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+# case-insensitive (lower only), partial-word, and substring completion
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 
 setopt notify # immediate job notifications
 setopt extendedglob # crazy file globbing
