@@ -20,6 +20,9 @@ alias ipython="ipython --no-confirm-exit"
 alias ipython3="ipython3 --no-confirm-exit"
 alias open="xdg-open"
 
+# disable ctrl-s/crtl-q flow control
+stty stop undef
+
 eval `dircolors ~/.dotfiles/dir_colors`
 export EDITOR=vim
 export PATH=$PATH:~/bin
