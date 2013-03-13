@@ -20,6 +20,12 @@ alias ipython="ipython --no-confirm-exit"
 alias ipython3="ipython3 --no-confirm-exit"
 alias open="xdg-open"
 
+# ack is called ack-grep in ubuntu
+if (( ! $+commands[ack] )) && (( $+commands[ack-grep]))
+then
+  alias ack=ack-grep
+fi
+
 # disable ctrl-s/crtl-q flow control
 stty stop undef
 
