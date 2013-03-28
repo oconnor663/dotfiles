@@ -12,14 +12,9 @@ LINKED_FILES=(
   bashrc
   gitconfig
   minttyrc
-  pentadactylrc
   tmux.conf
   vim
   vimrc
-  xinitrc
-  xmobarrc
-  xmonad
-  Xresources
   zshrc
 )
 
