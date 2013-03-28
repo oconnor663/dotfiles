@@ -25,6 +25,9 @@ set backspace=indent,eol,start
 let mapleader = ","
 noremap \ ,
 noremap <C-l> :nohlsearch<CR><C-l>
+" indenting keeps you in visual mode
+vnoremap < <gv
+vnoremap > >gv
 
 " Solarized color scheme
 set background=dark
