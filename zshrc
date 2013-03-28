@@ -4,9 +4,6 @@ then
 elif [ $TERM = screen ]
 then
   export TERM=screen-256color
-elif [ $TERM = linux ]
-then
-  ~/.dotfiles/solarized-linux-console.sh
 fi
 
 alias ta='tmux attach'
