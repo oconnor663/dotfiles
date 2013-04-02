@@ -39,6 +39,8 @@ Type=Application
 Name=Dotfiles Startup
 Exec=$ROOT/startup.sh
 END
+# And run it now for good measure
+./startup.sh
 
 # Enable this when we need to symlink desktop config files
 # find config -type d -exec mkdir -p ~/.{} \;
