@@ -1,7 +1,7 @@
 #!/bin/bash
 
-relative_path=`dirname $0`
-ROOT=`cd "$relative_path"; pwd`
+cd `dirname $0`
+ROOT=`pwd`
 
 DOTFILES=~/.dotfiles
 DOTFILES_OLD=~/.dotfiles-old
@@ -31,9 +31,22 @@ do
   ln -sfn "$ROOT/$NAME" "$DEST"
 done
 
+# Run our startup script on boot
+mkdir -p ~/.config/autostart
+cat > ~/.config/autostart/DotfilesStartup.desktop << END
+[Desktop Entry]
+Type=Application
+Name=Dotfiles Startup
+Exec=$ROOT/startup.sh
+END
+
+# Enable this when we need to symlink desktop config files
+# find config -type d -exec mkdir -p ~/.{} \;
+# find config -type f -exec ln -s "$ROOT/{}" ~/.{} \;
+
 mkdir -p ~/.vim-tmp
 
 if which gnome-terminal &> /dev/null
 then
-  "$ROOT/gnome-terminal-colors-solarized/set_dark.sh"
+  gnome-terminal-colors-solarized/set_dark.sh
 fi
