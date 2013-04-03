@@ -11,6 +11,7 @@ mkdir -p "$DOTFILES_OLD"
 LINKED_FILES=(
   bashrc
   gitconfig
+  hgrc
   minttyrc
   tmux.conf
   vim
