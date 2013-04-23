@@ -31,23 +31,9 @@ for NAME in ${LINKED_FILES[*]} ; do
   ln -sfn "$ROOT/$NAME" "$DEST"
 done
 
-# Run our startup script on boot
-mkdir -p ~/.config/autostart
-cat > ~/.config/autostart/DotfilesStartup.desktop << END
-[Desktop Entry]
-Type=Application
-Name=Dotfiles Startup
-Exec=$ROOT/startup.sh
-END
-# And run it now for good measure
-./startup.sh
-
-# Enable this when we need to symlink desktop config files
-# find config -type d -exec mkdir -p ~/.{} \;
-# find config -type f -exec ln -s "$ROOT/{}" ~/.{} \;
-
 mkdir -p ~/.vim-tmp
 
+# For Gnome, set terminal preferences and remap caps lock.
 if which dconf &> /dev/null ; then
   dconf load / << END
 [org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9]
@@ -60,6 +46,9 @@ font='Ubuntu Mono 15'
 bold-color-same-as-fg=false
 bold-color='#9393a1a1a1a1'
 background-color='#00002B2B3636'
+
+[org/gnome/desktop/input-sources]
+xkb-options=['caps:ctrl_modifier']
 END
 fi
 
