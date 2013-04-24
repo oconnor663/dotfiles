@@ -65,6 +65,18 @@ setopt autocd # cd without 'cd'
 setopt autopushd # cd works like pushd
 autoload -U zmv
 
+# get insert/delete/home/end working properly
+# https://wiki.archlinux.org/index.php/Zsh#Key_Bindings
+typeset -A key
+key[Home]=${terminfo[khome]}
+key[End]=${terminfo[kend]}
+key[Insert]=${terminfo[kich1]}
+key[Delete]=${terminfo[kdch1]}
+[[ -n "${key[Home]}"    ]]  && bindkey  "${key[Home]}"    beginning-of-line
+[[ -n "${key[End]}"     ]]  && bindkey  "${key[End]}"     end-of-line
+[[ -n "${key[Insert]}"  ]]  && bindkey  "${key[Insert]}"  overwrite-mode
+[[ -n "${key[Delete]}"  ]]  && bindkey  "${key[Delete]}"  delete-char
+
 # Load settings specific to this machine.
 local_zshrc=~/.zshrc.local
 if [ -e "$local_zshrc" ]
