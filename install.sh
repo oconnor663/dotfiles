@@ -8,18 +8,19 @@ DOTFILES_OLD=~/.dotfiles-old
 ln -snf "$ROOT" "$DOTFILES"
 mkdir -p "$DOTFILES_OLD"
 
-LINKED_FILES=(
+LINKED_PATHS=(
   bashrc
   gitconfig
   hgrc
   minttyrc
+  ssh
   tmux.conf
   vim
   vimrc
   zshrc
 )
 
-for NAME in ${LINKED_FILES[*]} ; do
+for NAME in ${LINKED_PATHS[*]} ; do
   DEST=~/".$NAME"
 
   # Copy existing dotfiles (but not symlinks) into the old directory
