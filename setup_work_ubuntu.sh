@@ -20,10 +20,6 @@ git clone git://github.com/facebook/arcanist.git
 libphutil/scripts/build_xhpast.sh
 ln -s ~/devtools/arcanist/bin/arc ~/bin/arc
 
-# depot_tools
-git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git
-# added to path in .zshrc.local
-
 # Android SDK
 wget http://dl.google.com/android/android-sdk_r21.1-linux.tgz
 tar xf android-sdk_r21.1-linux.tgz

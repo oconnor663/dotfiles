@@ -48,6 +48,7 @@ font='Ubuntu Mono 15'
 bold-color-same-as-fg=false
 bold-color='#9393a1a1a1a1'
 background-color='#00002B2B3636'
+audible-bell=false
 
 [org/gnome/desktop/input-sources]
 xkb-options=['caps:ctrl_modifier']
