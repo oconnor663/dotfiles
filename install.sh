@@ -13,7 +13,7 @@ LINKED_PATHS=(
   gitconfig
   hgrc
   minttyrc
-  ssh
+  ssh/config
   tmux.conf
   vim
   vimrc
@@ -29,6 +29,7 @@ for NAME in ${LINKED_PATHS[*]} ; do
     mv "$DEST" "$DOTFILES_OLD/$NAME"
   fi
 
+  mkdir -p $(dirname "$DEST")
   ln -sfn "$ROOT/$NAME" "$DEST"
 done
 
