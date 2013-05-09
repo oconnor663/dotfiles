@@ -1,7 +1,7 @@
 #! /bin/bash
 
 is_installed() {
-  pacman -Qsq $1 | grep "^$1$" > /dev/null
+  pacman -Q $1 > /dev/null
 }
 
 install_aur_once() {
@@ -27,17 +27,25 @@ set -exv
 # default to Python2
 sudo ln -sf python2 /usr/bin/python
 
-# uncomment [multilib] in pacman.conf
-tmp=`mktemp`
-cat /etc/pacman.conf | perl -00 -pne 's/#\[multilib\]\n#Include = \/etc\/pacman.d\/mirrorlist/\[multilib\]\nInclude = \/etc\/pacman.d\/mirrorlist/' > $tmp
-sudo mv $tmp /etc/pacman.conf
-sudo pacman -Sy
+# add [multilib] in pacman.conf
+if ! grep '^\[multilib\]$' /etc/pacman.conf ; then
+  sudo cat >> /etc/pacman.conf << END
+
+# Added by Jack's env setup
+[multilib]
+Include = /etc/pacman.d/mirrorlist
+END
+  sudo pacman -Sy
+fi
 
 # oracle java 7
 install_aur_once jdk
 
 # various dependencies
-sudo pacman -S --needed --noconfirm php apache-ant subversion
+sudo pacman -S --needed --noconfirm php apache-ant
+if ! is_installed subversion-1.6 ; then
+  sudo pacman -S --needed --noconfirm subversion
+fi
 
 # Android SDK and NDK
 install_aur_once android-sdk
