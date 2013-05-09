@@ -18,11 +18,9 @@ alias ipython3="ipython3 --no-confirm-exit"
 alias open="xdg-open"
 
 # ack is called ack-grep in ubuntu
-ack_flags="--color-filename='yellow' --color-match='red' --color-lineno='reset'"
-alias ack="ack $ack_flags"
 if (( ! $+commands[ack] )) && (( $+commands[ack-grep]))
 then
-  alias ack="ack-grep $ack_flags"
+  alias ack=ack-grep
 fi
 
 # disable ctrl-s/crtl-q flow control

@@ -1,0 +1,4 @@
+# Reasonable solarized colors
+--color-filename=yellow
+--color-match=red
+--color-lineno=reset

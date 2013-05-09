@@ -9,6 +9,7 @@ ln -snf "$ROOT" "$DOTFILES"
 mkdir -p "$DOTFILES_OLD"
 
 LINKED_PATHS=(
+  ackrc
   bashrc
   gitconfig
   hgrc
