@@ -25,7 +25,7 @@ clone_once() {
 set -exv
 
 # default to Python2
-sudo ln -sf python2 /usr/bin/python
+ln -sf /usr/bin/python2 ~/bin/python
 
 # add [multilib] in pacman.conf
 if ! grep '^\[multilib\]$' /etc/pacman.conf ; then

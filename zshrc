@@ -28,7 +28,7 @@ stty stop undef
 
 eval `dircolors ~/.dotfiles/dir_colors`
 export EDITOR=vim
-export PATH=$PATH:~/bin
+export PATH=~/bin:$PATH
 
 # add emacs keybindings on top of vi mode
 bindkey -e
