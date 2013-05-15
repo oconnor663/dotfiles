@@ -2,3 +2,7 @@
 --color-filename=yellow
 --color-match=red
 --color-lineno=reset
+
+# Ignore tags files
+--type-set=tags:is:tags
+--notags
