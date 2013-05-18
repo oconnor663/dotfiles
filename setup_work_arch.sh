@@ -67,3 +67,14 @@ cat << END > ~/.zshrc.local
 export PATH=\$PATH:\$ANDROID_HOME/platform-tools
 export PATH=\$PATH:~/devtools/depot_tools
 END
+
+# vpn
+sudo pacman -S --needed --noconfirm openconnect
+cat > ~/vpn << END
+#! /bin/bash
+
+sudo openconnect -u jacko -c ~/keys/client.pem \
+  --cafile ~/keys/TheFacebookRootCA.pem \
+  https://prnasa.tfbnw.net
+END
+chmod 755 ~/vpn
