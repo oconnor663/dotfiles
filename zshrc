@@ -16,6 +16,9 @@ alias gca="git commit -a --amend -C HEAD"
 alias ipython="ipython --no-confirm-exit"
 alias ipython3="ipython3 --no-confirm-exit"
 alias open="xdg-open"
+alias anthy="ibus engine anthy"
+alias eigo="ibus engine xkb:us::eng"
+alias えいご="eigo"
 
 # ack is called ack-grep in ubuntu
 if (( ! $+commands[ack] )) && (( $+commands[ack-grep]))
