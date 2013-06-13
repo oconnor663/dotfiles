@@ -64,7 +64,7 @@ if which gnome-terminal &> /dev/null ; then
   gconftool-2 -s -t string /apps/gnome-terminal/profiles/Default/font "Ubuntu Mono 15"
 fi
 
-newshell=/bin/zsh
+newshell=/usr/bin/zsh
 if [ -e $newshell ] && [ $SHELL != $newshell ]; then
   echo Switching default shell from $SHELL to $newshell...
   chsh -s $newshell
