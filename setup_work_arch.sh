@@ -71,11 +71,11 @@ END
 
 # vpn
 sudo pacman -S --needed --noconfirm openconnect
-cat > ~/vpn << END
+cat > ~/bin/vpn << END
 #! /bin/bash
 
 sudo openconnect -u jacko -c ~/keys/client.pem \
   --cafile ~/keys/TheFacebookRootCA.pem \
   https://prnasa.tfbnw.net
 END
-chmod 755 ~/vpn
+chmod 755 ~/bin/vpn
