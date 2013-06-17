@@ -28,6 +28,7 @@ for NAME in ${LINKED_PATHS[*]} ; do
   # Copy existing dotfiles (but not symlinks) into the old directory
   if [ -e "$DEST" -a ! -L "$DEST" ]
   then
+    mkdir -p $(dirname "$DOTFILES_OLD/$NAME")
     mv "$DEST" "$DOTFILES_OLD/$NAME"
   fi
 
