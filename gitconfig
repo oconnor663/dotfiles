@@ -8,3 +8,5 @@
   email = oconnor663@gmail.com
 [include]
   path = ~/.gitconfig.local
+[push]
+  default = simple
