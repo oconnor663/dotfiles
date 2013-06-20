@@ -19,7 +19,6 @@ LINKED_PATHS=(
   vim
   vimrc
   zshrc
-  Xresources
 )
 
 for NAME in ${LINKED_PATHS[*]} ; do
