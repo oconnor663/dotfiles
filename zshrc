@@ -1,9 +1,6 @@
 if [ $TERM = xterm -o $TERM = rxvt-unicode-256color ]
 then
   export TERM=xterm-256color
-elif [ $TERM = screen ]
-then
-  export TERM=screen-256color
 fi
 
 alias ta='tmux attach'

@@ -13,12 +13,6 @@ export PATH=$PATH:~/bin
 if [ $TERM = xterm ]
 then
   export TERM=xterm-256color
-elif [ $TERM = screen ]
-then
-  export TERM=screen-256color
-elif [ $TERM = linux ]
-then
-  ~/.dotfiles/solarized-linux-console.sh
 fi
 
 eval `dircolors ~/.dotfiles/dir_colors`
