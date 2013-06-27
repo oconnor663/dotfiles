@@ -61,6 +61,8 @@ clone_once git://github.com/facebook/libphutil.git ~/devtools/libphutil
 clone_once git://github.com/facebook/arcanist.git ~/devtools/arcanist
 # allow PHP to run outside of web directories
 sudo sed -i 's/^open_basedir = /; open_basedir = /' /etc/php/php.ini
+# enable posix extensions
+sudo sed -i 's/;extension=posix.so/extension=posix.so/' /etc/php/php.ini
 if $cloned ; then
   ~/devtools/libphutil/scripts/build_xhpast.sh
   ln -sf ~/devtools/arcanist/bin/arc ~/bin/arc
