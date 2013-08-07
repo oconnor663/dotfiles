@@ -20,6 +20,7 @@ set list
 set listchars=tab:»\ ,trail:·
 set autochdir
 set backspace=indent,eol,start
+set mouse=a
 
 " custom key mappings
 let mapleader = ","
