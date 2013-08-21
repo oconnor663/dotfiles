@@ -30,18 +30,12 @@ noremap <C-l> :nohlsearch<CR><C-l>
 vnoremap < <gv
 vnoremap > >gv
 
+" Prefer // over /*...*/. Used by vim-commentary.
+autocmd FileType c,cpp,cs,java setlocal commentstring=//\ %s
+
 " Solarized color scheme
 set background=dark
 colorscheme solarized
-
-" NERDTree settings
-map <Leader>t :NERDTreeToggle<CR>
-let NERDTreeShowBookmarks=1
-" quit vim if NERDTree is the last thing open
-autocmd bufenter * if (winnr("$") == 1 &&
-                     \ exists("b:NERDTreeType") &&
-                     \ b:NERDTreeType == "primary")
-                   \ | q | endif
 
 " CtrlP settings
 let g:ctrlp_cmd = 'CtrlPMRUFiles'
