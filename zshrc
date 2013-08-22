@@ -12,6 +12,7 @@ alias git="noglob git" # zsh likes to swallow ^ characters
 alias gca="git commit -a --amend -C HEAD"
 alias ipython="ipython --no-confirm-exit"
 alias ipython3="ipython3 --no-confirm-exit"
+alias i="ipython"
 alias open="xdg-open"
 alias anthy="ibus engine anthy"
 alias eigo="ibus engine xkb:us::eng"
