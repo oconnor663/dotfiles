@@ -6,3 +6,10 @@
 # Ignore tags files
 --type-set=tags:is:tags
 --notags
+
+# Ignore BUCK generated files
+--ignore-dir=buck-cache
+--ignore-dir=buck-out
+
+# Ignore Intellij junk
+--ignore-dir=.idea
