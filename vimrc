@@ -13,6 +13,7 @@ set expandtab
 set list
 set listchars=tab:»\ ,trail:·
 set mouse=a
+set autochdir
 
 " custom key mappings
 let mapleader = ","
