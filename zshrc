@@ -3,6 +3,9 @@ then
   export TERM=xterm-256color
 fi
 
+# Get rid of the delay when Esc
+export KEYTIMEOUT=1
+
 alias ta='tmux attach'
 alias grep='grep --color=auto'
 alias ls='ls --color=auto'
@@ -17,6 +20,7 @@ alias open="xdg-open"
 alias anthy="ibus engine anthy"
 alias eigo="ibus engine xkb:us::eng"
 alias えいご="eigo"
+alias r='cd `git rev-parse --show-toplevel`'
 
 # ack is called ack-grep in ubuntu
 if (( ! $+commands[ack] )) && (( $+commands[ack-grep]))

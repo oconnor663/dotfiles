@@ -14,6 +14,7 @@ set list
 set listchars=tab:»\ ,trail:·
 set mouse=a
 set autochdir
+set wildmode=list:longest,list:full
 
 " custom key mappings
 let mapleader = ","
