@@ -66,7 +66,6 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' 'r:|[._-]=* r:|=*' 'l:|=* r:
 
 setopt notify # immediate job notifications
 setopt extendedglob # crazy file globbing
-setopt autocd # cd without 'cd'
 setopt autopushd # cd works like pushd
 autoload -U zmv
 
