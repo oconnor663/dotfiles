@@ -21,6 +21,7 @@ alias anthy="ibus engine anthy"
 alias eigo="ibus engine xkb:us::eng"
 alias えいご="eigo"
 alias r='cd `git rev-parse --show-toplevel`'
+alias c='xclip -i -selection clipboard'
 
 # ack is called ack-grep in ubuntu
 if (( ! $+commands[ack] )) && (( $+commands[ack-grep]))
