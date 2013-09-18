@@ -13,7 +13,6 @@ set expandtab
 set list
 set listchars=tab:»\ ,trail:·
 set mouse=a
-set autochdir
 set wildmode=list:longest,list:full
 
 " custom key mappings
@@ -32,8 +31,6 @@ colorscheme solarized
 
 " CtrlP settings
 let g:ctrlp_cmd = 'CtrlPMRUFiles'
-" CtrlP should search from the current file's directory
-let g:ctrlp_working_path_mode = 1
 
 " yankstack settings
 let g:yankstack_map_keys = 0 " our mappings only
