@@ -37,16 +37,14 @@ eval `dircolors ~/.dotfiles/dir_colors`
 export EDITOR=vim
 export PATH=~/bin:$PATH
 
-# add emacs keybindings on top of vi mode
+# use emacs keybindings
 bindkey -e
-binds=`bindkey -L`
-bindkey -v
-for bind in ${(@f)binds}; do eval $bind; done
-unset binds
-# and drop into vim with v
-autoload -U edit-command-line
+# keep vi-mode's Ctrl-W behavior
+bindkey '^W' vi-backward-kill-word
+# add a keybinding to open the $EDITOR
+autoload edit-command-line
 zle -N edit-command-line
-bindkey -M vicmd v edit-command-line
+bindkey '^X^e' edit-command-line
 
 # get shared history all working properly
 HISTFILE=$HOME/.zsh_history
