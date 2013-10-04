@@ -31,6 +31,7 @@ colorscheme solarized
 
 " CtrlP settings
 let g:ctrlp_cmd = 'CtrlPMRUFiles'
+let g:ctrlp_working_path_mode = 0 " use vim's working dir
 
 " yankstack settings
 let g:yankstack_map_keys = 0 " our mappings only
