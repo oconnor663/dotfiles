@@ -35,6 +35,11 @@ for NAME in ${LINKED_PATHS[*]} ; do
   ln -sfn "$ROOT/$NAME" "$DEST"
 done
 
+mkdir -p ~/bin
+for script in `ls bin`; do
+  ln -sfn "$ROOT/bin/$script" ~/bin/"$script"
+done
+
 mkdir -p ~/.vim-tmp
 
 # For Gnome, set terminal preferences and remap caps lock.
