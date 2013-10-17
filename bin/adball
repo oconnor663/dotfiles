@@ -11,7 +11,9 @@ trap 'handle_ctrl_c' EXIT
 adb start-server
 
 for SERIAL in $(adb devices | grep -v List | cut -f 1); do
-  adb -s $SERIAL $@ &
+  # Run the command on each device, and prefix every line of
+  # output with the device id.
+  (adb -s $SERIAL $@ | sed "s/^/$SERIAL: /") &
 done
 
 for job in `jobs -p`; do
