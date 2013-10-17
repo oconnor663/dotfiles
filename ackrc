@@ -14,3 +14,6 @@
 # Ignore Intellij junk
 --ignore-dir=.idea
 --ignore-dir=.idea_modules
+
+# Ignore generated files under out/
+--ignore-dir=out
