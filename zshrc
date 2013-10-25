@@ -8,9 +8,6 @@ export KEYTIMEOUT=1
 
 alias ta='tmux attach'
 alias grep='grep --color=auto'
-alias ls='ls --color=auto'
-alias la='ls -A'
-alias ll='la -lh'
 alias git="noglob git" # zsh likes to swallow ^ characters
 alias gca="git commit -a --amend -C HEAD"
 alias ipython="ipython --no-confirm-exit"
@@ -33,7 +30,16 @@ fi
 # disable ctrl-s/crtl-q flow control
 stty stop undef
 
-eval `dircolors ~/.dotfiles/dir_colors`
+# colors for ls
+if ls --color=auto > /dev/null 2>&1 ; then
+  # GNU ls supports --color
+  eval `dircolors ~/.dotfiles/dir_colors`
+  export LS_OPTIONS="--color=auto"
+else
+  # --color not supported, assume BSD ls
+  export CLICOLOR="true"
+fi
+
 export EDITOR=vim
 export PATH=~/bin:$PATH
 
