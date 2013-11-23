@@ -34,7 +34,7 @@ stty stop undef
 if ls --color=auto > /dev/null 2>&1 ; then
   # GNU ls supports --color
   eval `dircolors ~/.dotfiles/dir_colors`
-  export LS_OPTIONS="--color=auto"
+  alias ls="ls --color=auto"
 else
   # --color not supported, assume BSD ls
   export CLICOLOR="true"
