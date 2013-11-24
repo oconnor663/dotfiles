@@ -10,3 +10,5 @@
   path = ~/.gitconfig.local
 [push]
   default = simple
+[branch]
+  autosetuprebase = always
