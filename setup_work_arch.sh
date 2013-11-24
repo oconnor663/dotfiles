@@ -49,10 +49,6 @@ if ! is_installed subversion-1.6 ; then
   sudo pacman -S --needed --noconfirm subversion
 fi
 
-# Android SDK and NDK
-install_aur_once android-sdk
-install_aur_once android-ndk
-
 mkdir -p ~/bin
 mkdir -p ~/devtools
 
