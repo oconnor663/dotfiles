@@ -38,6 +38,9 @@ let g:yankstack_map_keys = 0 " our mappings only
 nmap <leader>p <Plug>yankstack_substitute_older_paste
 nmap <leader>P <Plug>yankstack_substitute_newer_paste
 
+" EasyMotion settings
+let g:EasyMotion_leader_key = '<space>'
+
 " Store all backup files centrally
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
