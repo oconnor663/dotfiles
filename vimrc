@@ -14,6 +14,7 @@ set list
 set listchars=tab:»\ ,trail:·
 set mouse=a
 set wildmode=list:longest,list:full
+set colorcolumn=80
 
 " custom key mappings
 let mapleader = ","
