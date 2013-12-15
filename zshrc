@@ -8,8 +8,6 @@ export KEYTIMEOUT=1
 
 alias ta='tmux attach'
 alias grep='grep --color=auto'
-alias git="noglob git" # zsh likes to swallow ^ characters
-alias gca="git commit -a --amend -C HEAD"
 alias i="ipython"
 alias open="xdg-open"
 alias anthy="ibus engine anthy"
@@ -18,6 +16,13 @@ alias えいご="eigo"
 alias r='cd `git rev-parse --show-toplevel`'
 alias c='xclip -i -selection clipboard'
 alias ct='tmux show-buffer | c'
+
+# git aliases
+alias git="noglob git" # zsh likes to swallow ^ characters
+alias g='git'
+alias gca="git commit -a --amend -C HEAD"
+alias grh='git reset --hard'
+alias gpr='git pull --rebase'
 
 # ack is called ack-grep in ubuntu
 if (( ! $+commands[ack] )) && (( $+commands[ack-grep]))
