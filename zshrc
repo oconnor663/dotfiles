@@ -50,6 +50,8 @@ export PATH=~/bin:$PATH
 bindkey -e
 # keep vi-mode's Ctrl-W behavior
 bindkey '^W' vi-backward-kill-word
+# emulate the Ctrl-U behavior from bash
+bindkey \^U backward-kill-line
 # add a keybinding to open the $EDITOR
 autoload edit-command-line
 zle -N edit-command-line
