@@ -21,6 +21,7 @@ alias ct='tmux show-buffer | c'
 alias git="noglob git" # zsh likes to swallow ^ characters
 alias gs='git status'
 alias gd='git diff'
+alias gl='git log'
 alias gca="git commit -a --amend -C HEAD"
 alias grh='git reset --hard'
 alias gpr='git pull --rebase'
