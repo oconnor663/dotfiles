@@ -22,6 +22,8 @@ noremap \ ,
 " indenting keeps you in visual mode
 vnoremap < <gv
 vnoremap > >gv
+" vim-sensible maps Ctrl-L to nohlsearch. Let insert mode do that too.
+imap <C-L> <Esc><C-L>a
 
 " Prefer // over /*...*/. Used by vim-commentary.
 autocmd FileType c,cpp,cs,java setlocal commentstring=//\ %s
