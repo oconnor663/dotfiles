@@ -1,6 +1,7 @@
 call pathogen#infect()
 call pathogen#helptags()
 
+" Many common settings are handled in the vim-sensible plugin.
 set hidden
 set ignorecase
 set smartcase
@@ -24,6 +25,10 @@ vnoremap < <gv
 vnoremap > >gv
 " vim-sensible maps Ctrl-L to nohlsearch. Let insert mode do that too.
 imap <C-L> <Esc><C-L>a
+" convenient mappings for interacting with the system clipboard
+noremap <leader>c "+y
+noremap <leader>v :set paste<CR>"+p:set nopaste<CR>
+noremap <leader>V :set paste<CR>"+P:set nopaste<CR>
 
 " Prefer // over /*...*/. Used by vim-commentary.
 autocmd FileType c,cpp,cs,java setlocal commentstring=//\ %s
