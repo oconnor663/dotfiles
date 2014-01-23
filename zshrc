@@ -51,17 +51,17 @@ export PATH=~/bin:$PATH
 # use emacs keybindings
 bindkey -e
 # keep vi-mode's Ctrl-W behavior
-bindkey '^W' vi-backward-kill-word
+bindkey '^w' vi-backward-kill-word
 # emulate the Ctrl-U behavior from bash
-bindkey \^U backward-kill-line
+bindkey '^u' backward-kill-line
 # add a keybinding to open the $EDITOR
 autoload edit-command-line
 zle -N edit-command-line
-bindkey '^X^e' edit-command-line
+bindkey '^x^e' edit-command-line
 
 # enable globbing in history search
-bindkey "^R" history-incremental-pattern-search-backward
-bindkey "^S" history-incremental-pattern-search-forward
+bindkey "^r" history-incremental-pattern-search-backward
+bindkey "^s" history-incremental-pattern-search-forward
 
 # get shared history all working properly
 HISTFILE=$HOME/.zsh_history
