@@ -17,14 +17,19 @@ set mouse=a
 set wildmode=list:longest,list:full
 set colorcolumn=80
 
-" custom key mappings
+" Leader key is comma.
 let mapleader = ","
 noremap \ ,
-" indenting keeps you in visual mode
-vnoremap < <gv
-vnoremap > >gv
+
+" Use <Tab> and <S-Tab> to indent lines.
+nnoremap <Tab> >>
+nnoremap <S-Tab> <<
+vnoremap <Tab> >gv
+vnoremap <S-Tab> <gv
+
 " vim-sensible maps Ctrl-L to nohlsearch. Let insert mode do that too.
-imap <C-L> <Esc><C-L>a
+imap <C-l> <Esc><C-l>a
+
 " convenient mappings for interacting with the system clipboard
 noremap <leader>c "+y
 noremap <leader>v :set paste<CR>"+p:set nopaste<CR>
@@ -47,7 +52,7 @@ nmap <leader>p <Plug>yankstack_substitute_older_paste
 nmap <leader>P <Plug>yankstack_substitute_newer_paste
 
 " EasyMotion settings
-let g:EasyMotion_leader_key = '<space>'
+let g:EasyMotion_leader_key = '<Space>'
 
 " Store all backup files centrally
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
