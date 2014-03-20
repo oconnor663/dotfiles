@@ -26,6 +26,7 @@ nnoremap <Tab> >>
 nnoremap <S-Tab> <<
 vnoremap <Tab> >gv
 vnoremap <S-Tab> <gv
+" insert mode is handled in the Neocomplcache bindings
 
 " vim-sensible maps Ctrl-L to nohlsearch. Let insert mode do that too.
 imap <C-l> <Esc><C-l>a
@@ -61,8 +62,9 @@ set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 " Neocomplcache
 let g:neocomplcache_enable_at_startup = 1
 let g:neocomplcache_enable_smart_case = 1
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-inoremap <expr><S-TAB>  pumvisible() ? "\<C-p>" : "\<S-TAB>"
+" let the default action for tab in insert mode map to C-t/C-d
+imap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<C-t>"
+imap <expr><S-TAB>  pumvisible() ? "\<C-p>" : "\<C-d>"
 
 " gVim font
 set guifont=Ubuntu\ Mono\ 15
