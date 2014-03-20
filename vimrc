@@ -1,6 +1,9 @@
 call pathogen#infect()
 call pathogen#helptags()
 
+" Load vim-sensible early so that we can override parts of it.
+runtime! plugin/sensible.vim
+
 " Many common settings are handled in the vim-sensible plugin.
 set hidden
 set ignorecase
@@ -22,6 +25,7 @@ let mapleader = ","
 noremap \ ,
 
 " Use <Tab> and <S-Tab> to indent lines.
+set nosmarttab " override vim-sensible, let backspace delete individual spaces
 nnoremap <Tab> >>
 nnoremap <S-Tab> <<
 vnoremap <Tab> >gv
