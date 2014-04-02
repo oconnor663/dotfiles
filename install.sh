@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 cd `dirname $0`
 ROOT=`pwd`
 
@@ -75,3 +77,9 @@ if [ -e $newshell ] && [ $SHELL != $newshell ]; then
   echo Switching default shell from $SHELL to $newshell...
   chsh -s $newshell
 fi
+
+if ! which peru &> /dev/null ; then
+  git clone https://github.com/oconnor663/peru.git ~/peru
+  ln -s ~/peru/peru.sh ~/bin/peru
+fi
+peru -v
