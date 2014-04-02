@@ -9,6 +9,8 @@ export KEYTIMEOUT=1
 alias ta='tmux attach'
 alias grep='grep --color=auto'
 alias i="ipython"
+alias i2="ipython2"
+alias i3="ipython3"
 alias open="xdg-open"
 alias anthy="ibus engine anthy"
 alias eigo="ibus engine xkb:us::eng"
