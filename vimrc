@@ -20,9 +20,9 @@ set mouse=a
 set wildmode=list:longest,list:full
 set colorcolumn=80
 
-" Leader key is comma.
-let mapleader = ","
-noremap \ ,
+" Leader key is space.
+let mapleader = " "
+noremap <Space> <Nop>
 
 " Use <Tab> and <S-Tab> to indent lines.
 set nosmarttab " override vim-sensible, let backspace delete individual spaces
