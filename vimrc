@@ -57,7 +57,12 @@ nmap <leader>p <Plug>yankstack_substitute_older_paste
 nmap <leader>P <Plug>yankstack_substitute_newer_paste
 
 " EasyMotion settings
-let g:EasyMotion_leader_key = '<Space>'
+let g:EasyMotion_do_mapping = 0
+map <Leader>w <Plug>(easymotion-bd-w)
+" Make all the jump targets red
+hi EasyMotionTarget ctermbg=none ctermfg=red
+hi EasyMotionTarget2First ctermbg=none ctermfg=red
+hi EasyMotionTarget2Second ctermbg=none ctermfg=red
 
 " Store all backup files centrally
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
