@@ -82,6 +82,8 @@ zstyle ':completion:*' menu select
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 # case-insensitive (lower only), partial-word, and substring completion
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+# fix Shift-Tab in the completions menu
+bindkey '^[[Z' reverse-menu-complete
 
 setopt notify # immediate job notifications
 setopt extendedglob # crazy file globbing
