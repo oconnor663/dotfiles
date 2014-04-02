@@ -1,2 +1,6 @@
-vim/bundle/*/doc/tags
 vim/.netrwhist
+
+.peru-cache
+
+# Vim plugins are all fetched by peru.
+vim/bundle/*
