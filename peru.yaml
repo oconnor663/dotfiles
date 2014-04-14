@@ -7,6 +7,7 @@ imports:
   vim-easymotion: vim/bundle/easymotion
   vim-emacscommandline: vim/bundle/emacscommandline
   vim-fugitive: vim/bundle/fugitive
+  vim-pathogen: vim/autoload
   vim-repeat: vim/bundle/repeat
   vim-sensible: vim/bundle/sensible
   vim-syntastic: vim/bundle/syntastic
@@ -37,6 +38,11 @@ git module vim-emacscommandline:
 
 git module vim-fugitive:
   url: https://github.com/tpope/vim-fugitive.git
+
+git module vim-pathogen:
+  url: https://github.com/tpope/vim-pathogen.git
+  rule:
+    export: autoload/
 
 git module vim-repeat:
   url: https://github.com/tpope/vim-repeat.git
