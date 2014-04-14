@@ -9,6 +9,7 @@ imports:
   vim-fugitive: vim/bundle/fugitive
   vim-repeat: vim/bundle/repeat
   vim-sensible: vim/bundle/sensible
+  vim-syntastic: vim/bundle/syntastic
   vim-surround: vim/bundle/surround
   vim-unimpaired: vim/bundle/unimpaired
   vim-yankstack: vim/bundle/yankstack
@@ -42,6 +43,9 @@ git module vim-repeat:
 
 git module vim-sensible:
   url: https://github.com/tpope/vim-sensible.git
+
+git module vim-syntastic:
+  url: https://github.com/scrooloose/syntastic.git
 
 git module vim-surround:
   url: https://github.com/tpope/vim-surround.git
