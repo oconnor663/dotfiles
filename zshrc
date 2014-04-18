@@ -18,6 +18,7 @@ alias えいご="eigo"
 alias r='cd `git rev-parse --show-toplevel`'
 alias c='xclip -i -selection clipboard'
 alias ct='tmux show-buffer | c'
+alias pc='git clean -dfx --exclude .peru-cache'
 
 # git aliases
 alias git="noglob git" # zsh likes to swallow ^ characters
