@@ -1,12 +1,12 @@
 imports:
-  vim-ctrlp: vim/bundle/ctrlp
-  vim-neocomplcache: vim/bundle/neocomplcache
   vim-bracketed-paste: vim/bundle/bracketed-paste
   vim-colors-solarized: vim/bundle/colors-solarized
   vim-commentary: vim/bundle/commentary
+  vim-ctrlp: vim/bundle/ctrlp
   vim-easymotion: vim/bundle/easymotion
   vim-emacscommandline: vim/bundle/emacscommandline
   vim-fugitive: vim/bundle/fugitive
+  vim-neocomplete: vim/bundle/neocomplete
   vim-pathogen.autoload: vim/autoload
   vim-repeat: vim/bundle/repeat
   vim-sensible: vim/bundle/sensible
@@ -14,12 +14,6 @@ imports:
   vim-surround: vim/bundle/surround
   vim-unimpaired: vim/bundle/unimpaired
   vim-yankstack: vim/bundle/yankstack
-
-git module vim-ctrlp:
-  url: https://github.com/kien/ctrlp.vim.git
-
-git module vim-neocomplcache:
-  url: https://github.com/Shougo/neocomplcache.vim.git
 
 git module vim-bracketed-paste:
   url: https://github.com/ConradIrwin/vim-bracketed-paste.git
@@ -30,6 +24,9 @@ git module vim-colors-solarized:
 git module vim-commentary:
   url: https://github.com/tpope/vim-commentary.git
 
+git module vim-ctrlp:
+  url: https://github.com/kien/ctrlp.vim.git
+
 git module vim-easymotion:
   url: https://github.com/Lokaltog/vim-easymotion.git
 
@@ -38,6 +35,9 @@ git module vim-emacscommandline:
 
 git module vim-fugitive:
   url: https://github.com/tpope/vim-fugitive.git
+
+git module vim-neocomplete:
+  url: https://github.com/Shougo/neocomplete.vim.git
 
 git module vim-pathogen:
   url: https://github.com/tpope/vim-pathogen.git

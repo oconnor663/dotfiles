@@ -68,9 +68,9 @@ hi EasyMotionTarget2Second ctermbg=none ctermfg=red
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 
-" Neocomplcache
-let g:neocomplcache_enable_at_startup = 1
-let g:neocomplcache_enable_smart_case = 1
+" Neocomplete
+let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#enable_smart_case = 1
 " let the default action for tab in insert mode map to C-t/C-d
 imap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<C-t>"
 imap <expr><S-TAB>  pumvisible() ? "\<C-p>" : "\<C-d>"
