@@ -6,6 +6,9 @@ fi
 # Get rid of the delay when Esc
 export KEYTIMEOUT=1
 
+# conveniences in the interactive Python interpreter
+export PYTHONSTARTUP="$HOME/dotfiles/startup.py"
+
 alias ta='tmux attach'
 alias grep='grep --color=auto'
 alias i="ipython"
