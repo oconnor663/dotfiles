@@ -17,3 +17,6 @@
 
 # Ignore generated files under out/
 --ignore-dir=out
+
+# Ignore peru cache
+--ignore-dir=.peru-cache
