@@ -82,3 +82,6 @@ set guifont=Ubuntu\ Mono\ 15
 " fix YAML key highlighting (http://stackoverflow.com/a/22714798/823869)
 autocmd FileType yaml execute
       \'syn match yamlBlockMappingKey /^\s*\zs.*\ze\s*:\%(\s\|$\)/'
+
+" Syntastic
+let g:syntastic_python_python_exec = 'python3'
