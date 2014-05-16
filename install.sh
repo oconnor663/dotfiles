@@ -82,4 +82,4 @@ if ! which peru &> /dev/null ; then
   git clone https://github.com/oconnor663/peru.git ~/peru
   ln -s ~/peru/peru.sh ~/bin/peru
 fi
-peru
+peru sync
