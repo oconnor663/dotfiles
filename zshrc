@@ -9,6 +9,9 @@ export KEYTIMEOUT=1
 # conveniences in the interactive Python interpreter
 export PYTHONSTARTUP="$HOME/dotfiles/startup.py"
 
+# keep peru's cloned git repos in a central place
+export PERU_PLUGINS_CACHE=~/.peru-plugins-cache
+
 alias ta='tmux attach'
 alias grep='grep --color=auto'
 alias i="ipython"
