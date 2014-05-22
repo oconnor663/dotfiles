@@ -4,11 +4,11 @@ imports:
   vim-commentary: vim/bundle/commentary
   vim-ctrlp: vim/bundle/ctrlp
   vim-easymotion: vim/bundle/easymotion
-  vim-emacscommandline: vim/bundle/emacscommandline
   vim-fugitive: vim/bundle/fugitive
   vim-neocomplete: vim/bundle/neocomplete
   vim-pathogen: vim/autoload
   vim-repeat: vim/bundle/repeat
+  vim-rsi: vim/bundle/rsi
   vim-sensible: vim/bundle/sensible
   vim-syntastic: vim/bundle/syntastic
   vim-surround: vim/bundle/surround
@@ -30,9 +30,6 @@ git module vim-ctrlp:
 git module vim-easymotion:
   url: https://github.com/Lokaltog/vim-easymotion.git
 
-git module vim-emacscommandline:
-  url: https://github.com/houtsnip/vim-emacscommandline.git
-
 git module vim-fugitive:
   url: https://github.com/tpope/vim-fugitive.git
 
@@ -46,6 +43,9 @@ git module vim-pathogen:
 
 git module vim-repeat:
   url: https://github.com/tpope/vim-repeat.git
+
+git module vim-rsi:
+  url: https://github.com/tpope/vim-rsi.git
 
 git module vim-sensible:
   url: https://github.com/tpope/vim-sensible.git
