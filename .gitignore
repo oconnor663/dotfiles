@@ -1,7 +1,6 @@
 vim/.netrwhist
 
-peru
-.peru-cache
+.peru
 
 # Vim plugins are all fetched by peru.
 vim/
