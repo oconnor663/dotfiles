@@ -10,3 +10,5 @@
   path = ~/.gitconfig.local
 [push]
   default = simple
+[alias]
+  pick = cherry-pick
