@@ -1,1 +1,15 @@
-/home/jacko/tmp/yamldump
+#! /usr/bin/env python3
+
+import yaml
+
+import sys
+
+def do(f):
+    print(repr(yaml.safe_load(f)))
+
+if len(sys.argv) > 1:
+    for arg in sys.argv[1:]:
+        with open(arg) as f:
+            do(f)
+else:
+    do(sys.stdin)
