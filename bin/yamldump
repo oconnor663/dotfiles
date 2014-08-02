@@ -4,12 +4,13 @@ import yaml
 
 import sys
 
-def do(f):
-    print(repr(yaml.safe_load(f)))
+def do(input):
+    print(repr(yaml.safe_load(input)))
 
 if len(sys.argv) > 1:
     for arg in sys.argv[1:]:
         with open(arg) as f:
-            do(f)
+            input = f.read()
+            do(input)
 else:
-    do(sys.stdin)
+    do(sys.stdin.read())
