@@ -30,6 +30,7 @@ alias gs='git status'
 alias gd='git diff'
 alias gl='git log'
 alias gca="git commit -a --amend --no-edit"
+alias gcff="git clean -dffx"
 alias grh='git reset --hard'
 alias gpr='git pull --rebase'
 alias gout='git log @{upstream}.. --oneline'
