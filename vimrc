@@ -19,6 +19,7 @@ set listchars=tab:»\ ,trail:·
 set mouse=a
 set wildmode=list:longest,list:full
 set colorcolumn=80
+set nojoinspaces  " Join sentences with one period, not two.
 
 " Leader key is space.
 let mapleader = " "
