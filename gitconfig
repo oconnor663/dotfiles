@@ -12,3 +12,5 @@
   default = simple
 [alias]
   pick = cherry-pick
+[merge]
+  conflictstyle = diff3
