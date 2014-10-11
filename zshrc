@@ -1,6 +1,7 @@
 if [ $TERM = xterm -o $TERM = rxvt-unicode-256color ]
 then
   export TERM=xterm-256color
+  export SOLARIZED=1
 fi
 
 # Get rid of the delay when Esc
@@ -46,9 +47,11 @@ fi
 stty stop undef
 
 # colors for ls
+if [[ -n $SOLARIZED ]] ; then
+  eval `dircolors ~/.dotfiles/dir_colors`
+fi
 if ls --color=auto > /dev/null 2>&1 ; then
   # GNU ls supports --color
-  eval `dircolors ~/.dotfiles/dir_colors`
   alias ls="ls --color=auto"
 else
   # --color not supported, assume BSD ls

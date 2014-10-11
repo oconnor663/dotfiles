@@ -48,8 +48,10 @@ autocmd BufRead new-commit set textwidth=72
 autocmd FileType c,cpp,cs,java setlocal commentstring=//\ %s
 
 " Solarized color scheme
-set background=dark
-colorscheme solarized
+if $SOLARIZED == '1'
+  set background=dark
+  colorscheme solarized
+endif
 
 " CtrlP settings
 let g:ctrlp_cmd = 'CtrlPMRUFiles'
