@@ -59,7 +59,7 @@ else
 fi
 
 export EDITOR=vim
-export PATH=~/bin:$PATH
+export PATH=~/bin:~/.local/bin:$PATH
 
 # use emacs keybindings
 bindkey -e
