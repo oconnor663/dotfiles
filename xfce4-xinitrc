@@ -1,0 +1,7 @@
+# Turn the caps lock key into an extra control key.
+setxkbmap -option 'ctrl:nocaps'
+
+# Disable trackpad tapping.
+synclient TapButton1=0 TapButton2=0 TapButton3=0
+
+exec xfce4-session
