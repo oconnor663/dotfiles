@@ -21,6 +21,10 @@ LINKED_PATHS=(
   vim
   vimrc
   zshrc
+  xinitrc
+  xmobarrc
+  xmonad/xmonad.hs
+  Xresources
 )
 
 for NAME in ${LINKED_PATHS[*]} ; do
