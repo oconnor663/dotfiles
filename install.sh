@@ -68,7 +68,7 @@ xkb-options=['caps:ctrl_modifier']
 END
 fi
 
-if which gnome-terminal &> /dev/null ; then
+if which gconftool-2 &> /dev/null ; then
   # terminal colors
   gnome-terminal-colors-solarized/set_dark.sh
   # terminal font
