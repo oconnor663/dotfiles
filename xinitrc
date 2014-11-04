@@ -15,8 +15,6 @@ synclient TapButton1=0 TapButton2=0 TapButton3=0
 trayer --edge top --align right --SetDockType true --SetPartialStrut true \
  --expand true --width 10 --transparent true --height 12 --tint 0x000000 &
 
-xfce4-power-manager &
-
 nm-applet &
 
 dropboxd &
