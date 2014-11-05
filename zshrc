@@ -12,9 +12,9 @@ export PYTHONSTARTUP="$HOME/dotfiles/startup.py"
 
 alias ta='tmux attach'
 alias grep='grep --color=auto'
-alias i="ipython"
-alias i2="ipython2"
-alias i3="ipython3"
+alias i="ipython --no-confirm-exit"
+alias i2="ipython2 --no-confirm-exit"
+alias i3="ipython3 --no-confirm-exit"
 alias open="xdg-open"
 alias anthy="ibus engine anthy"
 alias eigo="ibus engine xkb:us::eng"
