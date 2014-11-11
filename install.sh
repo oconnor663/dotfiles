@@ -83,7 +83,9 @@ if [ -e $newshell ] && [ $SHELL != $newshell ]; then
 fi
 
 if ! which peru &> /dev/null ; then
-  git clone https://github.com/oconnor663/peru.git ~/peru
-  ln -s ~/peru/peru.sh ~/bin/peru
+  if ! [ -e ~/peru ]; then
+    git clone https://github.com/oconnor663/peru.git ~/peru
+  fi
+  ln -fs ~/peru/peru.sh ~/bin/peru
 fi
 ~/bin/peru sync
