@@ -1,4 +1,0 @@
-#! /bin/bash
-
-pre_colon=`echo $1 | cut -d : -f 1`
-vim ".$pre_colon/BUCK"
