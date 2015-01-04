@@ -21,6 +21,12 @@ set wildmode=list:longest,list:full
 set colorcolumn=80
 set nojoinspaces  " Join sentences with one period, not two.
 
+" Disable the bell.
+set vb t_vb=
+" gvim resets this for no good reason
+" http://stackoverflow.com/a/18589653/823869
+autocmd GUIEnter * set vb t_vb=
+
 " Leader key is space.
 let mapleader = " "
 noremap <Space> <Nop>
