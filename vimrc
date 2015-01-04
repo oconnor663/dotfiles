@@ -19,7 +19,7 @@ set listchars=tab:»\ ,trail:·
 set mouse=a
 set wildmode=list:longest,list:full
 set colorcolumn=80
-set nojoinspaces  " Join sentences with one period, not two.
+set nojoinspaces  " Join sentences with one space, not two.
 
 " Disable the bell.
 set vb t_vb=
