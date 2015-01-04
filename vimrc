@@ -47,10 +47,17 @@ autocmd BufRead new-commit set textwidth=72
 " Prefer // over /*...*/. Used by vim-commentary.
 autocmd FileType c,cpp,cs,java setlocal commentstring=//\ %s
 
-" Solarized color scheme
+" Solarized color scheme in the terminal
 if $SOLARIZED == '1'
-  set background=dark
   colorscheme solarized
+  set background=dark
+endif
+
+" Solarized color scheme in the gui
+set guifont=Ubuntu\ Mono\ 15
+if has("gui_running")
+  colorscheme solarized
+  set background=light
 endif
 
 " CtrlP settings
@@ -81,9 +88,6 @@ let g:neocomplete#enable_smart_case = 1
 " let the default action for tab in insert mode map to C-t/C-d
 imap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<C-t>"
 imap <expr><S-TAB>  pumvisible() ? "\<C-p>" : "\<C-d>"
-
-" gVim font
-set guifont=Ubuntu\ Mono\ 15
 
 " fix YAML key highlighting (http://stackoverflow.com/a/22714798/823869)
 autocmd FileType yaml execute
