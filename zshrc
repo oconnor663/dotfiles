@@ -37,6 +37,7 @@ alias grh='git reset --hard'
 alias gpr='git pull --rebase'
 alias gout='git log @{upstream}.. --oneline'
 alias goutfull='git log @{upstream}..'
+alias ginit='git init && git add -A && git commit -m "first commit"'
 
 # ack is called ack-grep in ubuntu
 if (( ! $+commands[ack] )) && (( $+commands[ack-grep]))
