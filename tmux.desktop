@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Tmux
+Keywords=shell;prompt;command;commandline;
+Exec=gnome-terminal -e tmux
+Icon=utilities-terminal
+Type=Application
+Categories=GNOME;GTK;System;TerminalEmulator;
+StartupNotify=true
