@@ -53,6 +53,15 @@ autocmd BufRead new-commit set textwidth=72
 " Prefer // over /*...*/. Used by vim-commentary.
 autocmd FileType c,cpp,cs,java setlocal commentstring=//\ %s
 
+" settings for Go files
+autocmd FileType go call SetGoOptions()
+function SetGoOptions()
+  setlocal nolist
+  setlocal noexpandtab
+  setlocal tabstop=4
+  setlocal shiftwidth=4
+endfunction
+
 " Solarized color scheme in the terminal
 if $SOLARIZED == '1'
   colorscheme solarized
