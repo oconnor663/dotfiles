@@ -18,7 +18,7 @@ imports:
 
 git module vim-bracketed-paste:
   url: https://github.com/ConradIrwin/vim-bracketed-paste.git
-  rev: 4be92ef5e0b51712205f521e0a2219f16b3c5731
+  rev: 36779ba3b1af4b81fcba7b83095afe794a07b71a
 
 git module vim-colors-solarized:
   url: https://github.com/altercation/vim-colors-solarized.git
@@ -26,7 +26,7 @@ git module vim-colors-solarized:
 
 git module vim-commentary:
   url: https://github.com/tpope/vim-commentary.git
-  rev: 8b4df6ca0ba9cd117d97a8fd26b44b2439d5e3f1
+  rev: 9c685131a5facfa0d643feca3a61b41c007d8170
 
 git module vim-ctrlp:
   url: https://github.com/kien/ctrlp.vim.git
@@ -34,11 +34,11 @@ git module vim-ctrlp:
 
 git module vim-easymotion:
   url: https://github.com/Lokaltog/vim-easymotion.git
-  rev: 868cd71710a48e8ec8acffeabd1eebfb10812c77
+  rev: 1b5d892b954de80958c4da11b88d0f0a0efeece8
 
 git module vim-fugitive:
   url: https://github.com/tpope/vim-fugitive.git
-  rev: 0374322ba5d85ae44dd9dc44ef31ca015a59097e
+  rev: eb8eb1850a47671a8a3639feab8b2a50577e4913
 
 git module vim-go:
   url: https://github.com/fatih/vim-go
@@ -46,36 +46,36 @@ git module vim-go:
 
 git module vim-neocomplete:
   url: https://github.com/Shougo/neocomplete.vim.git
-  rev: 5efdea2cc0b206d448846bbc278756ba900c3d51
+  rev: 98b7682408f988e301c4644c68b95e81de053c70
 
 git module vim-pathogen:
   url: https://github.com/tpope/vim-pathogen.git
   export: autoload/
-  rev: 91e6378908721d20514bbe5d18d292a0a15faf0c
+  rev: b9fb0dfd811004010f5f6903edef42d6004ebea2
 
 git module vim-repeat:
   url: https://github.com/tpope/vim-repeat.git
-  rev: 2a3c5f8e3c26a57b8eb4cfc4be79615a1c508ef6
+  rev: b06684a19549a45c91f36dc47dc55525e4c9c994
 
 git module vim-rsi:
   url: https://github.com/tpope/vim-rsi.git
-  rev: ec39927fcbb53a77e628b2d138e0a43caa945a3b
+  rev: dfc5288097b83d1eb3173d8be348a11f3d467d8e
 
 git module vim-sensible:
   url: https://github.com/tpope/vim-sensible.git
-  rev: 64aa12b07b0be90a8e98bc7be1b5faac4ac873a4
+  rev: b30dcf387af977acfa21732592bfca05598b2188
 
 git module vim-syntastic:
   url: https://github.com/scrooloose/syntastic.git
-  rev: 7246fac6c028952cef486a71b995cc60c7c7426e
+  rev: 7cbb79b73444247d546392ce0bba0f755bed329b
 
 git module vim-surround:
   url: https://github.com/tpope/vim-surround.git
-  rev: fa433e0b7330753688f715f3be5d10dc480f20e5
+  rev: fd75eb2cb2ffe85a457445cb152d5a6c7acda140
 
 git module vim-unimpaired:
   url: https://github.com/tpope/vim-unimpaired.git
-  rev: 1bf6f167d4994d7e899a5b27a627e91490850508
+  rev: 3548479cc154154cbdbb6737ca08a47937cc7113
 
 git module vim-yankstack:
   url: https://github.com/maxbrunsfeld/vim-yankstack.git
