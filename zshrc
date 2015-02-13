@@ -36,6 +36,7 @@ alias gca="git commit -a --amend --no-edit"
 alias gcff="git clean -dffx"
 alias grh='git reset --hard'
 alias gpr='git pull --rebase'
+alias gfra='git fetch && git rebase --autostash'
 alias gout='git log @{upstream}.. --oneline'
 alias goutfull='git log @{upstream}..'
 alias ginit='git init && git add -A && git commit -m "first commit"'
