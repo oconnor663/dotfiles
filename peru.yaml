@@ -5,6 +5,7 @@ imports:
   vim-ctrlp: vim/bundle/ctrlp
   vim-easymotion: vim/bundle/easymotion
   vim-fugitive: vim/bundle/fugitive
+  vim-go: vim/bundle/go
   vim-neocomplete: vim/bundle/neocomplete
   vim-pathogen: vim/autoload
   vim-repeat: vim/bundle/repeat
@@ -38,6 +39,10 @@ git module vim-easymotion:
 git module vim-fugitive:
   url: https://github.com/tpope/vim-fugitive.git
   rev: 0374322ba5d85ae44dd9dc44ef31ca015a59097e
+
+git module vim-go:
+  url: https://github.com/fatih/vim-go
+  rev: bf94a57eb2cbce2bc244b54197dcf12750936dcc
 
 git module vim-neocomplete:
   url: https://github.com/Shougo/neocomplete.vim.git
