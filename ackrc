@@ -20,3 +20,6 @@
 
 # Ignore peru cache
 --ignore-dir=.peru-cache
+
+# Ignore Godeps
+--ignore-dir=Godeps
