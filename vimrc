@@ -62,6 +62,12 @@ function SetGoOptions()
   setlocal shiftwidth=4
 endfunction
 
+" settings for IcedCoffeeScript
+autocmd BufNewFile,BufRead *.iced call SetICSOptions()
+function SetICSOptions()
+  setlocal syntax=coffee
+endfunction
+
 " Solarized color scheme in the terminal
 if $SOLARIZED == '1'
   colorscheme solarized
