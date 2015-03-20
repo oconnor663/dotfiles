@@ -1,5 +1,6 @@
 imports:
   vim-bracketed-paste: vim/bundle/bracketed-paste
+  vim-coffee: vim/bundle/coffee
   vim-colors-solarized: vim/bundle/colors-solarized
   vim-commentary: vim/bundle/commentary
   vim-ctrlp: vim/bundle/ctrlp
@@ -15,6 +16,10 @@ imports:
   vim-surround: vim/bundle/surround
   vim-unimpaired: vim/bundle/unimpaired
   vim-yankstack: vim/bundle/yankstack
+
+git module vim-coffee:
+  url: https://github.com/kchmck/vim-coffee-script
+  rev: 827e4a38b07479433b619091469a7495a392df8a
 
 git module vim-bracketed-paste:
   url: https://github.com/ConradIrwin/vim-bracketed-paste.git
