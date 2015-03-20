@@ -1,0 +1,31 @@
+#! /bin/bash
+
+set -e
+
+if [[ -n $(git status --porcelain) ]] ; then
+  echo error: repo is dirty
+  exit 1
+fi
+
+branch=$(git symbolic-ref --short HEAD)
+
+if [[ "$branch" = "master" ]] ; then
+  echo error: trying to land master on itself
+  exit 1
+fi
+
+echo checking out master
+git checkout -q master
+
+echo pulling master
+git pull --ff-only
+
+echo cherry-picking commits from "$branch"
+git cherry-pick master.."$branch"
+
+echo pushing master
+git push origin master
+
+git branch -D "$branch"
+
+echo SUCCESS
