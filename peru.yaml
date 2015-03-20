@@ -7,7 +7,6 @@ imports:
   vim-easymotion: vim/bundle/easymotion
   vim-fugitive: vim/bundle/fugitive
   vim-go: vim/bundle/go
-  vim-neocomplete: vim/bundle/neocomplete
   vim-pathogen: vim/autoload
   vim-repeat: vim/bundle/repeat
   vim-rsi: vim/bundle/rsi
@@ -48,10 +47,6 @@ git module vim-fugitive:
 git module vim-go:
   url: https://github.com/fatih/vim-go
   rev: bf94a57eb2cbce2bc244b54197dcf12750936dcc
-
-git module vim-neocomplete:
-  url: https://github.com/Shougo/neocomplete.vim.git
-  rev: 98b7682408f988e301c4644c68b95e81de053c70
 
 git module vim-pathogen:
   url: https://github.com/tpope/vim-pathogen.git
