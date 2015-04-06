@@ -22,6 +22,7 @@ alias えいご="eigo"
 alias r='cd $(git rev-parse --show-toplevel || echo .)'
 alias c='xclip -i -selection clipboard'
 alias ct='tmux show-buffer | c'
+alias v='xclip -o -selection clipboard'
 alias pc='git clean -dfx --exclude .peru-cache'
 alias find='noglob find' # easier wildcards
 alias scp='noglob scp'   # ditto
