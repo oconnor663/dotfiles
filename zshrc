@@ -1,5 +1,4 @@
-if [ $TERM = xterm -o $TERM = rxvt-unicode-256color ]
-then
+if [[ $TERM = xterm || $TERM = xterm-256color ]] ; then
   export TERM=xterm-256color
   export SOLARIZED=1
 fi
