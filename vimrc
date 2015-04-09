@@ -68,6 +68,12 @@ function SetICSOptions()
   setlocal syntax=coffee
 endfunction
 
+" make WSGI files look like python
+autocmd BufNewFile,BufRead *.wsgi call SetWSGIOptions()
+function SetWSGIOptions()
+  setlocal filetype=python
+endfunction
+
 " Solarized color scheme in the terminal
 if $SOLARIZED == '1'
   colorscheme solarized
