@@ -118,13 +118,6 @@ key[Delete]=${terminfo[kdch1]}
 [[ -n "${key[Insert]}"  ]]  && bindkey  "${key[Insert]}"  overwrite-mode
 [[ -n "${key[Delete]}"  ]]  && bindkey  "${key[Delete]}"  delete-char
 
-# Load settings specific to this machine.
-local_zshrc=~/.zshrc.local
-if [ -e "$local_zshrc" ]
-then
-  source "$local_zshrc"
-fi
-
 setopt prompt_subst
 export PROMPT='%(?..%F{red}%? )%F{cyan}%m %F{blue}%~ %F{yellow}$(__git_prompt)%f'
 
@@ -234,3 +227,10 @@ function _zle_line_finish() {
   # doesn't get the ^[[200~ codes around the pasted text.
   [[ $TERM == rxvt-unicode || $TERM == xterm || $TERM = xterm-256color || $TERM = screen || $TERM = screen-256color ]] && printf '\e[?2004l'
 }
+
+# Load settings specific to this machine.
+local_zshrc=~/.zshrc.local
+if [ -e "$local_zshrc" ]
+then
+  source "$local_zshrc"
+fi
