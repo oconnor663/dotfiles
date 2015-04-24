@@ -48,6 +48,9 @@ done
 
 mkdir -p ~/.vim-tmp
 
+mkdir -p ~/.local/share/applications
+ln -sf $DOTFILES/tmux.desktop ~/.local/share/applications/tmux.desktop
+
 # For Gnome, set terminal preferences and remap caps lock.
 if which dconf &> /dev/null ; then
   dconf load / << END
