@@ -18,7 +18,7 @@ imports:
 
 git module vim-coffee:
   url: https://github.com/kchmck/vim-coffee-script
-  rev: 827e4a38b07479433b619091469a7495a392df8a
+  rev: 32fe889b8cafd3a4921ef8e6485156453ff58c42
 
 git module vim-bracketed-paste:
   url: https://github.com/ConradIrwin/vim-bracketed-paste.git
@@ -38,15 +38,15 @@ git module vim-ctrlp:
 
 git module vim-easymotion:
   url: https://github.com/Lokaltog/vim-easymotion.git
-  rev: 1b5d892b954de80958c4da11b88d0f0a0efeece8
+  rev: 9f1c449edfce6d61c7f620e3a9c1389b7b7e334f
 
 git module vim-fugitive:
   url: https://github.com/tpope/vim-fugitive.git
-  rev: eb8eb1850a47671a8a3639feab8b2a50577e4913
+  rev: 1c844375fa2762e3b7c16294fa36afee6fef28b1
 
 git module vim-go:
   url: https://github.com/fatih/vim-go
-  rev: bf94a57eb2cbce2bc244b54197dcf12750936dcc
+  rev: 3df3cbf2e7ab9d76fd67f9f4077060b4450ba90c
 
 git module vim-pathogen:
   url: https://github.com/tpope/vim-pathogen.git
@@ -55,7 +55,7 @@ git module vim-pathogen:
 
 git module vim-repeat:
   url: https://github.com/tpope/vim-repeat.git
-  rev: b06684a19549a45c91f36dc47dc55525e4c9c994
+  rev: 7a6675f092842c8f81e71d5345bd7cdbf3759415
 
 git module vim-rsi:
   url: https://github.com/tpope/vim-rsi.git
@@ -63,20 +63,20 @@ git module vim-rsi:
 
 git module vim-sensible:
   url: https://github.com/tpope/vim-sensible.git
-  rev: b30dcf387af977acfa21732592bfca05598b2188
+  rev: d0beb8ab42627bea2c747564ca46ec663e3ba0ba
 
 git module vim-syntastic:
   url: https://github.com/scrooloose/syntastic.git
-  rev: 7cbb79b73444247d546392ce0bba0f755bed329b
+  rev: b609b3bdd37724b64e35bc9e6e087e2d43345062
 
 git module vim-surround:
   url: https://github.com/tpope/vim-surround.git
-  rev: fd75eb2cb2ffe85a457445cb152d5a6c7acda140
+  rev: 772ab9587b7d1e2c3bae75395c9123803059ba8a
 
 git module vim-unimpaired:
   url: https://github.com/tpope/vim-unimpaired.git
-  rev: 3548479cc154154cbdbb6737ca08a47937cc7113
+  rev: 503443231efb2f92558937befd4f3f2bb44b8e7c
 
 git module vim-yankstack:
   url: https://github.com/maxbrunsfeld/vim-yankstack.git
-  rev: c6b96be20d9cfcbbcd7cc257a73274c6702d3fb7
+  rev: 157a659c1b101c899935d961774fb5c8f0775370
