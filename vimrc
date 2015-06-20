@@ -74,6 +74,13 @@ function SetWSGIOptions()
   setlocal filetype=python
 endfunction
 
+" narrower text width in README files
+autocmd BufNewFile,BufRead README* call SetREADMEOptions()
+function SetREADMEOptions()
+  setlocal textwidth=72
+  setlocal colorcolumn=72
+endfunction
+
 " Solarized color scheme in the terminal
 if $SOLARIZED == '1'
   colorscheme solarized
