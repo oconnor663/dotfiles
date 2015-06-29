@@ -66,6 +66,7 @@ endfunction
 autocmd BufNewFile,BufRead *.iced call SetICSOptions()
 function SetICSOptions()
   setlocal syntax=coffee
+  setlocal commentstring=#\ %s
 endfunction
 
 " make WSGI files look like python
