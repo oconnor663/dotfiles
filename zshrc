@@ -119,7 +119,7 @@ key[Delete]=${terminfo[kdch1]}
 [[ -n "${key[Delete]}"  ]]  && bindkey  "${key[Delete]}"  delete-char
 
 setopt prompt_subst
-export PROMPT='%(?..%F{red}%? )%F{cyan}%m %F{blue}%~ %F{yellow}$(__git_prompt)%f'
+export PROMPT='%(?..%F{red}%? )%F{cyan}%M %F{blue}%~ %F{yellow}$(__git_prompt)%f'
 
 __git_prompt() {
   if git rev-parse --git-dir > /dev/null 2>&1; then
