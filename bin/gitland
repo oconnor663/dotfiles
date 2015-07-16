@@ -21,7 +21,7 @@ echo pulling master
 git pull --ff-only
 
 echo cherry-picking commits from "$branch"
-git cherry-pick master.."$branch"
+git cherry-pick --ff master.."$branch"
 
 echo pushing master
 git push origin master
