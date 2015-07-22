@@ -14,3 +14,9 @@
   pick = cherry-pick
 [merge]
   conflictstyle = diff3
+[pager]
+  # In order to support these, /usr/share/git/diff-highlight must be added to
+  # $PATH elsewhere (in this case, in my .zshrc).
+  log = diff-highlight | less
+  show = diff-highlight | less
+  diff = diff-highlight | less
