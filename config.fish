@@ -5,6 +5,10 @@ if begin; [ "$TERM" = xterm ]; or [ "$TERM" = xterm-256color ]; end
 
   eval (dircolors -c ~/.dotfiles/dir_colors)
 
+  ###
+  ### TODO: Factor out these colors somehow.
+  ###
+
   set -l base03  "--bold black"
   set -l base02  "black"
   set -l base01  "--bold green"
