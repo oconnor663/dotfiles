@@ -49,3 +49,23 @@ if begin; [ "$TERM" = xterm ]; or [ "$TERM" = xterm-256color ]; end
   set -g fish_color_git         $green
 
 end
+
+alias ta='tmux attach'
+alias grep='grep --color=auto'
+alias i="ipython --no-confirm-exit"
+alias i2="ipython2 --no-confirm-exit"
+alias i3="ipython3 --no-confirm-exit"
+alias open="xdg-open"
+alias r='cd (git rev-parse --show-toplevel; or echo .)'
+alias c='xclip -i -selection clipboard'
+alias ct='tmux show-buffer | c'
+alias v='xclip -o -selection clipboard'
+alias gs='git status'
+alias gd='git diff'
+alias gca="git commit -a --amend --no-edit"
+alias gcff="git clean -dffx"
+alias grh='git reset --hard'
+alias gpr='git pull --rebase'
+alias gfra='git fetch ;and git rebase --autostash'
+alias gout='git log "@{upstream}.." --oneline'
+alias ginit='git init ;and git add -A ;and git commit -m "first commit"'
