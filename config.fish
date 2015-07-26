@@ -1,9 +1,13 @@
+set DOTFILES ~/dotfiles
+
 setenv PATH ~/bin ~/.local/bin $PATH
+setenv EDITOR vim
+setenv PYTHONSTARTUP $DOTFILES/startup.py
 
 if begin; [ "$TERM" = xterm ]; or [ "$TERM" = xterm-256color ]; end
   setenv SOLARIZED 1
 
-  eval (dircolors -c ~/.dotfiles/dir_colors)
+  eval (dircolors -c $DOTFILES/dir_colors)
 
   ###
   ### TODO: Factor out these colors somehow.
