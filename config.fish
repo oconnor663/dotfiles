@@ -69,3 +69,19 @@ alias gpr='git pull --rebase'
 alias gfra='git fetch ;and git rebase --autostash'
 alias gout='git log "@{upstream}.." --oneline'
 alias ginit='git init ;and git add -A ;and git commit -m "first commit"'
+
+
+function fish_prompt
+  set -l last_status $status
+  set -l prompt_status
+  if test $last_status -ne 0
+    set prompt_status " [$last_status]"
+  end
+
+  set -l user (whoami)@(hostname)
+
+  echo -ns (set_color blue)(prompt_pwd) \
+           (set_color yellow)(__fish_git_prompt " %s") \
+           (set_color red) $prompt_status " " \
+           (set_color normal) "> "
+end
