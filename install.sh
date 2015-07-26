@@ -56,7 +56,7 @@ if which dconf &> /dev/null ; then
   dconf load / < $DOTFILES/gnome-dconf-settings
 fi
 
-newshell=/usr/bin/zsh
+newshell=/usr/bin/fish
 if [ -e $newshell ] && [ $SHELL != $newshell ]; then
   echo Switching default shell from $SHELL to $newshell...
   chsh -s $newshell
