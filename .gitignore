@@ -4,3 +4,6 @@ vim/.netrwhist
 
 # Vim plugins are all fetched by peru.
 vim/
+
+# also peru
+dircolors-solarized
