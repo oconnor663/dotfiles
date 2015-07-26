@@ -114,8 +114,9 @@ hi EasyMotionTarget2First ctermbg=none ctermfg=red
 hi EasyMotionTarget2Second ctermbg=none ctermfg=red
 
 " Store all backup files centrally
-set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
-set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+silent !mkdir -p ~/.vim-tmp
+set backupdir=~/.vim-tmp
+set directory=~/.vim-tmp
 
 " Neocomplete
 let g:neocomplete#enable_at_startup = 1

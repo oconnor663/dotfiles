@@ -2,52 +2,38 @@
 
 set -e
 
-cd `dirname $0`
-ROOT=`pwd`
+HERE=$(cd $(dirname "$BASH_SOURCE"); pwd)
 
-DOTFILES=~/.dotfiles
-DOTFILES_OLD=~/.dotfiles-old
-ln -snf "$ROOT" "$DOTFILES"
-mkdir -p "$DOTFILES_OLD"
+if [[ "$HERE" != "$HOME/dotfiles" ]] ; then
+  echo 'can only be installed from ~/dotfiles'
+  exit 1
+fi
 
-LINKED_PATHS=(
-  ackrc
-  gitconfig
-  hgrc
-  ssh/config
-  tmux.conf
-  vim
-  vimrc
-  zshrc
-)
+function link {
+  local src="$1"
+  local dest="$2"
+  mkdir -p $(dirname "$dest")
+  ln -sfn "$HERE/$src" "$dest"
+}
 
-for NAME in ${LINKED_PATHS[*]} ; do
-  DEST=~/".$NAME"
+link ackrc        ~/.ackrc
+link config.fish  ~/.config/fish/config.fish
+link gitconfig    ~/.gitconfig
+link hgrc         ~/.hgrc
+link ssh-config   ~/.ssh/config
+link tmux.conf    ~/.tmux.conf
+link tmux.desktop ~/.local/share/applications/tmux.desktop
+link vim          ~/.vim
+link vimrc        ~/.vimrc
+link zshrc        ~/.zshrc
 
-  # Copy existing dotfiles (but not symlinks) into the old directory
-  if [ -e "$DEST" -a ! -L "$DEST" ]
-  then
-    mkdir -p $(dirname "$DOTFILES_OLD/$NAME")
-    mv "$DEST" "$DOTFILES_OLD/$NAME"
-  fi
-
-  mkdir -p $(dirname "$DEST")
-  ln -sfn "$ROOT/$NAME" "$DEST"
+for script in $(ls bin); do
+  link "bin/$script" ~/bin/"$script"
 done
-
-mkdir -p ~/bin
-for script in `ls bin`; do
-  ln -sfn "$ROOT/bin/$script" ~/bin/"$script"
-done
-
-mkdir -p ~/.vim-tmp
-
-mkdir -p ~/.local/share/applications
-ln -sf $DOTFILES/tmux.desktop ~/.local/share/applications/tmux.desktop
 
 # For Gnome, set terminal preferences and remap caps lock.
 if which dconf &> /dev/null ; then
-  dconf load / < $DOTFILES/gnome-dconf-settings
+  dconf load / < $HERE/gnome-dconf-settings
 fi
 
 newshell=/usr/bin/fish
