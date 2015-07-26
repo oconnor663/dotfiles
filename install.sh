@@ -12,19 +12,13 @@ mkdir -p "$DOTFILES_OLD"
 
 LINKED_PATHS=(
   ackrc
-  bashrc
   gitconfig
   hgrc
-  minttyrc
   ssh/config
   tmux.conf
   vim
   vimrc
   zshrc
-  xinitrc
-  xmobarrc
-  xmonad/xmonad.hs
-  Xresources
 )
 
 for NAME in ${LINKED_PATHS[*]} ; do
