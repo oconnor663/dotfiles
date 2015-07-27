@@ -1,7 +1,7 @@
 [Desktop Entry]
 Name=Tmux
 Keywords=shell;prompt;command;commandline;
-# Force zsh to be interactive, so that color settings in .zshrc
+# Force the shell to be interactive, so that color settings
 # get sourced and tmux itself runs with the right env vars.
 Exec=gnome-terminal -e "fish -i -c tmux"
 Icon=utilities-terminal
