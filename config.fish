@@ -23,12 +23,12 @@ function fish_prompt
   set -l last_status $status
   set -l prompt_status
   if test $last_status -ne 0
-    set prompt_status " [$last_status]"
+    set prompt_status "[$last_status]"
   end
   set -l user (whoami)@(hostname)
   echo -ns (set_color blue)(prompt_pwd) \
-           (set_color yellow)(__fish_git_prompt " %s") \
-           (set_color red) $prompt_status " " \
+           (set_color yellow)(__fish_git_prompt " %s") " " \
+           (set_color red) $prompt_status \
            (set_color normal) "> "
 end
 
