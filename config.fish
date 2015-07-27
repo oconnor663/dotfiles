@@ -1,5 +1,7 @@
 set DOTFILES ~/dotfiles
 
+set fish_greeting  # disable the greeting
+
 setenv PATH ~/bin ~/.local/bin $PATH
 setenv EDITOR vim
 setenv PYTHONSTARTUP $DOTFILES/startup.py
