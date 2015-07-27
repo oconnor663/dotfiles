@@ -51,3 +51,8 @@ alias gpr='git pull --rebase'
 alias gfra='git fetch ;and git rebase --autostash'
 alias gout='git log "@{upstream}.." --oneline'
 alias ginit='git init ;and git add -A ;and git commit -m "first commit"'
+
+set -l local_conf ~/.config/fish/local.fish
+if [ -e $local_conf ]
+  source $local_conf
+end
