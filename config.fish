@@ -6,7 +6,14 @@ setenv PATH ~/bin ~/.local/bin /usr/share/git/diff-highlight $PATH
 setenv EDITOR vim
 setenv PYTHONSTARTUP $DOTFILES/startup.py
 
-if begin; [ "$TERM" = xterm ]; or [ "$TERM" = xterm-256color ]; end
+# Set color variables and the solarized theme.
+# TODO: This assumes that tmux will always be launched by a fish shell
+# that has already exported these variables, so it won't need to set
+# them again when $TERM=screen*. This should probably be less brittle.
+if [ "$TERM" = xterm ]
+  setenv TERM xterm-256color
+end
+if [ "$TERM" = xterm-256color ]
   setenv SOLARIZED 1
   eval (dircolors -c $DOTFILES/dircolors-solarized/dircolors.ansi-dark)
   source $DOTFILES/solarized.fish
