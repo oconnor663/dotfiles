@@ -114,7 +114,6 @@ hi EasyMotionTarget2First ctermbg=none ctermfg=red
 hi EasyMotionTarget2Second ctermbg=none ctermfg=red
 
 " Store all backup files centrally
-silent !mkdir -p ~/.vim-tmp
 set backupdir=~/.vim-tmp
 set directory=~/.vim-tmp
 
