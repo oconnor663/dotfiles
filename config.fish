@@ -25,7 +25,7 @@ function fish_prompt
   if test $last_status -ne 0
     set prompt_status "[$last_status]"
   end
-  set -l user (whoami)@(hostname)
+  history --merge
   echo -ns (set_color blue)(prompt_pwd) \
            (set_color yellow)(__fish_git_prompt " %s") " " \
            (set_color red) $prompt_status \
