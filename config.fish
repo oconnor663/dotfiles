@@ -32,6 +32,17 @@ function fish_prompt
            (set_color normal) "> "
 end
 
+function edit_command
+    set -l tmpfile (mktemp); or return 1
+    commandline > $tmpfile
+    eval $EDITOR $tmpfile
+    commandline -r -- (cat $tmpfile)
+    rm $tmpfile
+end
+function fish_user_key_bindings
+  bind \ee edit_command
+end
+
 alias ta='tmux attach'
 alias grep='grep --color=auto'
 alias i="ipython --no-confirm-exit"
