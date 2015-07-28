@@ -9,6 +9,14 @@ if [[ "$HERE" != "$HOME/dotfiles" ]] ; then
   exit 1
 fi
 
+peru sync
+
+newshell=/usr/bin/fish
+if [ $SHELL != $newshell ]; then
+  echo Switching default shell from $SHELL to $newshell...
+  chsh -s $newshell
+fi
+
 function link {
   local src="$1"
   local dest="$2"
@@ -38,11 +46,3 @@ done
 if which dconf &> /dev/null ; then
   dconf load / < $HERE/gnome-dconf-settings
 fi
-
-newshell=/usr/bin/fish
-if [ -e $newshell ] && [ $SHELL != $newshell ]; then
-  echo Switching default shell from $SHELL to $newshell...
-  chsh -s $newshell
-fi
-
-peru sync
