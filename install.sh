@@ -36,7 +36,7 @@ link vimrc        ~/.vimrc
 link zshrc        ~/.zshrc
 
 # Doing this in .vimrc is unnecessarily hard.
-mkdir ~/.vim-tmp
+mkdir -p ~/.vim-tmp
 
 for script in $(ls bin); do
   link "bin/$script" ~/bin/"$script"
