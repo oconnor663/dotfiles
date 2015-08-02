@@ -2,8 +2,7 @@ vim/.netrwhist
 
 .peru
 
-# Vim plugins are all fetched by peru.
+# Things fetched by peru
 vim/
-
-# also peru
-dircolors-solarized
+tmux/
+dircolors-solarized/

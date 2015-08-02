@@ -1,6 +1,9 @@
 imports:
   dircolors-solarized: dircolors-solarized
 
+  tmux-colors-solarized: tmux/solarized
+  tmux-sensible: tmux/sensible
+
   vim-bracketed-paste: vim/bundle/bracketed-paste
   vim-coffee: vim/bundle/coffee
   vim-colors-solarized: vim/bundle/colors-solarized
@@ -20,8 +23,15 @@ imports:
 
 git module dircolors-solarized:
   url: https://github.com/seebi/dircolors-solarized
-  pick: dircolors.ansi-dark
   rev: a21f4726bd214a96c76259b235c9a83854876e2f
+
+git module tmux-sensible:
+  url: https://github.com/tmux-plugins/tmux-sensible
+  rev: cd7faa8bba39bac5340f7d09282815d0de47df65
+
+git module tmux-colors-solarized:
+  url: https://github.com/seebi/tmux-colors-solarized
+  rev: 50299c1dd6407bc415360a6173de247b86fab9b8
 
 git module vim-coffee:
   url: https://github.com/kchmck/vim-coffee-script
