@@ -11,7 +11,7 @@ fi
 
 peru sync
 
-newshell=/usr/bin/fish
+newshell=/bin/zsh
 if [ $SHELL != $newshell ]; then
   echo Switching default shell from $SHELL to $newshell...
   chsh -s $newshell
@@ -25,7 +25,6 @@ function link {
 }
 
 link ackrc        ~/.ackrc
-link config.fish  ~/.config/fish/config.fish
 link gitconfig    ~/.gitconfig
 link hgrc         ~/.hgrc
 link ssh-config   ~/.ssh/config
