@@ -130,3 +130,6 @@ autocmd FileType yaml execute
 
 " Syntastic
 let g:syntastic_python_python_exec = 'python3'
+
+" vim-airline
+let g:airline_powerline_fonts = 1
