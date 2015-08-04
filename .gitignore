@@ -3,6 +3,7 @@ vim/.netrwhist
 .peru
 
 # Things fetched by peru
-vim/
-tmux/
 dircolors-solarized/
+oh-my-zsh/
+tmux/
+vim/
