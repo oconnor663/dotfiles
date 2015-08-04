@@ -5,9 +5,10 @@ fi
 
 export EDITOR=vim
 export PATH=~/bin:~/.local/bin:$PATH
+DOTFILES=$HOME/dotfiles
 
 # conveniences in the interactive Python interpreter
-export PYTHONSTARTUP="$HOME/dotfiles/startup.py"
+export PYTHONSTARTUP="$DOTFILES/startup.py"
 
 alias ta='tmux attach'
 alias grep='grep --color=auto'
@@ -45,7 +46,7 @@ stty stop undef
 
 # colors for ls
 if [[ -n $SOLARIZED ]] ; then
-  eval `dircolors ~/.dotfiles/dircolors-solarized/dircolors.ansi-dark`
+  eval $(dircolors "$DOTFILES/dircolors-solarized/dircolors.ansi-dark")
 fi
 if ls --color=auto > /dev/null 2>&1 ; then
   # GNU ls supports --color
