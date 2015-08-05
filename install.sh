@@ -27,7 +27,6 @@ function link {
 link ackrc        ~/.ackrc
 link gitconfig    ~/.gitconfig
 link hgrc         ~/.hgrc
-link ssh-config   ~/.ssh/config
 link tmux.conf    ~/.tmux.conf
 link tmux.desktop ~/.local/share/applications/tmux.desktop
 link vim          ~/.vim
