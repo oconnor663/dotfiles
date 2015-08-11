@@ -22,6 +22,7 @@ alias ct='tmux show-buffer | c'
 alias v='xclip -o -selection clipboard'
 alias find='noglob find' # easier wildcards
 alias scp='noglob scp'   # ditto
+alias sz='source ~/.zshrc'
 
 # git aliases
 alias git="noglob git" # zsh likes to swallow ^ characters
