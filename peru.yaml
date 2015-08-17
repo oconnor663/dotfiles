@@ -30,11 +30,11 @@ git module dircolors-solarized:
 
 git module oh-my-zsh:
   url: https://github.com/robbyrussell/oh-my-zsh
-  rev: 3d5b3430fd9da12f6e33f534e487fe9b18928ac7
+  rev: 192de6bcffb0294e19f4203f6f7dc1a7f3e427be
 
 git module tmux-sensible:
   url: https://github.com/tmux-plugins/tmux-sensible
-  rev: cd7faa8bba39bac5340f7d09282815d0de47df65
+  rev: 3baff4e795e8f9a9b83ef5152192ed5c9bc9c533
 
 git module tmux-colors-solarized:
   url: https://github.com/seebi/tmux-colors-solarized
@@ -58,7 +58,7 @@ git module vim-colors-solarized:
 
 git module vim-commentary:
   url: https://github.com/tpope/vim-commentary.git
-  rev: 9c685131a5facfa0d643feca3a61b41c007d8170
+  rev: 7fb632aab475b1d2560fe18a329742ba3b4725c6
 
 git module vim-ctrlp:
   url: https://github.com/kien/ctrlp.vim.git
@@ -66,15 +66,15 @@ git module vim-ctrlp:
 
 git module vim-easymotion:
   url: https://github.com/Lokaltog/vim-easymotion.git
-  rev: 9f1c449edfce6d61c7f620e3a9c1389b7b7e334f
+  rev: 0806257ca6432ac7beb75c4319dadf7f3ba9907b
 
 git module vim-fugitive:
   url: https://github.com/tpope/vim-fugitive.git
-  rev: 1c844375fa2762e3b7c16294fa36afee6fef28b1
+  rev: b319b694539017dcd789dc2c42f784a30d7b28b8
 
 git module vim-go:
   url: https://github.com/fatih/vim-go
-  rev: 3df3cbf2e7ab9d76fd67f9f4077060b4450ba90c
+  rev: 5048bdbebcffb296aa60b4c21c44ae8276244539
 
 git module vim-pathogen:
   url: https://github.com/tpope/vim-pathogen.git
@@ -95,15 +95,15 @@ git module vim-sensible:
 
 git module vim-syntastic:
   url: https://github.com/scrooloose/syntastic.git
-  rev: b609b3bdd37724b64e35bc9e6e087e2d43345062
+  rev: 47c70b3e1e388d8f9cc7c6d9687efc047df843ac
 
 git module vim-surround:
   url: https://github.com/tpope/vim-surround.git
-  rev: 772ab9587b7d1e2c3bae75395c9123803059ba8a
+  rev: 2d05440ad23f97a7874ebd9b5de3a0e65d25d85c
 
 git module vim-unimpaired:
   url: https://github.com/tpope/vim-unimpaired.git
-  rev: 503443231efb2f92558937befd4f3f2bb44b8e7c
+  rev: 1ec6af944e3bac5f8ccf0bfa18692a83828bde04
 
 git module vim-yankstack:
   url: https://github.com/maxbrunsfeld/vim-yankstack.git
