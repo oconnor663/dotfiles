@@ -23,6 +23,7 @@ alias v='xclip -o -selection clipboard'
 alias find='noglob find' # easier wildcards
 alias scp='noglob scp'   # ditto
 alias sz='source ~/.zshrc'
+alias pypi_upload='python setup.py register sdist upload'
 
 # git aliases
 alias git="noglob git" # zsh likes to swallow ^ characters
