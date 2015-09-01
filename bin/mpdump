@@ -1,0 +1,11 @@
+#! /usr/bin/env python3
+
+import json
+import umsgpack
+import sys
+
+print(json.dumps(
+    umsgpack.loads(sys.stdin.buffer.read()),
+    # Stringify bytes, since JSON doesn't support them natively.
+    default=str,
+    indent='    '))
