@@ -69,10 +69,6 @@ autoload edit-command-line
 zle -N edit-command-line
 bindkey '^x^e' edit-command-line
 
-# enable globbing in history search
-bindkey "^r" history-incremental-pattern-search-backward
-bindkey "^s" history-incremental-pattern-search-forward
-
 # get shared history all working properly
 HISTFILE=$HOME/.zsh_history
 HISTSIZE=100000
