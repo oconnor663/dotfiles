@@ -31,13 +31,17 @@ autocmd GUIEnter * set vb t_vb=
 let mapleader = " "
 noremap <Space> <Nop>
 
+" override vim-sensible, let backspace delete individual spaces
+set nosmarttab
+
 " Use <Tab> and <S-Tab> to indent lines.
-set nosmarttab " override vim-sensible, let backspace delete individual spaces
 nnoremap <Tab> >>
 nnoremap <S-Tab> <<
 vnoremap <Tab> >gv
 vnoremap <S-Tab> <gv
-" insert mode is handled in the Neocomplcache bindings
+" Since CTRL-I and <Tab> are the same key (*sigh*), we need to unclobber the
+" original CTRL-I binding.
+nnoremap <leader>CTRL-I CTRL-I
 
 " vim-sensible maps Ctrl-L to nohlsearch. Let insert mode do that too.
 imap <C-l> <Esc><C-l>a
