@@ -68,6 +68,8 @@ bindkey '^u' backward-kill-line
 autoload edit-command-line
 zle -N edit-command-line
 bindkey '^x^e' edit-command-line
+# file rename magick
+bindkey "^[m" copy-prev-shell-word
 
 # get shared history all working properly
 HISTFILE=$HOME/.zsh_history
