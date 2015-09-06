@@ -121,13 +121,6 @@ hi EasyMotionTarget2Second ctermbg=none ctermfg=red
 set backupdir=~/.vim-tmp
 set directory=~/.vim-tmp
 
-" Neocomplete
-let g:neocomplete#enable_at_startup = 1
-let g:neocomplete#enable_smart_case = 1
-" let the default action for tab in insert mode map to C-t/C-d
-imap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<C-t>"
-imap <expr><S-TAB>  pumvisible() ? "\<C-p>" : "\<C-d>"
-
 " fix YAML key highlighting (http://stackoverflow.com/a/22714798/823869)
 autocmd FileType yaml execute
       \'syn match yamlBlockMappingKey /^\s*\zs.*\ze\s*:\%(\s\|$\)/'
