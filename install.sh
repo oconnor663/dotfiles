@@ -29,6 +29,7 @@ link gitconfig    ~/.gitconfig
 link hgrc         ~/.hgrc
 link tmux.conf    ~/.tmux.conf
 link tmux.desktop ~/.local/share/applications/tmux.desktop
+link yaourtrc     ~/.yaourtrc
 link vim          ~/.vim
 link vimrc        ~/.vimrc
 link zshrc        ~/.zshrc
