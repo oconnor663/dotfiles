@@ -64,6 +64,7 @@ function SetGoOptions()
   setlocal noexpandtab
   setlocal tabstop=4
   setlocal shiftwidth=4
+  nnoremap <buffer> <C-]> :GoDef<CR>
 endfunction
 
 " settings for IcedCoffeeScript
