@@ -1,18 +1,7 @@
 #! /usr/bin/env python3
 
-import binascii
-import json
+import pprint
 import umsgpack
 import sys
 
-
-# JSON doesn't support serializing bytes, so we stringify them ourselves.
-def stringify_bytes(b):
-    if not isinstance(b, bytes):
-        raise TypeError('something else besides bytes!')
-    return "BYTES " + binascii.hexlify(b).decode()
-
-print(json.dumps(
-    umsgpack.loads(sys.stdin.buffer.read()),
-    default=stringify_bytes,
-    indent='    '))
+pprint.pprint(umsgpack.unpackb(sys.stdin.buffer.read()))
