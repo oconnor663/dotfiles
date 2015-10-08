@@ -1,1 +1,2 @@
 PKGEXT=.pkg.tar
+NOENTER=0
