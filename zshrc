@@ -38,6 +38,8 @@ alias gpr='git pull --rebase'
 alias gfra='git fetch && git rebase --autostash'
 alias gout='git log @{upstream}.. --oneline'
 alias ginit='git init && git add -A && git commit -m "first commit"'
+alias glog='git log --oneline --decorate --graph'
+alias gref='git reflog --all --date=relative'
 
 # ack is called ack-grep in ubuntu
 if (( ! $+commands[ack] )) && (( $+commands[ack-grep]))
