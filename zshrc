@@ -41,6 +41,13 @@ alias ginit='git init && git add -A && git commit -m "first commit"'
 alias glog='git log --oneline --decorate --graph'
 alias gref='git reflog --all --date=relative'
 
+venv() {
+  dir="$(mktemp -d)"
+  target_python="${1:-$(basename $(realpath $(which python)))}"
+  virtualenv "$dir" -p "$target_python" --prompt "[$target_python] "
+  source "$dir/bin/activate"
+}
+
 # ack is called ack-grep in ubuntu
 if (( ! $+commands[ack] )) && (( $+commands[ack-grep]))
 then
