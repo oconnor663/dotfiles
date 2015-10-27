@@ -43,8 +43,9 @@ alias gref='git reflog --all --date=relative'
 
 venv() {
   dir="$(mktemp -d)"
-  target_python="${1:-$(basename $(realpath $(which python)))}"
-  virtualenv "$dir" -p "$target_python" --prompt "[$target_python] "
+  target_python="${1:-python}"
+  real_python="$(basename "$(realpath "$(which "$target_python")")")"
+  virtualenv "$dir" -p "$real_python" --prompt "[$real_python] "
   source "$dir/bin/activate"
 }
 
