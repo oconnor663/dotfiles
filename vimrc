@@ -131,3 +131,6 @@ let g:syntastic_python_python_exec = 'python3'
 
 " vim-airline
 let g:airline_powerline_fonts = 1
+
+" unbreak Ctrl-C in SQL files
+let g:omni_sql_no_default_maps = 1
