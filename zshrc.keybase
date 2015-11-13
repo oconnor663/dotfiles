@@ -1,0 +1,57 @@
+# These are random aliases and settings specific to working at Keybase. They're
+# not intended to be meaningful for anyone else.
+
+export PATH="$HOME/node-prefix/bin:$PATH"
+export RUN_MODE=devel
+export GOPATH=~/go
+export PATH="$PATH:$GOPATH/bin"
+export KEYBASE_INVITATION_CODE=202020202020202020202020
+export GO15VENDOREXPERIMENT=1
+
+alias newuser='cd $(mktemp -d); thisuser'
+alias thisuser='export HOME="$(pwd)"; export XDG_RUNTIME_DIR="$HOME/runtime"; mkdir -p "$XDG_RUNTIME_DIR"; export PS1="%F{yellow}TEST $HOME $PS1"'
+alias ralph='mkdir -p /home/jacko/ralph; cd /home/jacko/ralph; export HOME=$(pwd) export PS1="%F{yellow}TEST ralph $PS1"'
+
+alias nkeybase="(cd $HOME/node-client && make) && $HOME/node-client/bin/main.js"
+alias nkb="nkeybase --host localhost --port 3000 --no-tls"
+alias kb="(echo building client && cd $GOPATH/src/github.com/keybase/client/go/keybase && go install) && $GOPATH/bin/keybase"
+alias kbs='kb --standalone'
+alias kbrel="(echo building client && cd $GOPATH/src/github.com/keybase/client/go/keybase && go install -tags production) && $GOPATH/bin/keybase"
+# alias kbt="GPG=~/gnupg/g10/gpg2 go test"
+alias stop='kb ctl stop'
+
+alias forever='forever --no-colors'
+
+alias dist='ssh -A keybase@dist.keybase.io'
+alias ws6='ssh -A keybase@ws6.keybase.io'
+alias gw1='ssh -A jacko@gw1.keybase.io'
+
+export BETADIR=~/client-beta
+export BREWDIR=~/homebrew-beta
+export SERVEROPSDIR=~/server-ops
+
+random16() {
+  head -c 8 /dev/urandom | tohex
+}
+
+signup() {
+  username="$1"
+  if [ -z "$username" ] ; then
+    echo "Must have a username."
+    return 1
+  fi
+  email="$(random16)@$(random16).com"
+  kbs signup --batch --username "$username" --passphrase okokokokokok \
+    --email "$email" --device "home thing"
+}
+
+waitapp() {
+  while ! curl localhost:3000 > /dev/null 2>&1 ; do
+    sleep 0.1
+  done
+}
+
+reapp() {
+  forever restart app
+  waitapp
+}

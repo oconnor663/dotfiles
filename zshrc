@@ -142,6 +142,9 @@ source "$DOTFILES/oh-my-zsh/plugins/gitfast/git-prompt.sh"
 # Safe paste: give me a chance to edit multi-line commands that I paste in.
 source "$DOTFILES/oh-my-zsh/plugins/safe-paste/safe-paste.plugin.zsh"
 
+# Load work settings.
+source "$DOTFILES/zshrc.keybase"
+
 # Load settings specific to this machine.
 local_zshrc="$HOME/.zshrc.local"
 if [ -e "$local_zshrc" ] ; then
