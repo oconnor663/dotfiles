@@ -8,8 +8,16 @@ export PATH="$PATH:$GOPATH/bin"
 export KEYBASE_INVITATION_CODE=202020202020202020202020
 export GO15VENDOREXPERIMENT=1
 
-alias newuser='cd $(mktemp -d); thisuser'
-alias thisuser='export HOME="$(pwd)"; export XDG_RUNTIME_DIR="$HOME/runtime"; mkdir -p "$XDG_RUNTIME_DIR"; export PS1="%F{yellow}TEST $HOME $PS1"'
+newuser() {
+  cd $(mktemp -d);
+  thisuser
+}
+thisuser() {
+  export HOME="$(pwd)"
+  export XDG_RUNTIME_DIR="$HOME/runtime"
+  mkdir -p "$XDG_RUNTIME_DIR"
+  export PS1="%F{yellow}TEST $HOME $PS1"
+}
 alias ralph='mkdir -p /home/jacko/ralph; cd /home/jacko/ralph; export HOME=$(pwd) export PS1="%F{yellow}TEST ralph $PS1"'
 
 alias nkeybase="(cd $HOME/node-client && make) && $HOME/node-client/bin/main.js"
@@ -43,6 +51,8 @@ signup() {
   email="$(random16)@$(random16).com"
   kbs signup --batch --username "$username" --passphrase okokokokokok \
     --email "$email" --device "home thing"
+  # Mark the home dir in case we need to find it.
+  echo "$username" > "$HOME/$username"
 }
 
 waitapp() {
