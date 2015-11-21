@@ -41,9 +41,9 @@ alias ginit='git init && git add -A && git commit -m "first commit"'
 alias glog='git log --oneline --decorate --graph'
 alias gref='git reflog --all --date=relative'
 
-alias save='git add -A  && git commit -qm "SAVE" && git reset --mixed -q HEAD^'
-alias wipe='git add -A  && git commit -qm "WIPE" && git reset --hard  -q HEAD^'
-alias nuke='git add -Af && git commit -qm "NUKE" && git reset --hard  -q HEAD^'
+alias save='git add -A  && git commit --allow-empty -qm "SAVE" && git reset --mixed -q HEAD^'
+alias wipe='git add -A  && git commit --allow-empty -qm "WIPE" && git reset --hard  -q HEAD^'
+alias nuke='git add -Af && git commit --allow-empty -qm "NUKE" && git reset --hard  -q HEAD^'
 
 venv() {
   dir="$(mktemp -d)"
