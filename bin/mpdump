@@ -1,6 +1,7 @@
 #! /usr/bin/env python3
 
 import base64
+import io
 import json
 import sys
 import umsgpack
@@ -21,8 +22,8 @@ def json_print(obj):
             return obj
     print(json.dumps(_recurse_repr(obj), indent='  '))
 
-# sys.stdin is buffered by default, and there's no way to override that.
-# Instead, we rewrap stdin in our own file object.
-stdin = open(sys.stdin.fileno(), mode='rb', buffering=0)
+input_bytes = sys.stdin.buffer.read()
+input_stream = io.BytesIO(input_bytes)
 
-json_print(umsgpack.unpack(stdin))
+while input_stream.tell() < len(input_bytes):
+    json_print(umsgpack.unpack(input_stream))
