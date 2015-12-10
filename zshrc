@@ -124,16 +124,6 @@ key[Delete]=${terminfo[kdch1]}
 [[ -n "${key[Insert]}"  ]]  && bindkey  "${key[Insert]}"  overwrite-mode
 [[ -n "${key[Delete]}"  ]]  && bindkey  "${key[Delete]}"  delete-char
 
-# Unbind PageUp and PageDown. These keys are used by tmux to scroll around in
-# copy mode, and unbinding them here helps us avoid writing crap when we keep
-# hitting PageDown after scrolling to the bottom.
-noop () { }
-zle -N noop
-key[PageUp]=${terminfo[kpp]}
-key[PageDown]=${terminfo[knp]}
-[[ -n "${key[PageUp]}"   ]] && bindkey "${key[PageUp]}"   noop
-[[ -n "${key[PageDown]}" ]] && bindkey "${key[PageDown]}" noop
-
 setopt prompt_subst
 export PROMPT='%(?..%F{red}%? )%F{cyan}%M %F{blue}%~ %F{yellow}$(__git_ps1 "%s ")%f'
 
