@@ -41,9 +41,12 @@ alias ginit='git init && git add -A && git commit -m "first commit"'
 alias glog='git log --oneline --decorate --graph'
 alias gref='git reflog --all --date=relative'
 
-alias save='git add -A  && git commit --allow-empty -qm "SAVE" && git reset --mixed -q HEAD^'
-alias wipe='git add -A  && git commit --allow-empty -qm "WIPE" && git reset --hard  -q HEAD^'
-alias nuke='git add -Af && git commit --allow-empty -qm "NUKE" && git reset --hard  -q HEAD^'
+# State-saving commands for git. The `git clean` at the end of the last two is
+# to handle a weird bug where inner git directories aren't removed (though the
+# files they contain are removed).
+alias save='git add -A  && git commit --allow-empty -qnm "SAVE" && git reset --mixed -q HEAD^'
+alias wipe='git add -A  && git commit --allow-empty -qnm "WIPE" && git reset --hard  -q HEAD^ && git clean -dqff'
+alias nuke='git add -Af && git commit --allow-empty -qnm "NUKE" && git reset --hard  -q HEAD^ && git clean -dqffx'
 
 venv() {
   dir="$(mktemp -d)"
