@@ -17,6 +17,14 @@ thisuser() {
   export XDG_RUNTIME_DIR="$HOME/runtime"
   mkdir -p "$XDG_RUNTIME_DIR"
   export PS1="%F{yellow}TEST $HOME $PS1"
+  ln -sf "$HOME" /tmp/keybase_last_test_user
+}
+lastuser() {
+  if ! cd "$(realpath /tmp/keybase_last_test_user)" ; then
+    echo "No last test user."
+    return
+  fi
+  thisuser
 }
 alias ralph='mkdir -p /home/jacko/ralph; cd /home/jacko/ralph; thisuser'
 
