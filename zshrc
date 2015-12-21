@@ -30,6 +30,7 @@ alias fromhex="python3 -c 'import sys, binascii; sys.stdout.buffer.write(binasci
 # git aliases
 alias git="noglob git" # zsh likes to swallow ^ characters
 alias gs='git status'
+alias gsi='git status --ignored'
 alias gd='git diff'
 alias gca="git commit -a --amend --no-edit"
 alias gpr='git pull --rebase'
