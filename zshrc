@@ -7,6 +7,9 @@ export EDITOR=vim
 export PATH=~/bin:~/.local/bin:~/.cargo/bin:$PATH
 DOTFILES=$HOME/dotfiles
 
+# Centralize all peru caching.
+export PERU_CACHE_DIR=$HOME/.peru-cache
+
 # conveniences in the interactive Python interpreter
 export PYTHONSTARTUP="$DOTFILES/startup.py"
 
