@@ -4,7 +4,7 @@ if [[ $TERM = xterm || $TERM = xterm-256color ]] ; then
 fi
 
 export EDITOR=vim
-export PATH=~/bin:~/.local/bin:$PATH
+export PATH=~/bin:~/.local/bin:~/.cargo/bin:$PATH
 DOTFILES=$HOME/dotfiles
 
 # conveniences in the interactive Python interpreter
