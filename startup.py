@@ -1,17 +1,22 @@
 print("Jack's startup.py...")
-import math
-import os
-import re
-import subprocess
-import sys
+from base64 import *
+from binascii import *
+from collections import *
+from hashlib import *
+from io import *
+from math import *
+from os import *
+from re import *
+from subprocess import *
+from sys import *
 
 try:
-    import asyncio
+    from asyncio import *
 except:
     pass
 
 try:
-    from pathlib import Path
+    from pathlib import *
 except:
     pass
 
@@ -24,4 +29,4 @@ readline.parse_and_bind('"\\C-n": next-history')
 readline.parse_and_bind('"\\e[A": previous-history')
 readline.parse_and_bind('"\\e[B": next-history')
 
-subprocess.call(['stty', 'werase', 'undef'])
+call(['stty', 'werase', 'undef'])
