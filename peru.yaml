@@ -18,6 +18,7 @@ imports:
   vim-pathogen: vim/autoload
   vim-repeat: vim/bundle/repeat
   vim-rsi: vim/bundle/rsi
+  vim-rust: vim/bundle/rust
   vim-sensible: vim/bundle/sensible
   vim-syntastic: vim/bundle/syntastic
   vim-surround: vim/bundle/surround
@@ -88,6 +89,10 @@ git module vim-repeat:
 git module vim-rsi:
   url: https://github.com/tpope/vim-rsi.git
   rev: dfc5288097b83d1eb3173d8be348a11f3d467d8e
+
+git module vim-rust:
+  url: https://github.com/rust-lang/rust.vim
+  rev: 99242777d79432f894f0357410fafa455a91c351
 
 git module vim-sensible:
   url: https://github.com/tpope/vim-sensible.git
