@@ -1,14 +1,16 @@
 print("Jack's startup.py...")
+
 from base64 import *
 from binascii import *
 from collections import *
 from hashlib import *
 from io import *
 from math import *
-from os import *
-from re import *
-from subprocess import *
-from sys import *
+
+import os
+import subprocess
+import re
+import sys
 
 try:
     from asyncio import *
