@@ -31,4 +31,4 @@ readline.parse_and_bind('"\\C-n": next-history')
 readline.parse_and_bind('"\\e[A": previous-history')
 readline.parse_and_bind('"\\e[B": next-history')
 
-call(['stty', 'werase', 'undef'])
+subprocess.call(['stty', 'werase', 'undef'])
