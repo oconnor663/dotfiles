@@ -44,6 +44,11 @@ alias gout='git log @{upstream}.. --oneline'
 alias ginit='git init && git add -A && git commit -m "first commit"'
 alias glog='git log --oneline --decorate --graph'
 alias gref='git reflog --all --date=relative'
+function gdrop() {
+  local current_branch="$(git symbolic-ref --short HEAD)" &&
+  git checkout master &&
+  git branch -D "$current_branch" &&
+}
 
 # State-saving commands for git. The `git clean` at the end of the last two is
 # to handle a weird bug where inner git directories aren't removed (though the
