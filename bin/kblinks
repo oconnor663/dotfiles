@@ -1,0 +1,25 @@
+#! /bin/bash
+
+set -e -u -o pipefail
+
+username="${1:-}"
+
+if [ -z $username ] ; then
+  echo need a username
+  exit 1
+fi
+
+if [ -z "${local:-}" ] ; then
+  base="https://keybase.io"
+else
+  base="http://localhost:3000"
+fi
+
+uid="$(curl --silent "$base/_/api/1.0/user/lookup.json?username=$username" \
+  | python -c "import json, sys; o=json.load(sys.stdin); print(o['them']['id'])")"
+
+chromium "$base/$username" --new-window
+chromium "$base/$username/chain"
+chromium "$base/_/api/1.0/user/lookup.json?username=$username"
+chromium "$base/_/api/1.0/sig/get.json?uid=$uid"
+chromium "$base/_/api/1.0/merkle/path.json?username=$username"
