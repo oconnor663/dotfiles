@@ -17,7 +17,7 @@ function thisuser() {
   export XDG_RUNTIME_DIR="$HOME/runtime"
   mkdir -p "$XDG_RUNTIME_DIR"
   export PS1="%F{yellow}TEST $HOME $PS1"
-  ln -sf "$HOME" /tmp/keybase_last_test_user
+  ln -sfn "$HOME" /tmp/keybase_last_test_user
 }
 function lastuser() {
   if ! cd "$(realpath /tmp/keybase_last_test_user)" ; then
