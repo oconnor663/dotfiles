@@ -24,6 +24,7 @@ imports:
   vim-surround: vim/bundle/surround
   vim-unimpaired: vim/bundle/unimpaired
   vim-yankstack: vim/bundle/yankstack
+  vim-youcompleteme: vim/bundle/youcompleteme
 
 git module dircolors-solarized:
   url: https://github.com/seebi/dircolors-solarized
@@ -113,3 +114,7 @@ git module vim-unimpaired:
 git module vim-yankstack:
   url: https://github.com/maxbrunsfeld/vim-yankstack.git
   rev: 157a659c1b101c899935d961774fb5c8f0775370
+
+git module vim-youcompleteme:
+  url: https://github.com/Valloric/YouCompleteMe
+  rev: f691a5f513a543d1ed38eec32141d2a437c9e87f

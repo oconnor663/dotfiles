@@ -9,8 +9,6 @@ if [[ "$HERE" != "$HOME/dotfiles" ]] ; then
   exit 1
 fi
 
-peru sync
-
 newshell=/bin/zsh
 if [ $SHELL != $newshell ]; then
   echo Switching default shell from $SHELL to $newshell...
@@ -45,3 +43,8 @@ done
 if which dconf &> /dev/null ; then
   dconf load / < $HERE/gnome-dconf-settings
 fi
+
+peru sync
+
+(cd "$HERE/vim/bundle/youcompleteme" &&
+  python2 install.py --clang-completer --gocode-completer --racer-completer)
