@@ -22,6 +22,16 @@ try:
 except:
     pass
 
+try:
+    import libnacl
+except:
+    pass
+
+try:
+    import umsgpack
+except:
+    pass
+
 import readline
 # Ctrl-W behavior more like Vim.
 readline.parse_and_bind('"\\C-w": backward-kill-word')
