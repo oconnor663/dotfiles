@@ -30,7 +30,6 @@ alias sz='source ~/.zshrc'
 alias pypi_upload='python setup.py register sdist upload'
 alias tohex="python3 -c 'import sys, binascii; print(binascii.hexlify(sys.stdin.buffer.read()).decode())'"
 alias fromhex="python3 -c 'import sys, binascii; sys.stdout.buffer.write(binascii.unhexlify(input().strip()))'"
-alias newrust='cd "$(mktemp -d)" && cargo new --bin scratch && cd scratch && vim src/main.rs'
 
 # git aliases
 alias git="noglob git" # zsh likes to swallow ^ characters
@@ -65,6 +64,14 @@ venv() {
   real_python="$(basename "$(realpath "$(which "$target_python")")")"
   virtualenv "$dir" -p "$real_python" --prompt "[$real_python] "
   source "$dir/bin/activate"
+}
+
+newrust() {
+  crate="$(mktemp -d)"/scratch
+  ln -sfn "$crate" /tmp/lastrust
+  cargo new --bin "$crate"
+  cd "$crate"
+  vim src/main.rs
 }
 
 # ack is called ack-grep in ubuntu
