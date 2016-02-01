@@ -5,6 +5,7 @@ fi
 
 export EDITOR=vim
 export PATH=~/bin:~/.local/bin:~/.cargo/bin:$PATH
+export RUST_SRC_PATH=~/rust/src
 DOTFILES=$HOME/dotfiles
 
 # Centralize all peru caching.
