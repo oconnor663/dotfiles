@@ -2,28 +2,65 @@
 
 import binascii
 import io
-import json
 import sys
+import textwrap
 import umsgpack
 
 
-def json_print(obj):
-    # We need to repr everything that JSON doesn't directly support,
-    # particularly bytes.
-    def _recurse_repr(obj):
-        if isinstance(obj, (list, tuple)):
-            return [_recurse_repr(x) for x in obj]
-        elif isinstance(obj, dict):
-            return {_recurse_repr(key): _recurse_repr(val)
-                    for key, val in obj.items()}
-        elif isinstance(obj, bytes):
-            return binascii.hexlify(obj).decode()
+def format_list(obj):
+    out = "[\n"
+    for inner_obj in obj:
+        out += textwrap.indent(format_obj(inner_obj), '  ')
+        out += ",\n"
+    out += "]"
+    return out
+
+
+def format_bytes(obj):
+    try:
+        # If the bytes decode cleanly to utf8, return the normal repr.
+        obj.decode()
+        output = repr(obj)
+    except UnicodeDecodeError:
+        # Otherwise return hex.
+        output = binascii.hexlify(obj).decode()
+    # Attempt to double-decode the result. If the bytes decode as a single
+    # MessagePack object, add a comment.
+    stream = io.BytesIO(obj)
+    try:
+        double_decoded = umsgpack.unpack(stream)
+        if stream.tell() == len(obj):
+            output += ",\n# DECODING AGAIN:\n"
+            output += textwrap.indent(format_obj(double_decoded), "# ")
+    except Exception:
+        pass
+    return output
+
+
+def format_obj(obj):
+    if isinstance(obj, list):
+        return format_list(obj)
+    elif isinstance(obj, bytes):
+        return format_bytes(obj)
+    else:
+        # TODO: Handle dictionaries?
+        return repr(obj)
+
+
+def format_stream(stream):
+    # Read all the objects out of a stream, gracefully handling EOF, and then
+    # stringify those objects.
+    output = io.StringIO()
+    all_bytes = stream.read()
+    temp_stream = io.BytesIO(all_bytes)
+    while True:
+        obj = umsgpack.unpack(temp_stream)
+        output.write(format_obj(obj))
+        if temp_stream.tell() < len(all_bytes):
+            output.write(',\n')
         else:
-            return obj
-    print(json.dumps(_recurse_repr(obj), indent='  '))
+            break
+    return output.getvalue()
 
-input_bytes = sys.stdin.buffer.read()
-input_stream = io.BytesIO(input_bytes)
 
-while input_stream.tell() < len(input_bytes):
-    json_print(umsgpack.unpack(input_stream))
+print(format_stream(sys.stdin.buffer))
