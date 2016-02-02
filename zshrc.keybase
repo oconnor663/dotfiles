@@ -26,11 +26,16 @@ function lastuser() {
   fi
   thisuser
 }
+function kb() {
+  echo building keybase
+  go install github.com/keybase/client/go/keybase
+  echo done
+  $GOPATH/bin/keybase "$@"
+}
 alias ralph='mkdir -p /home/jacko/ralph; cd /home/jacko/ralph; thisuser'
 
 alias nkeybase="(cd $HOME/node-client && make) && $HOME/node-client/bin/main.js"
 alias nkb="nkeybase --host localhost --port 3000 --no-tls"
-alias kb="(echo building client && cd $GOPATH/src/github.com/keybase/client/go/keybase && go install) && $GOPATH/bin/keybase"
 alias kbs='kb --standalone'
 alias kbrel="kb --run-mode=prod --server=https://keybase.io"
 alias kbsrel="kbrel --standalone"
