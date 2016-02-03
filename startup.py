@@ -23,11 +23,6 @@ except:
     pass
 
 try:
-    import libnacl
-except:
-    pass
-
-try:
     import umsgpack
 except:
     pass
