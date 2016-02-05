@@ -27,10 +27,10 @@ function lastuser() {
   thisuser
 }
 function kb() {
-  echo building keybase
-  go install github.com/keybase/client/go/keybase
-  echo done
-  $GOPATH/bin/keybase "$@"
+  echo building keybase &&
+  go install github.com/keybase/client/go/keybase &&
+  echo done &&
+  $GOPATH/bin/keybase "$@" &&
 }
 alias ralph='mkdir -p /home/jacko/ralph; cd /home/jacko/ralph; thisuser'
 
