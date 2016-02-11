@@ -46,6 +46,3 @@ if which dconf &> /dev/null ; then
 fi
 
 peru sync
-
-(cd "$HERE/vim/bundle/youcompleteme" &&
-  python2 install.py --clang-completer --gocode-completer --racer-completer)
