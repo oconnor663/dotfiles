@@ -14,3 +14,5 @@
   pick = cherry-pick
 [merge]
   conflictstyle = diff3
+[core]
+  pager = $HOME/dotfiles/git_pager.sh
