@@ -22,6 +22,11 @@ BOTTOM = u'─'.encode('utf8')
 BOTTOMRIGHT = u'─╯'.encode('utf8')
 NEWLINE = os.linesep.encode('utf8')
 
+# Python 2 does not define BrokenPipeError.
+expected_errors = (KeyboardInterrupt, IOError)
+if sys.version_info.major >= 3:
+    expected_errors += (BrokenPipeError,)
+
 try:
     for line in stdin:
         # Looks for lines of the form:
@@ -50,5 +55,5 @@ try:
         stdout.write(color + LEFT + date_text + b' '*(width-len(date_text)) +
                      RIGHT + NEWLINE)
         stdout.write(color + BOTTOMLEFT + BOTTOM*width + BOTTOMRIGHT + NEWLINE)
-except (BrokenPipeError, KeyboardInterrupt):
+except expected_errors:
     sys.exit(1)
