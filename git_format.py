@@ -1,4 +1,5 @@
 #! /usr/bin/env python
+# coding=utf8
 
 import os
 import re
@@ -10,14 +11,15 @@ import sys
 stdin = os.fdopen(0, 'rb')
 stdout = os.fdopen(1, 'wb')
 
-TOPLEFT = '╭'.encode()
-TOP = '─'.encode()
-TOPRIGHT = '╮'.encode()
-SIDE = '│'.encode()
-BOTTOMLEFT = '╰'.encode()
-BOTTOM = '─'.encode()
-BOTTOMRIGHT = '╯'.encode()
-NEWLINE = os.linesep.encode()
+# Get all these bytes in a Python-2-compatible way.
+TOPLEFT = u'╭'.encode('utf8')
+TOP = u'─'.encode('utf8')
+TOPRIGHT = u'╮'.encode('utf8')
+SIDE = u'│'.encode('utf8')
+BOTTOMLEFT = u'╰'.encode('utf8')
+BOTTOM = u'─'.encode('utf8')
+BOTTOMRIGHT = u'╯'.encode('utf8')
+NEWLINE = os.linesep.encode('utf8')
 
 try:
     for line in stdin:
