@@ -12,13 +12,14 @@ stdin = os.fdopen(0, 'rb')
 stdout = os.fdopen(1, 'wb')
 
 # Get all these bytes in a Python-2-compatible way.
-TOPLEFT = u'╭'.encode('utf8')
+TOPLEFT = u'╭─'.encode('utf8')
 TOP = u'─'.encode('utf8')
-TOPRIGHT = u'╮'.encode('utf8')
-SIDE = u'│'.encode('utf8')
-BOTTOMLEFT = u'╰'.encode('utf8')
+TOPRIGHT = u'─╮'.encode('utf8')
+LEFT = u'│ '.encode('utf8')
+RIGHT = u' │'.encode('utf8')
+BOTTOMLEFT = u'╰─'.encode('utf8')
 BOTTOM = u'─'.encode('utf8')
-BOTTOMRIGHT = u'╯'.encode('utf8')
+BOTTOMRIGHT = u'─╯'.encode('utf8')
 NEWLINE = os.linesep.encode('utf8')
 
 try:
@@ -42,12 +43,12 @@ try:
         # Print all three lines in color, with a fancy box.
         width = max(len(commit_text), len(author_text), len(author_text))
         stdout.write(color + TOPLEFT + TOP*width + TOPRIGHT + NEWLINE)
-        stdout.write(color + SIDE + commit_text +
-                     b' '*(width-len(commit_text)) + SIDE + NEWLINE)
-        stdout.write(color + SIDE + author_text +
-                     b' '*(width-len(author_text)) + SIDE + NEWLINE)
-        stdout.write(color + SIDE + date_text + b' '*(width-len(date_text)) +
-                     SIDE + NEWLINE)
+        stdout.write(color + LEFT + commit_text +
+                     b' '*(width-len(commit_text)) + RIGHT + NEWLINE)
+        stdout.write(color + LEFT + author_text +
+                     b' '*(width-len(author_text)) + RIGHT + NEWLINE)
+        stdout.write(color + LEFT + date_text + b' '*(width-len(date_text)) +
+                     RIGHT + NEWLINE)
         stdout.write(color + BOTTOMLEFT + BOTTOM*width + BOTTOMRIGHT + NEWLINE)
 except BrokenPipeError:
     sys.exit(1)
