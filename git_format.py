@@ -50,5 +50,5 @@ try:
         stdout.write(color + LEFT + date_text + b' '*(width-len(date_text)) +
                      RIGHT + NEWLINE)
         stdout.write(color + BOTTOMLEFT + BOTTOM*width + BOTTOMRIGHT + NEWLINE)
-except BrokenPipeError:
+except (BrokenPipeError, KeyboardInterrupt):
     sys.exit(1)
