@@ -1,18 +1,13 @@
+# Zsh doesn't read ~/.profile by default, but any environment variables we want
+# to share with desktop programs (like gVim) need to live in that file.
+emulate sh
+source ~/.profile
+emulate zsh
+
 if [[ $TERM != linux ]] ; then
   export TERM=xterm-256color
   export SOLARIZED=1
 fi
-
-export EDITOR=vim
-export PATH=~/bin:~/.local/bin:~/.cargo/bin:$PATH
-export RUST_SRC_PATH=~/rust/src
-DOTFILES=$HOME/dotfiles
-
-# Centralize all peru caching.
-export PERU_CACHE_DIR=$HOME/.peru-cache
-
-# conveniences in the interactive Python interpreter
-export PYTHONSTARTUP="$DOTFILES/startup.py"
 
 alias ta='tmux attach'
 alias grep='grep --color=auto'

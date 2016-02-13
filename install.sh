@@ -26,6 +26,7 @@ link ackrc        ~/.ackrc
 link gitconfig    ~/.gitconfig
 link hgrc         ~/.hgrc
 link makepkg.conf ~/.makepkg.conf
+link profile      ~/.profile
 link tmux.conf    ~/.tmux.conf
 link tmux.desktop ~/.local/share/applications/tmux.desktop
 link yaourtrc     ~/.yaourtrc
