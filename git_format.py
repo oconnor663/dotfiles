@@ -33,27 +33,37 @@ try:
         #   ${ANSI color}commit abcdef...
         commit_regex = b"^(?P<color>(\x1b\\[\S*m)?)(?P<text>commit \w{40})"
         match = re.match(commit_regex, line)
-        # Just print any non-matching lines.
+        # Just print until we get to a matching line.
         if not match:
             stdout.write(line)
             continue
-        # For matching lines, extract the color, and read the author and date
-        # from the next two lines.
+
+        # For a matching line, extract the color. Then, slurp up all the
+        # following lines that don't start with a space. (Usually this is
+        # Author and Date, but it can also include Merge.)
         commit_line = line
         color = match.group("color")
         commit_text = match.group("text")
-        author_text = next(stdin).strip()
-        date_text = next(stdin).strip()
+        lines_to_box = [commit_text]
+
+        while True:
+            next_line = next(stdin)
+            if next_line.startswith(b' ') or next_line.startswith(NEWLINE):
+                # This is the end of the commit header lines. We'll need to
+                # print this line after we've printed the header.
+                break
+            lines_to_box.append(next_line.strip())
 
         # Print all three lines in color, with a fancy box.
-        width = max(len(commit_text), len(author_text), len(author_text))
+        width = max(len(line) for line in lines_to_box)
         stdout.write(color + TOPLEFT + TOP*width + TOPRIGHT + NEWLINE)
-        stdout.write(color + LEFT + commit_text +
-                     b' '*(width-len(commit_text)) + RIGHT + NEWLINE)
-        stdout.write(color + LEFT + author_text +
-                     b' '*(width-len(author_text)) + RIGHT + NEWLINE)
-        stdout.write(color + LEFT + date_text + b' '*(width-len(date_text)) +
-                     RIGHT + NEWLINE)
+        for line in lines_to_box:
+            padding = b' ' * (width - len(line))
+            stdout.write(color + LEFT + line + padding + RIGHT + NEWLINE)
         stdout.write(color + BOTTOMLEFT + BOTTOM*width + BOTTOMRIGHT + NEWLINE)
+
+        # Finally, print out the extra raw line we read above.
+        stdout.write(next_line)
+
 except expected_errors:
     sys.exit(1)
