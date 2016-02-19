@@ -63,6 +63,7 @@ signup() {
     return 1
   fi
   email="$(random16)@$(random16).com"
+  waitapp
   kbs signup --batch --username "$username" --passphrase okokokokokok \
     --email "$email" --device "home thing"
   # Mark the home dir in case we need to find it.
