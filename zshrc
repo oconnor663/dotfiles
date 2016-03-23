@@ -47,6 +47,14 @@ function gdrop() {
   git checkout master &&
   git branch -D "$current_branch" &&
 }
+function gpo() {
+  branch="$(git name-rev --name-only HEAD)"
+  if [[ "$branch" = master ]] ; then
+    echo "BLERG! Did you mean to run this on master?"
+    return 1
+  fi
+  git push origin "$(git name-rev --name-only HEAD)" "$@"
+}
 
 # State-saving commands for git. The `git clean` at the end of the last two is
 # to handle a weird bug where inner git directories aren't removed (though the
