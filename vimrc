@@ -133,3 +133,6 @@ let g:airline_powerline_fonts = 1
 
 " unbreak Ctrl-C in SQL files
 let g:omni_sql_no_default_maps = 1
+
+" Rust
+let g:rustfmt_autosave = 1
