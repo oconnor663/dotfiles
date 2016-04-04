@@ -115,7 +115,7 @@ bindkey "^[m" copy-prev-shell-word
 
 # get shared history all working properly
 HISTFILE=$HOME/.zsh_history
-HISTSIZE=10000
+HISTSIZE=100000
 SAVEHIST=$HISTSIZE
 setopt extended_history
 setopt hist_ignore_dups
