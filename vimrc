@@ -31,6 +31,9 @@ autocmd GUIEnter * set vb t_vb=
 let mapleader = " "
 noremap <Space> <Nop>
 
+" get rid of "ex mode"
+nnoremap Q <Nop>
+
 " override vim-sensible, let backspace delete individual spaces
 set nosmarttab
 
