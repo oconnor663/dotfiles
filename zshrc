@@ -71,6 +71,24 @@ venv() {
   source "$dir/bin/activate"
 }
 
+newgo() {
+  dir="$(mktemp -d)"
+  ln -sfn "$dir" /tmp/lastgo
+  cd "$dir"
+  cat << EOF > test.go
+package main
+
+import (
+	"fmt"
+)
+
+func main() {
+	fmt.Println("hello")
+}
+EOF
+  vim test.go
+}
+
 newrust() {
   crate="$(mktemp -d)"/scratch
   ln -sfn "$crate" /tmp/lastrust
