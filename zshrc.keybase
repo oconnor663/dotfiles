@@ -26,12 +26,7 @@ function lastuser() {
   fi
   thisuser
 }
-function kb() {
-  echo -n "Building keybase..." >&2 &&
-  go install github.com/keybase/client/go/keybase &&
-  echo "done." >&2 &&
-  $GOPATH/bin/keybase "$@" &&
-}
+alias kb='gorun github.com/keybase/client/go/keybase'
 alias ralph='mkdir -p /home/jacko/ralph; cd /home/jacko/ralph; thisuser'
 
 alias nkeybase="(cd $HOME/node-client && make) && $HOME/node-client/bin/main.js"
@@ -96,4 +91,17 @@ kbdown() {
   if killall keybase &> /dev/null ; then
     echo Shutting down keybase service...
   fi
+}
+
+gorun() {
+  if [ -z "$1" ] ; then
+    echo "Argument required."
+    return 1
+  fi
+  project="$1"
+  shift
+  echo -n "Running \`go install $project\`... " >&2 && \
+  go install "$project" && \
+  echo "Done." >&2 && \
+  "$GOPATH/bin/$(basename "$project")" "$@" &&\
 }
