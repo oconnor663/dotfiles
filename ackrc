@@ -11,3 +11,9 @@
 
 # Ignore JS bundles
 --ignore-file=match:.bundle.js
+
+# Ignore installed JS modules
+--ignore-dir=node_modules
+
+# Ignore vendored Go files
+--ignore-dir=vendor
