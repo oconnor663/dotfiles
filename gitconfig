@@ -16,3 +16,9 @@
   conflictstyle = diff3
 [core]
   pager = $HOME/dotfiles/git_pager.sh
+[transfer]
+  fsckObjects = true
+[fetch]
+  fsckObjects = true
+[receive]
+  fsckObjects = true
