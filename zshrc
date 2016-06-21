@@ -16,9 +16,6 @@ alias i2="ipython2 --no-confirm-exit"
 alias i3="ipython3 --no-confirm-exit"
 alias open="xdg-open"
 alias r='cd $(git rev-parse --show-toplevel || echo .)'
-alias c='xclip -i -selection clipboard'
-alias ct='tmux show-buffer | c'
-alias v='xclip -o -selection clipboard'
 alias find='noglob find' # easier wildcards
 alias scp='noglob scp'   # ditto
 alias sz='source ~/.zshrc'
@@ -55,6 +52,15 @@ function gpo() {
   fi
   git push origin "$(git name-rev --name-only HEAD)" "$@"
 }
+function c() {
+  if [ -t 0 ] ; then
+    echo "BLERG! Tried to copy terminal input."
+    return 1
+  fi
+  xclip -i -selection clipboard
+}
+alias ct='tmux show-buffer | c'
+alias v='xclip -o -selection clipboard'
 
 # State-saving commands for git. The `git clean` at the end of the last two is
 # to handle a weird bug where inner git directories aren't removed (though the
