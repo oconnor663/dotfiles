@@ -31,7 +31,9 @@ link tmux.conf    ~/.tmux.conf
 link tmux.desktop ~/.local/share/applications/tmux.desktop
 link yaourtrc     ~/.yaourtrc
 link vim          ~/.vim
+link vim          ~/.config/nvim
 link vimrc        ~/.vimrc
+link vimrc        ~/.config/nvim/init.vim
 link zshrc        ~/.zshrc
 
 # Doing this in .vimrc is unnecessarily hard.
