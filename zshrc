@@ -53,11 +53,11 @@ function gpo() {
   git push origin "$(git name-rev --name-only HEAD)" "$@"
 }
 function c() {
-  if [ -t 0 ] ; then
+  if [ -t 0 ] && [ -z "$1" ] ; then
     echo "BLERG! Tried to copy terminal input."
     return 1
   fi
-  xclip -i -selection clipboard
+  xclip -i -selection clipboard "$@"
 }
 alias ct='tmux show-buffer | c'
 alias v='xclip -o -selection clipboard'
