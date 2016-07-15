@@ -6,7 +6,6 @@ imports:
   tmux-colors-solarized: tmux/solarized
   tmux-sensible: tmux/sensible
 
-  vim-airline: vim/bundle/airline
   vim-bracketed-paste: vim/bundle/bracketed-paste
   vim-coffee: vim/bundle/coffee
   vim-colors-solarized: vim/bundle/colors-solarized
@@ -40,10 +39,6 @@ git module tmux-sensible:
 git module tmux-colors-solarized:
   url: https://github.com/seebi/tmux-colors-solarized
   rev: c84905ca4ee902835811f88c4955e592799aa12c
-
-git module vim-airline:
-  url: https://github.com/bling/vim-airline
-  rev: 348663f7f8826b82efdd9ef11c98b8eddaba2e2b
 
 git module vim-coffee:
   url: https://github.com/kchmck/vim-coffee-script
