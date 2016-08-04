@@ -16,6 +16,7 @@ alias i2="ipython2 --no-confirm-exit"
 alias i3="ipython3 --no-confirm-exit"
 alias open="xdg-open"
 alias r='cd $(git rev-parse --show-toplevel || echo .)'
+alias rp='cd $(realpath .)'
 alias find='noglob find' # easier wildcards
 alias scp='noglob scp'   # ditto
 alias sz='source ~/.zshrc'
