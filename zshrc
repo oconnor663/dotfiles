@@ -40,6 +40,8 @@ alias goutp='git log @{upstream}.. -p'
 alias ginit='git init && git add -A && git commit -m "first commit"'
 alias glog='git log --oneline --decorate --graph'
 alias gref='git reflog --all --date=relative'
+alias good='git bisect good'
+alias bad='git bisect bad'
 function gdrop() {
   local current_branch="$(git symbolic-ref --short HEAD)" &&
   git checkout master &&
