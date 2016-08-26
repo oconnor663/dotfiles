@@ -15,6 +15,7 @@ imports:
   vim-ctrlp:            vim/bundle/ctrlp
   vim-easymotion:       vim/bundle/easymotion
   vim-fugitive:         vim/bundle/fugitive
+  vim-gitgutter:        vim/bundle/gitgutter
   vim-go:               vim/bundle/go
   vim-repeat:           vim/bundle/repeat
   vim-rsi:              vim/bundle/rsi
@@ -68,6 +69,10 @@ git module vim-easymotion:
 git module vim-fugitive:
   url: https://github.com/tpope/vim-fugitive.git
   rev: 3439f999b138254e4bb56187fc91f91f545b4b12
+
+git module vim-gitgutter:
+  url: https://github.com/airblade/vim-gitgutter
+  rev: 26c6b549f287b8ae348eda083e7c77f79f4de28b
 
 git module vim-go:
   url: https://github.com/fatih/vim-go
