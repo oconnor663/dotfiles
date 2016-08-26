@@ -32,7 +32,7 @@ git module dircolors-solarized:
 
 git module oh-my-zsh:
   url: https://github.com/robbyrussell/oh-my-zsh
-  rev: 7fabc8bca41d4ff7090325116a85513dac852236
+  rev: d1ce70f68540bdf6a7f27ab9879e8222d0e7a604
 
 git module tmux-sensible:
   url: https://github.com/tmux-plugins/tmux-sensible
@@ -44,11 +44,11 @@ git module tmux-colors-solarized:
 
 git module vim-coffee:
   url: https://github.com/kchmck/vim-coffee-script
-  rev: 32fe889b8cafd3a4921ef8e6485156453ff58c42
+  rev: b91dbe92ad794a85a03b089f384fa324ff4e0c3d
 
 git module vim-bracketed-paste:
   url: https://github.com/ConradIrwin/vim-bracketed-paste.git
-  rev: 765e757dbcd05bc9d33debc3e9cab8bda9dabdbf
+  rev: d26cf23bbfec3531fb243aa58bafc5a701460f86
 
 git module vim-colors-solarized:
   url: https://github.com/altercation/vim-colors-solarized.git
@@ -68,15 +68,15 @@ git module vim-easymotion:
 
 git module vim-fugitive:
   url: https://github.com/tpope/vim-fugitive.git
-  rev: 3439f999b138254e4bb56187fc91f91f545b4b12
+  rev: aac85a268e89a6c8be79341e130ac90256fadbd6
 
 git module vim-gitgutter:
   url: https://github.com/airblade/vim-gitgutter
-  rev: 26c6b549f287b8ae348eda083e7c77f79f4de28b
+  rev: 402257f920ea7e75af6c0a0c1a33ec4c0cd9d4a8
 
 git module vim-go:
   url: https://github.com/fatih/vim-go
-  rev: 523d5a435d490c8c5ea3d8ed0ecac453e2f33f93
+  rev: 7fd92a84234eee27639558c823b8b9fe1270dc07
 
 git module vim-pathogen:
   url: https://github.com/tpope/vim-pathogen.git
@@ -93,15 +93,15 @@ git module vim-rsi:
 
 git module vim-rust:
   url: https://github.com/rust-lang/rust.vim
-  rev: 5dd7ab99103c05a56e059b39ad9f63274d2ae72e
+  rev: fc11d02fee330df7b30c83a80f09dd0c60ab43ce
 
 git module vim-sensible:
   url: https://github.com/tpope/vim-sensible.git
-  rev: 9e91be7e0fb42949831fe3161ef583363648aa58
+  rev: 4b7535921819a5b2e39be68f81109ea684232503
 
 git module vim-syntastic:
   url: https://github.com/scrooloose/syntastic.git
-  rev: 5462fdd677e498ab9ed8e2e13ede564c556a8957
+  rev: 2b84b14cd1ef0d4bb74d91ca08a8818d84d8982d
 
 git module vim-surround:
   url: https://github.com/tpope/vim-surround.git
