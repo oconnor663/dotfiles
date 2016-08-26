@@ -4,25 +4,26 @@ imports:
   oh-my-zsh: oh-my-zsh
 
   tmux-colors-solarized: tmux/solarized
-  tmux-sensible: tmux/sensible
+  tmux-sensible:         tmux/sensible
 
-  vim-bracketed-paste: vim/bundle/bracketed-paste
-  vim-coffee: vim/bundle/coffee
-  vim-colors-solarized: vim/bundle/colors-solarized
-  vim-commentary: vim/bundle/commentary
-  vim-ctrlp: vim/bundle/ctrlp
-  vim-easymotion: vim/bundle/easymotion
-  vim-fugitive: vim/bundle/fugitive
-  vim-go: vim/bundle/go
   vim-pathogen: vim/autoload
-  vim-repeat: vim/bundle/repeat
-  vim-rsi: vim/bundle/rsi
-  vim-rust: vim/bundle/rust
-  vim-sensible: vim/bundle/sensible
-  vim-syntastic: vim/bundle/syntastic
-  vim-surround: vim/bundle/surround
-  vim-unimpaired: vim/bundle/unimpaired
-  vim-yankstack: vim/bundle/yankstack
+
+  vim-bracketed-paste:  vim/bundle/bracketed-paste
+  vim-coffee:           vim/bundle/coffee
+  vim-colors-solarized: vim/bundle/colors-solarized
+  vim-commentary:       vim/bundle/commentary
+  vim-ctrlp:            vim/bundle/ctrlp
+  vim-easymotion:       vim/bundle/easymotion
+  vim-fugitive:         vim/bundle/fugitive
+  vim-go:               vim/bundle/go
+  vim-repeat:           vim/bundle/repeat
+  vim-rsi:              vim/bundle/rsi
+  vim-rust:             vim/bundle/rust
+  vim-sensible:         vim/bundle/sensible
+  vim-syntastic:        vim/bundle/syntastic
+  vim-surround:         vim/bundle/surround
+  vim-unimpaired:       vim/bundle/unimpaired
+  vim-yankstack:        vim/bundle/yankstack
 
 git module dircolors-solarized:
   url: https://github.com/seebi/dircolors-solarized
