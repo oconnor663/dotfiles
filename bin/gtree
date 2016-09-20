@@ -1,0 +1,25 @@
+#! /usr/bin/env python3
+
+from docopt import docopt
+from duct import sh, cmd
+from pathlib import Path
+import sys
+
+__doc__ = """\
+Usage:
+    gtree [<path>]
+"""
+
+def main():
+    args = docopt(__doc__)
+    path = args["<path>"]
+    target = Path(path) if path else Path.cwd()
+    git_dir = Path(sh("mktemp -d").read())
+    cmd_start = ["git", "--git-dir", git_dir, "--work-tree", target]
+    cmd(*cmd_start, "init", "--quiet").run()
+    cmd(*cmd_start, "add", ".").run()
+    cmd(*cmd_start, "write-tree").run()
+    cmd("rm", "-r", git_dir)
+
+if __name__ == "__main__":
+    main()
