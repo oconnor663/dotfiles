@@ -94,3 +94,19 @@ gorun() {
   echo "Done." >&2 && \
   "$GOPATH/bin/$(basename "$project")" "$@" &&\
 }
+
+private() {
+  if [ -n "$1" ] ; then
+    cd /keybase/private/oconnor663,"$1"
+  else
+    cd /keybase/private/oconnor663
+  fi
+}
+
+public() {
+  if [ -n "$1" ] ; then
+    cd /keybase/public/"$1"
+  else
+    cd /keybase/public/oconnor663
+  fi
+}
