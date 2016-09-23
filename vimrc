@@ -143,3 +143,17 @@ let g:omni_sql_no_default_maps = 1
 " Rust
 let g:rustfmt_autosave = 1
 let g:rustfmt_fail_silently = 1
+
+" vim-go
+map <Leader>b :wa<CR>:GoBuild<CR>
+let g:go_fmt_command = "goimports"
+let g:syntastic_go_checkers = ['go', 'golint', 'errcheck']
+let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
+let g:go_list_type = "quickfix"
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_types = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
+au FileType go nmap gd <Plug>(go-def)
