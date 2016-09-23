@@ -52,3 +52,5 @@ done
 if which dconf &> /dev/null ; then
   dconf load / < $HERE/gnome-dconf-settings
 fi
+
+"$HERE/vim/bundle/youcompleteme/install.py" --racer-completer --gocode-completer
