@@ -1,4 +1,9 @@
-export EDITOR=vim
+if which nvim > /dev/null ; then
+  export EDITOR=nvim
+else
+  export EDITOR=vim
+fi
+
 export PATH="$HOME/bin:$HOME/.local/bin:$HOME/.cargo/bin:$PATH"
 export RUST_SRC_PATH="$HOME/rust/src"
 

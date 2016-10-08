@@ -95,7 +95,7 @@ func main() {
 	fmt.Println("hello")
 }
 EOF
-  vim test.go
+  "$EDITOR" test.go
 }
 
 newrust() {
@@ -103,7 +103,7 @@ newrust() {
   ln -sfn "$crate" /tmp/lastrust
   cargo new --bin "$crate"
   cd "$crate"
-  vim src/main.rs
+  "$EDITOR" src/main.rs
 }
 
 # ack is called ack-grep in ubuntu
