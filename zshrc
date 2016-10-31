@@ -104,6 +104,8 @@ newrust() {
   ln -sfn "$crate" /tmp/lastrust
   cargo new --bin "$crate"
   cd "$crate"
+  git add -A
+  git commit -m "first"
   "$EDITOR" src/main.rs
 }
 
