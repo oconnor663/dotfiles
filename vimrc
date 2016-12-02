@@ -21,6 +21,9 @@ set wildmode=list:longest,list:full
 set colorcolumn=80
 set nojoinspaces  " Join sentences with one space, not two.
 
+" Enable cursor shape changing in insert mode for Neovim.
+let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
+
 " Disable the bell.
 set vb t_vb=
 " gvim resets this for no good reason
