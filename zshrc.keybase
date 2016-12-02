@@ -35,6 +35,8 @@ alias forever='forever --no-color'
 alias dist='ssh -A keybase@dist.keybase.io'
 alias ws6='ssh -A keybase@ws6.keybase.io'
 alias gw='ssh -A jacko@gw.keybase.io'
+alias noff='nmcli networking off'
+alias non='nmcli networking on'
 
 random16() {
   head -c 8 /dev/urandom | tohex
