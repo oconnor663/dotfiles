@@ -4,6 +4,9 @@ set -e
 
 HERE=$(cd $(dirname "$BASH_SOURCE"); pwd)
 
+# Source the profile file immediately, for e.g. peru settings.
+source "$HERE/profile"
+
 if [[ "$HERE" != "$HOME/dotfiles" ]] ; then
   echo 'can only be installed from ~/dotfiles'
   exit 1
