@@ -1,0 +1,14 @@
+#! /usr/bin/env python
+
+import docopt
+import os
+import sys
+
+__doc__ = """\
+Usage:
+    getpgid <pid>
+"""
+
+args = docopt.docopt(__doc__)
+
+print(os.getpgid(int(args["<pid>"])))
