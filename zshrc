@@ -30,6 +30,7 @@ alias git="noglob git" # zsh likes to swallow ^ characters
 alias gs='git status'
 alias gsi='git status --ignored'
 alias gd='git diff'
+alias gb='git rev-parse --abbrev-ref HEAD'
 alias gca="git commit -a --amend --no-edit"
 alias gcff="git clean -dffx"
 alias grh='git reset --hard'
