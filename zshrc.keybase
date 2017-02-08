@@ -25,7 +25,7 @@ alias ralph='mkdir -p /home/jacko/ralph; cd /home/jacko/ralph; thisuser'
 alias nkeybase="(cd $HOME/node-client && make) && $HOME/node-client/bin/main.js"
 alias nkb="nkeybase --host localhost --port 3000 --no-tls"
 alias kbs='kb --standalone'
-alias kbrel="kb --run-mode=prod --server=https://keybase.io"
+alias kbrel="kb --run-mode=prod"
 alias kbsrel="kbrel --standalone"
 # alias kbt="GPG=~/gnupg/g10/gpg2 go test"
 alias stop='kb ctl stop'
