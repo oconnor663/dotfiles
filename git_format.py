@@ -4,6 +4,7 @@
 import os
 import re
 import sys
+import unicodedata
 
 # We have to do everything in binary, because diffs can contain invalid
 # unicode. Open our own streams instead of using sys.stdin/sys.stdout, so that
@@ -27,6 +28,17 @@ expected_errors = (KeyboardInterrupt, IOError)
 if sys.version_info.major >= 3:
     expected_errors += (BrokenPipeError,)
 
+
+# Calculate length in a way that respects Unicode normalization, which is
+# likely to match what gets displayed. If the line isn't valid UTF-8, though,
+# just count the bytes.
+def printable_len(line):
+    try:
+        return len(unicodedata.normalize("NFC", line.decode()))
+    except UnicodeDecodeError:
+        return len(line)
+
+
 try:
     for line in stdin:
         # Looks for lines of the form:
@@ -45,6 +57,7 @@ try:
         color = match.group("color")
         commit_text = match.group("text")
         lines_to_box = [commit_text]
+        printable_lengths = [printable_len(commit_text)]
 
         while True:
             next_line = next(stdin)
@@ -52,13 +65,15 @@ try:
                 # This is the end of the commit header lines. We'll need to
                 # print this line after we've printed the header.
                 break
-            lines_to_box.append(next_line.strip())
+            stripped = next_line.strip()
+            lines_to_box.append(stripped)
+            printable_lengths.append(printable_len(stripped))
 
         # Print all three lines in color, with a fancy box.
-        width = max(len(line) for line in lines_to_box)
+        width = max(printable_lengths)
         stdout.write(color + TOPLEFT + TOP*width + TOPRIGHT + NEWLINE)
-        for line in lines_to_box:
-            padding = b' ' * (width - len(line))
+        for (line, printable) in zip(lines_to_box, printable_lengths):
+            padding = b' ' * (width - printable)
             stdout.write(color + LEFT + line + padding + RIGHT + NEWLINE)
         stdout.write(color + BOTTOMLEFT + BOTTOM*width + BOTTOMRIGHT + NEWLINE)
 
