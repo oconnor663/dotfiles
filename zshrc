@@ -5,7 +5,6 @@ source ~/.profile
 emulate zsh
 
 if [[ $TERM != linux ]] ; then
-  export TERM=xterm-256color
   export SOLARIZED=1
 fi
 
