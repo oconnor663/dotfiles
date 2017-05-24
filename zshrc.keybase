@@ -30,7 +30,7 @@ alias kbsrel="kbrel --standalone"
 # alias kbt="GPG=~/gnupg/g10/gpg2 go test"
 alias stop='kb ctl stop'
 
-alias forever='forever --no-color'
+alias forever='forever --no-colors'
 
 alias dist='ssh -A keybase@dist.keybase.io'
 alias ws6='ssh -A keybase@ws6.keybase.io'
