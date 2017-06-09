@@ -34,14 +34,15 @@ alias gca="git commit -a --amend --no-edit"
 alias gcff="git clean -dffx"
 alias grh='git reset --hard'
 alias gpr='git pull --rebase'
-alias gfra='git fetch && git rebase --autostash'
-alias gout='git log @{upstream}.. --oneline'
-alias goutp='git log @{upstream}.. -p'
+alias gfra='git fetch && git rebase --autostash origin/master'
+alias gout='git log origin/master.. --oneline'
+alias goutp='git log origin/master.. -p'
 alias ginit='git init && git add -A && git commit -m "first commit"'
 alias glog='git log --oneline --decorate --graph'
 alias gref='git reflog --all --date=relative'
 alias good='git bisect good'
 alias bad='git bisect bad'
+alias grecent='git for-each-ref --sort=-committerdate refs/heads/ --format="%(refname:short) (%(committerdate:relative))"'
 function gdrop() {
   local current_branch="$(git symbolic-ref --short HEAD)" &&
   git checkout master &&
@@ -54,6 +55,14 @@ function gpo() {
     return 1
   fi
   git push origin "$(git name-rev --name-only HEAD)" "$@"
+}
+function gup() {
+  git fetch
+  if [[ -n "$(git log HEAD..origin/master -1)" ]] ; then
+    git rebase origin/master --autostash
+  else
+    echo Up to date.
+  fi
 }
 function c() {
   if [ -t 0 ] && [ -z "$1" ] ; then
