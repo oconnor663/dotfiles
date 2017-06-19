@@ -20,6 +20,7 @@ set mouse=a
 set wildmode=list:longest,list:full
 set colorcolumn=80
 set nojoinspaces  " Join sentences with one space, not two.
+set noswapfile
 
 " Enable cursor shape changing in insert mode for Neovim.
 let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
@@ -122,10 +123,6 @@ map <Leader>w <Plug>(easymotion-bd-w)
 hi EasyMotionTarget ctermbg=none ctermfg=red
 hi EasyMotionTarget2First ctermbg=none ctermfg=red
 hi EasyMotionTarget2Second ctermbg=none ctermfg=red
-
-" Store all backup files centrally
-set backupdir=~/.vim-tmp
-set directory=~/.vim-tmp
 
 " fix YAML key highlighting (http://stackoverflow.com/a/22714798/823869)
 autocmd FileType yaml execute
