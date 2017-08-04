@@ -41,6 +41,9 @@ link vimrc        ~/.vimrc
 link vimrc        ~/.config/nvim/init.vim
 link zshrc        ~/.zshrc
 
+link keybindings.json ~/.config/Code/User/keybindings.json
+link settings.json    ~/.config/Code/User/settings.json
+
 # Doing this in .vimrc is unnecessarily hard.
 mkdir -p ~/.vim-tmp
 

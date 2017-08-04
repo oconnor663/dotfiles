@@ -1,0 +1,22 @@
+{
+    "editor.fontFamily": "Ubuntu Mono",
+    "editor.fontSize": 16,
+    "vim.disableAnnoyingNeovimMessage": true,
+    "vim.easymotion": true,
+    "vim.easymotionMarkerFontFamily": "Ubuntu Mono",
+    "vim.handleKeys": {},
+    "vim.hlsearch": true,
+    "vim.otherModesKeyBindingsNonRecursive": [
+        {
+            "before": ["<C-w>"],
+            "after": [],
+            "commands": [
+                {
+                    "command": "workbench.action.closeActiveEditor",
+                    "args": []
+                }
+            ]
+        }
+    ],
+    "vim.useSystemClipboard": true
+}
