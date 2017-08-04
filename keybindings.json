@@ -5,10 +5,6 @@
         "when": "editorTextFocus"
     },
     {
-        "key": "ctrl+shift+o",
-        "command": "workbench.action.files.openFile"
-    },
-    {
         "key": "ctrl+shift+r",
         "command": "workbench.action.openRecent"
     },

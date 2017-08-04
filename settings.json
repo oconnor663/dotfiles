@@ -8,5 +8,7 @@
         "<C-w>": false
     },
     "vim.hlsearch": true,
-    "vim.leader": " "
+    "vim.leader": " ",
+    "go.lintTool": "gometalinter",
+    "go.lintFlags": ["--disable-all"]
 }
