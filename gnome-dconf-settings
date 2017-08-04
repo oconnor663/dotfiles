@@ -13,4 +13,4 @@ audible-bell=false
 default-show-menubar=false
 
 [org/gnome/desktop/input-sources]
-xkb-options=['caps:ctrl_modifier']
+xkb-options=['ctrl:nocaps']
