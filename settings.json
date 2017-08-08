@@ -5,10 +5,14 @@
     "vim.easymotion": true,
     "vim.easymotionMarkerFontFamily": "Ubuntu Mono",
     "vim.handleKeys":{
+        "<C-f>": false,
         "<C-w>": false
     },
     "vim.hlsearch": true,
     "vim.leader": " ",
     "go.lintTool": "gometalinter",
-    "go.lintFlags": ["--disable-all"]
+    "go.lintFlags": [
+        "--disable-all"
+    ],
+    "editor.minimap.showSlider": "always"
 }
