@@ -14,5 +14,6 @@
     "go.lintFlags": [
         "--disable-all"
     ],
-    "editor.minimap.showSlider": "always"
+    "editor.minimap.showSlider": "always",
+    "window.zoomLevel": 0
 }
