@@ -38,6 +38,9 @@ noremap <Space> <Nop>
 " get rid of "ex mode"
 nnoremap Q <Nop>
 
+" super awesome mapping for 'last file'
+nnoremap <BS> <C-^>
+
 " override vim-sensible, let backspace delete individual spaces
 set nosmarttab
 
