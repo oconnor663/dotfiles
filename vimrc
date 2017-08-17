@@ -45,8 +45,8 @@ nnoremap <BS> <C-^>
 set nosmarttab
 
 " Use <Tab> and <S-Tab> to indent lines.
-inoremap <Tab> <C-o>>>
-inoremap <S-Tab> <C-o><<
+" inoremap <Tab> <C-o>>>
+" inoremap <S-Tab> <C-o><<
 vnoremap <Tab> >gv
 vnoremap <S-Tab> <gv
 " Since CTRL-I and <Tab> are the same key (*sigh*), we need to unclobber the
@@ -60,6 +60,10 @@ imap <C-l> <Esc><C-l>a
 noremap <leader>c "+y
 noremap <leader>v :set paste<CR>"+p:set nopaste<CR>
 noremap <leader>V :set paste<CR>"+P:set nopaste<CR>
+
+" FZF bindings
+nnoremap <C-p> :Files<CR>
+nnoremap <leader><C-p> :History<CR>
 
 " Limit line length in arc files like we do in git commits.
 autocmd BufRead new-commit set textwidth=72
@@ -109,10 +113,6 @@ if has("gui_running")
   set background=light
 endif
 
-" CtrlP settings
-let g:ctrlp_cmd = 'CtrlPMRUFiles'
-let g:ctrlp_working_path_mode = 0 " use vim's working dir
-
 " yankstack settings
 let g:yankstack_map_keys = 0 " our mappings only
 nmap <leader>p <Plug>yankstack_substitute_older_paste
@@ -141,8 +141,12 @@ let g:airline_powerline_fonts = 1
 let g:omni_sql_no_default_maps = 1
 
 " Rust
-let g:rustfmt_autosave = 1
+" let g:rustfmt_autosave = 1
 let g:rustfmt_fail_silently = 1
+
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#sources#rust#racer_binary='/usr/bin/racer'
+let g:deoplete#sources#rust#rust_source_path='/home/jacko/rust/src'
 
 " vim-go
 map <Leader>b :wa<CR>:GoBuild<CR>

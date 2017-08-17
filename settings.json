@@ -15,5 +15,13 @@
         "--disable-all"
     ],
     "editor.minimap.showSlider": "always",
-    "window.zoomLevel": 0
+    "window.zoomLevel": 0,
+    "rust.rustup": {
+        "toolchain": "stable-x86_64-unknown-linux-gnu",
+        "nightlyToolchain": "nightly-x86_64-unknown-linux-gnu"
+    },
+    "rust.mode": "rls",
+    "rust.rls": {
+        "useRustfmt": true
+    }
 }
