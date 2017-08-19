@@ -15,6 +15,8 @@ imports:
   vim-ctrlp:            vim/bundle/ctrlp
   vim-easymotion:       vim/bundle/easymotion
   vim-fugitive:         vim/bundle/fugitive
+  vim-fzf:              vim/bundle/fzf
+  vim-fzf-base:         vim/bundle/fzf-base
   vim-gitgutter:        vim/bundle/gitgutter
   vim-go:               vim/bundle/go
   vim-repeat:           vim/bundle/repeat
@@ -65,6 +67,17 @@ git module vim-ctrlp:
 git module vim-easymotion:
   url: https://github.com/Lokaltog/vim-easymotion.git
   rev: d55e7bf515eab93e0b49f6f762bf5b0bf808264d
+
+git module vim-fzf:
+  url: https://github.com/junegunn/fzf.vim
+  rev: 7e868c49ac650270884bf46618277bae7077d661
+
+git module vim-fzf-base:
+  url: https://github.com/junegunn/fzf
+  pick:
+    - doc
+    - plugin
+  rev: c304fc43333c95467394ca2d6e5eddbbcdf99e3d
 
 git module vim-fugitive:
   url: https://github.com/tpope/vim-fugitive.git
