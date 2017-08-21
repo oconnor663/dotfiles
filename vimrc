@@ -79,6 +79,7 @@ endfunction
 " settings for IcedCoffeeScript
 autocmd BufNewFile,BufRead *.iced call SetICSOptions()
 function SetICSOptions()
+  setlocal filetype=iced
   setlocal syntax=coffee
   setlocal commentstring=#\ %s
 endfunction
