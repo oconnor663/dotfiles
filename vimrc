@@ -144,6 +144,8 @@ let g:omni_sql_no_default_maps = 1
 let g:rustfmt_autosave = 1
 let g:rustfmt_fail_silently = 1
 
+let g:deoplete#enable_at_startup = 1
+
 " vim-go
 map <Leader>b :wa<CR>:GoBuild<CR>
 let g:go_fmt_command = "goimports"

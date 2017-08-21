@@ -13,6 +13,8 @@ imports:
   vim-colors-solarized: vim/bundle/colors-solarized
   vim-commentary:       vim/bundle/commentary
   vim-ctrlp:            vim/bundle/ctrlp
+  vim-deoplete:         vim/bundle/deoplete
+  vim-deoplete-go:      vim/bundle/deoplete-go
   vim-easymotion:       vim/bundle/easymotion
   vim-fugitive:         vim/bundle/fugitive
   vim-fzf:              vim/bundle/fzf
@@ -64,9 +66,21 @@ git module vim-ctrlp:
   url: https://github.com/kien/ctrlp.vim.git
   rev: 564176f01d7f3f7f8ab452ff4e1f5314de7b0981
 
+git module vim-deoplete:
+  url: https://github.com/Shougo/deoplete.nvim
+  rev: a61b4597f23a36898565994c79b958849472157f
+
+git module vim-deoplete-go:
+  url: https://github.com/zchee/deoplete-go
+  rev: aef73fdf275053a6fb00c3f66d1f18821bc74bd3
+
 git module vim-easymotion:
   url: https://github.com/Lokaltog/vim-easymotion.git
   rev: d55e7bf515eab93e0b49f6f762bf5b0bf808264d
+
+git module vim-fugitive:
+  url: https://github.com/tpope/vim-fugitive.git
+  rev: d4df8882c5370f790d36d4600bb90dbf100ceea8
 
 git module vim-fzf:
   url: https://github.com/junegunn/fzf.vim
@@ -78,10 +92,6 @@ git module vim-fzf-base:
     - doc
     - plugin
   rev: c304fc43333c95467394ca2d6e5eddbbcdf99e3d
-
-git module vim-fugitive:
-  url: https://github.com/tpope/vim-fugitive.git
-  rev: d4df8882c5370f790d36d4600bb90dbf100ceea8
 
 git module vim-gitgutter:
   url: https://github.com/airblade/vim-gitgutter
