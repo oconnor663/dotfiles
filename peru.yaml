@@ -84,14 +84,14 @@ git module vim-fugitive:
 
 git module vim-fzf:
   url: https://github.com/junegunn/fzf.vim
-  rev: 7e868c49ac650270884bf46618277bae7077d661
+  rev: e246016844f95a67b9602a2d3e6af24af8dbdbaf
 
 git module vim-fzf-base:
   url: https://github.com/junegunn/fzf
   pick:
     - doc
     - plugin
-  rev: c304fc43333c95467394ca2d6e5eddbbcdf99e3d
+  rev: 55ee4186aa688e524e041971d588a6f002486deb
 
 git module vim-gitgutter:
   url: https://github.com/airblade/vim-gitgutter
