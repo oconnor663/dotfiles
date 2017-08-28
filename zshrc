@@ -23,7 +23,6 @@ alias pypi_upload='python setup.py register sdist upload'
 alias tohex="python3 -c 'import sys, binascii; print(binascii.hexlify(sys.stdin.buffer.read()).decode())'"
 alias fromhex="python3 -c 'import sys, binascii; sys.stdout.buffer.write(binascii.unhexlify(input().strip()))'"
 alias yolo="pacaur --noedit --noconfirm"
-alias ap="ack --passthru"
 
 # git aliases
 alias git="noglob git" # zsh likes to swallow ^ characters
@@ -71,6 +70,10 @@ function c() {
     return 1
   fi
   xclip -i -selection clipboard "$@"
+}
+function hl() {
+  # https://unix.stackexchange.com/a/367/23305
+  grep --color -E "$1|$" "${@:2}"
 }
 alias ct='tmux show-buffer | c'
 alias v='xclip -o -selection clipboard'
