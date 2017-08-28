@@ -146,6 +146,8 @@ let g:rustfmt_autosave = 1
 let g:rustfmt_fail_silently = 1
 
 let g:deoplete#enable_at_startup = 1
+let g:deoplete#sources#rust#racer_binary='/usr/bin/racer'
+let g:deoplete#sources#rust#rust_source_path='/home/jacko/rust/src'
 
 " vim-go
 map <Leader>b :wa<CR>:GoBuild<CR>
