@@ -148,6 +148,12 @@ let g:rustfmt_fail_silently = 1
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#sources#rust#racer_binary='/usr/bin/racer'
 let g:deoplete#sources#rust#rust_source_path='/home/jacko/rust/src'
+" Make the enter key insert a newline instead of just selecting an entry, see:
+" https://github.com/Shougo/deoplete.nvim/blob/master/doc/deoplete.txt
+inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+function! s:my_cr_function() abort
+  return deoplete#close_popup() . "\<CR>"
+endfunction
 
 " vim-go
 map <Leader>b :wa<CR>:GoBuild<CR>
