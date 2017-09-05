@@ -45,8 +45,8 @@ nnoremap <BS> <C-^>
 set nosmarttab
 
 " Use <Tab> and <S-Tab> to indent lines.
-inoremap <Tab> <C-o>>>
-inoremap <S-Tab> <C-o><<
+" inoremap <Tab> <C-o>>>
+" inoremap <S-Tab> <C-o><<
 vnoremap <Tab> >gv
 vnoremap <S-Tab> <gv
 " Since CTRL-I and <Tab> are the same key (*sigh*), we need to unclobber the
