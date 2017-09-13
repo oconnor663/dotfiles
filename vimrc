@@ -11,8 +11,8 @@ set smartcase
 set hlsearch
 set tags=tags;/
 set number
-set tabstop=2
-set shiftwidth=2
+set tabstop=4
+set shiftwidth=4
 set expandtab
 set list
 set listchars=tab:»\ ,trail:·
@@ -144,6 +144,7 @@ let g:omni_sql_no_default_maps = 1
 " Rust
 let g:rustfmt_autosave = 1
 let g:rustfmt_fail_silently = 1
+let g:rust_recommended_style = 0  " avoid setting tw=99
 
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#sources#rust#racer_binary='/usr/bin/racer'
