@@ -57,7 +57,7 @@ signup() {
 }
 
 waitapp() {
-  echo 'waiting for localhost...'
+  echo -n 'waiting for localhost...'
   while ! curl localhost:3000 > /dev/null 2>&1 ; do
     sleep 0.1
   done
