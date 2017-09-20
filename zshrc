@@ -168,6 +168,10 @@ setopt hist_ignore_space
 setopt inc_append_history
 setopt share_history
 
+# use regexes in history search
+bindkey '^r' history-incremental-pattern-search-backward
+bindkey '^s' history-incremental-pattern-search-forward
+
 autoload -U compinit && compinit
 setopt complete_in_word
 zstyle ':completion:*' menu select
