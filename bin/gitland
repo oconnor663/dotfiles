@@ -28,4 +28,6 @@ git push origin master
 
 git branch -D "$branch"
 
+git push origin ":$branch"
+
 echo SUCCESS
