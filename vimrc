@@ -82,6 +82,8 @@ function SetICSOptions()
   setlocal filetype=iced
   setlocal syntax=coffee
   setlocal commentstring=#\ %s
+  setlocal tabstop=2
+  setlocal shiftwidth=2
 endfunction
 
 " make WSGI files look like python
