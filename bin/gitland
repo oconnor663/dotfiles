@@ -1,33 +1,42 @@
 #! /bin/bash
 
-set -e
+set -e -u -o pipefail
 
-if [[ -n $(git status --porcelain --untracked-files=no) ]] ; then
+if [[ -n "$(git status --porcelain --untracked-files=no)" ]] ; then
   echo error: repo is dirty
   exit 1
 fi
 
-branch=$(git symbolic-ref --short HEAD)
+branch="$(git symbolic-ref --short HEAD)"
 
 if [[ "$branch" = "master" ]] ; then
   echo error: trying to land master on itself
   exit 1
 fi
 
+echo fetching origin
+git fetch origin
+
+echo rebasing on origin/master
+git rebase origin/master
+
+# This step helps GitHub realize that a PR is landing.
+echo force pushing to "origin/$branch"
+git push --force origin "$branch"
+
+echo pushing to origin/master
+git push origin "$branch:master"
+
+echo deleting branch origin/"$branch"
+git push --delete origin "$branch"
+
 echo checking out master
-git checkout -q master
+git checkout master
 
-echo pulling master
-git pull --ff-only
+echo fast-forwarding master
+git merge --ff-only origin/master
 
-echo cherry-picking commits from "$branch"
-git cherry-pick --ff master.."$branch"
-
-echo pushing master
-git push origin master
-
-git branch -D "$branch"
-
-git push origin ":$branch"
+echo deleting branch "$branch"
+git branch --delete "$branch"
 
 echo SUCCESS
