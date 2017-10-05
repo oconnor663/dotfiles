@@ -88,6 +88,9 @@ alias save='git add -A  && git commit --allow-empty -qnm "SAVE" && git reset --m
 alias wipe='git add -A  && git commit --allow-empty -qnm "WIPE" && git reset --hard  -q HEAD^ && git clean -dqff'
 alias nuke='git add -Af && git commit --allow-empty -qnm "NUKE" && git reset --hard  -q HEAD^ && git clean -dqffx'
 
+alias deflate='python3 -c "import zlib,sys;sys.stdout.buffer.write(zlib.compress(sys.stdin.buffer.read()))"'
+alias inflate='python3 -c "import zlib,sys;sys.stdout.buffer.write(zlib.decompress(sys.stdin.buffer.read()))"'
+
 venv() {
   dir="$(mktemp -d)"
   target_python="${1:-python}"
