@@ -28,6 +28,7 @@ imports:
   vim-sensible:         vim/bundle/sensible
   vim-syntastic:        vim/bundle/syntastic
   vim-surround:         vim/bundle/surround
+  vim-undotree:         vim/bundle/undotree
   vim-unimpaired:       vim/bundle/unimpaired
   vim-yankstack:        vim/bundle/yankstack
 
@@ -134,6 +135,10 @@ git module vim-syntastic:
 git module vim-surround:
   url: https://github.com/tpope/vim-surround.git
   rev: e49d6c2459e0f5569ff2d533b4df995dd7f98313
+
+git module vim-undotree:
+  url: https://github.com/mbbill/undotree
+  rev: db2fa7236179e3cf64c2f58cd68e0eb9d50c4073
 
 git module vim-unimpaired:
   url: https://github.com/tpope/vim-unimpaired.git
