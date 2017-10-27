@@ -1,7 +1,6 @@
 #! /usr/bin/env python3
 
 from pathlib import Path
-import json
 
 PACKAGE = """\
 [[package]]
@@ -12,28 +11,21 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 """
 
 crates = {}
-registry = Path.home() / ".cargo/registry"
-index = registry / "index"
-src = registry / "src"
-for index_subdir in index.iterdir():
-    for first_layer in index_subdir.iterdir():
-        if first_layer.is_dir() and not first_layer.name.startswith("."):
-            for second_layer in first_layer.iterdir():
-                # This skips the "1" dir, but I don't think we care.
-                if second_layer.is_dir():
-                    for entry in second_layer.iterdir():
-                        with entry.open() as f:
-                            # These lines are in ascending version order.
-                            for line in f:
-                                blob = json.loads(line)
-                                name = blob["name"]
-                                version = blob["vers"]
-                                fullname = name + "-" + version
-                                local_src = src / index_subdir.name / fullname
-                                # Use the latest version we have source for.
-                                if local_src.is_dir():
-                                    crates[blob["name"]] = blob["vers"]
+srcdir = Path.home() / ".cargo/registry/src"
+# For me there's only one subdir, "github.com-1ecc6299db9ec823".
+for src_subdir in srcdir.iterdir():
+    for entry in src_subdir.iterdir():
+        name, version = entry.name.rsplit("-", 1)
+        try:
+            version_ints = [int(i) for i in version.split(".")]
+        except ValueError:
+            # If the version has "-alpha" or whatever, just skip it.
+            continue
+        # Find the latest version for each crate.
+        if name not in crates or version_ints > crates[name][1]:
+            crates[name] = (version, version_ints)
 
 with open("Cargo.lock", "w") as f:
-    for crate, version in sorted(crates.items()):
+    # Sorted output order is nice in case we end up git-diff'ing these.
+    for crate, (version, _) in sorted(crates.items()):
         f.write(PACKAGE.format(crate, version))
