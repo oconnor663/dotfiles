@@ -23,6 +23,8 @@ alias pypi_upload='python setup.py register sdist upload'
 alias tohex="python3 -c 'import sys, binascii; print(binascii.hexlify(sys.stdin.buffer.read()).decode())'"
 alias fromhex="python3 -c 'import sys, binascii; sys.stdout.buffer.write(binascii.unhexlify(input().strip()))'"
 alias yolo="pacaur --noedit --noconfirm"
+alias scu="systemctl --user"
+alias jcu="journalctl --user"
 
 # git aliases
 alias git="noglob git" # zsh likes to swallow ^ characters
