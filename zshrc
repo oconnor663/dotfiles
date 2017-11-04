@@ -60,7 +60,7 @@ function gpo() {
   git push origin "$(git name-rev --name-only HEAD)" "$@"
 }
 function gup() {
-  git fetch
+  git fetch && \
   if [[ -n "$(git log HEAD..origin/master -1)" ]] ; then
     git rebase origin/master --autostash
   else
