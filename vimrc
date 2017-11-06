@@ -99,6 +99,12 @@ function SetREADMEOptions()
   setlocal colorcolumn=72
 endfunction
 
+" `systemctl edit` likes to put random hex characters after .conf
+autocmd BufNewFile,BufRead *.conf* call SetConfOptions()
+function SetConfOptions()
+  setlocal filetype=conf
+endfunction
+
 " Solarized color scheme in the terminal
 if $SOLARIZED == '1'
   colorscheme solarized
