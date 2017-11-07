@@ -67,6 +67,9 @@ autocmd BufRead new-commit set textwidth=72
 " Prefer // over /*...*/. Used by vim-commentary.
 autocmd FileType c,cpp,cs,java setlocal commentstring=//\ %s
 
+" Prefer # in sytemd files.
+autocmd FileType systemd setlocal commentstring=#\ %s
+
 " settings for Go files
 autocmd FileType go call SetGoOptions()
 function SetGoOptions()
