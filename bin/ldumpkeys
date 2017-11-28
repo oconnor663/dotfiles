@@ -1,0 +1,25 @@
+#! /usr/bin/env python3
+
+import plyvel
+import sys
+
+keys_only = ("keys" in sys.argv[0])
+
+if len(sys.argv) > 1:
+    path = sys.argv[1]
+else:
+    path = "."
+
+if len(sys.argv) > 2:
+    prefix = sys.argv[2].encode()
+else:
+    prefix = b""
+
+db = plyvel.DB(path)
+
+for key, val in db:
+    if key.startswith(prefix):
+        if keys_only:
+            print(key.decode())
+        else:
+            print(key, val)
