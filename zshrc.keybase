@@ -73,8 +73,9 @@ kbdown() {
   if killall Keybase &> /dev/null ; then
     echo Shutting down Keybase GUI...
   fi
-  if fusermount -uz /keybase &> /dev/null ; then
-    echo Unmounting /keybase...
+  mountpoint="$(realpath /keybase)"
+  if fusermount -uz "$mountpoint" &> /dev/null ; then
+    echo "Unmounting $mountpoint..."
   fi
   if killall kbfsfuse &> /dev/null ; then
     echo Shutting down kbfsfuse...
