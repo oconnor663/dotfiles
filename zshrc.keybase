@@ -113,3 +113,11 @@ public() {
     cd /keybase/public/oconnor663
   fi
 }
+
+fullrestart() {
+  (cd ~/keybase && make stop && make dbpatch && make run)
+}
+
+ktest() {
+  waitapp && iced ~/keybase/test/run.iced "$@"
+}
