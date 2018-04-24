@@ -122,9 +122,8 @@ if has("gui_running")
   set background=light
 endif
 
-" CtrlP settings
-let g:ctrlp_cmd = 'CtrlPMRUFiles'
-let g:ctrlp_working_path_mode = 0 " use vim's working dir
+" FZF settings
+nnoremap <C-p> :AllFiles<CR>
 
 " yankstack settings
 let g:yankstack_map_keys = 0 " our mappings only

@@ -12,7 +12,6 @@ imports:
   vim-coffee:           vim/bundle/coffee
   vim-colors-solarized: vim/bundle/colors-solarized
   vim-commentary:       vim/bundle/commentary
-  vim-ctrlp:            vim/bundle/ctrlp
   vim-deoplete:         vim/bundle/deoplete
   vim-deoplete-go:      vim/bundle/deoplete-go
   vim-deoplete-rust:    vim/bundle/deoplete-rust
@@ -63,10 +62,6 @@ git module vim-colors-solarized:
 git module vim-commentary:
   url: https://github.com/tpope/vim-commentary.git
   rev: 89f43af18692d22ed999c3097e449f12fdd8b299
-
-git module vim-ctrlp:
-  url: https://github.com/kien/ctrlp.vim.git
-  rev: 564176f01d7f3f7f8ab452ff4e1f5314de7b0981
 
 git module vim-deoplete:
   url: https://github.com/Shougo/deoplete.nvim
