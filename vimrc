@@ -22,6 +22,7 @@ set colorcolumn=80
 set nojoinspaces  " Join sentences with one space, not two.
 set noswapfile
 set inccommand=split
+set updatetime=100  " Faster gitgutter updates.
 
 " Enable cursor shape changing in insert mode for Neovim.
 let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
