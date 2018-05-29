@@ -11,6 +11,8 @@ function thisuser() {
   mkdir -p "$XDG_RUNTIME_DIR"
   export PS1="%F{yellow}TEST $HOME $PS1"
   ln -sfn "$HOME" /tmp/keybase_last_test_user
+  unset KEYBASE_FEATURES
+  export KEYBASE_SYSTEMD=0
 }
 function lastuser() {
   if ! cd "$(realpath /tmp/keybase_last_test_user)" ; then
