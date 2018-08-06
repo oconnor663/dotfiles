@@ -117,7 +117,7 @@ git module vim-rsi:
 
 git module vim-rust:
   url: https://github.com/rust-lang/rust.vim
-  rev: 8e75da9834abb22f8d7ece3f4ca4324a14fa18a6
+  rev: 2fa74427456a68e9e90f542567f851df50d48a8c
 
 git module vim-sensible:
   url: https://github.com/tpope/vim-sensible.git
