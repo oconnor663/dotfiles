@@ -155,9 +155,7 @@ let g:omni_sql_no_default_maps = 1
 
 " Rust
 let g:rustfmt_autosave = 1
-let g:rustfmt_fail_silently = 1
 let g:rust_recommended_style = 0  " avoid setting tw=99
-let g:rustfmt_command = "cargo +nightly fmt -- "
 
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#sources#rust#racer_binary='/usr/bin/racer'
