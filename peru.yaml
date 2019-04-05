@@ -30,6 +30,7 @@ imports:
   vim-undotree:         vim/bundle/undotree
   vim-unimpaired:       vim/bundle/unimpaired
   vim-yankstack:        vim/bundle/yankstack
+  vim-yapf:             vim/bundle/yapf
 
 git module dircolors-solarized:
   url: https://github.com/seebi/dircolors-solarized
@@ -142,3 +143,8 @@ git module vim-unimpaired:
 git module vim-yankstack:
   url: https://github.com/maxbrunsfeld/vim-yankstack.git
   rev: 157a659c1b101c899935d961774fb5c8f0775370
+
+git module vim-yapf:
+  url: https://github.com/google/yapf
+  export: plugins/vim
+  rev: 8871cf6f6cb0838685cbce0df2263b780c410b1a
