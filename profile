@@ -13,8 +13,6 @@ export PERU_CACHE_DIR="$HOME/.peru-cache"
 export DOTFILES="$HOME/dotfiles"
 export PYTHONSTARTUP="$DOTFILES/startup.py"
 
-export RUST_BACKTRACE=1
-
 source "$DOTFILES/profile.keybase"
 
 if [ -e ~/.profile.local ] ; then
