@@ -38,7 +38,7 @@ git module dircolors-solarized:
 
 git module oh-my-zsh:
   url: https://github.com/robbyrussell/oh-my-zsh
-  rev: 45a9f284641a23baa142743d8a6136d4e300c465
+  rev: 4ddb2e384ab0840b1d8a6d4c95770ef8a6c25fcc
 
 git module tmux-sensible:
   url: https://github.com/tmux-plugins/tmux-sensible
@@ -54,7 +54,7 @@ git module vim-coffee:
 
 git module vim-bracketed-paste:
   url: https://github.com/ConradIrwin/vim-bracketed-paste.git
-  rev: 90051e40ccc0f12f871ebc5a8305ba428c93027b
+  rev: c4c639f3cacd1b874ed6f5f196fac772e089c932
 
 git module vim-colors-solarized:
   url: https://github.com/altercation/vim-colors-solarized.git
@@ -62,15 +62,15 @@ git module vim-colors-solarized:
 
 git module vim-commentary:
   url: https://github.com/tpope/vim-commentary.git
-  rev: 54e5676988e6eeaa05b41730b6b056026ad0ef13
+  rev: 141d9d32a9fb58fe474fcc89cd7221eb2dd57b3a
 
 git module vim-deoplete:
   url: https://github.com/Shougo/deoplete.nvim
-  rev: 57d3f0c3cdfcfc1d91901a6d59d08f9008abd166
+  rev: 19f1dc07f382534d16e5e21f2dddf5109d64ae68
 
 git module vim-deoplete-go:
   url: https://github.com/zchee/deoplete-go
-  rev: 513ae17f1bd33954da80059a21c128a315726a81
+  rev: cb8504f09a04fac9325a5e2aa4a11c2400b1312d
 
 git module vim-deoplete-rust:
   url: https://github.com/sebastianmarkow/deoplete-rust
@@ -78,67 +78,67 @@ git module vim-deoplete-rust:
 
 git module vim-easymotion:
   url: https://github.com/Lokaltog/vim-easymotion.git
-  rev: 342549e7a1e5b07a030803e0e4b6f0415aa51275
+  rev: 85e90c9759e14633d878ed534ef313876ab96555
 
 git module vim-fugitive:
   url: https://github.com/tpope/vim-fugitive.git
-  rev: 40d78f07dee2ffab68abb9d6d1a9e27843df0fe0
+  rev: 1b3668b89fee230c6025dc47c01c82fc1e282ac0
 
 git module vim-fzf:
   url: https://github.com/junegunn/fzf.vim
-  rev: dc5f9437fcaed9f6896235830246871fdf9c9ba8
+  rev: b31512e2a2d062ee4b6eb38864594c83f1ad2c2f
 
 git module vim-fzf-base:
   url: https://github.com/junegunn/fzf
   pick:
     - doc
     - plugin
-  rev: f57920ad903105381b02502580be2bb11e4e6714
+  rev: ff951341c993ed84ad65344e496e122ee3dddf67
 
 git module vim-gitgutter:
   url: https://github.com/airblade/vim-gitgutter
-  rev: ad25925f1ec8790a3b0532c367c40470342d73fb
+  rev: 7eeea63e62b1cc088a75c7a7c244fc774d82e5bb
 
 git module vim-go:
   url: https://github.com/fatih/vim-go
-  rev: 7491209072ed4aa746e6fe7894f976ecd251801e
+  rev: f04098811b8a7aba3dba699ed98f6f6e39b7d7ac
 
 git module vim-pathogen:
   url: https://github.com/tpope/vim-pathogen.git
   export: autoload/
-  rev: 06da921608b971fb47603671bcafdb2843992eb3
+  rev: e9fb0914dba5bdfe2feaa364dda2e9495c5620a2
 
 git module vim-repeat:
   url: https://github.com/tpope/vim-repeat.git
-  rev: 8106e142dfdc278ff3eaaadd7b362ad7949d4357
+  rev: 43d2678fa59d068c815d8298331c195e850ff5a7
 
 git module vim-rsi:
   url: https://github.com/tpope/vim-rsi.git
-  rev: c19aeb88592555d277af56d453ea8b43dc8266de
+  rev: 8b7abe2d470b7fffac6562818468e14594735564
 
 git module vim-rust:
   url: https://github.com/rust-lang/rust.vim
-  rev: 2fa74427456a68e9e90f542567f851df50d48a8c
+  rev: 2234f0d3f8204b44f30ff6eb3b6f7345c23aef92
 
 git module vim-sensible:
   url: https://github.com/tpope/vim-sensible.git
-  rev: 2d60332fa5b2b1ea346864245569df426052865a
+  rev: 8db5a732eff08c796de188a52e7af66b99a8b9f2
 
 git module vim-syntastic:
   url: https://github.com/scrooloose/syntastic.git
-  rev: d31e270cc8affc6338a9ed44e2efcaec0ca4cd34
+  rev: 1089ee5212b833d73c96ca93773b9eca1a0f721b
 
 git module vim-surround:
   url: https://github.com/tpope/vim-surround.git
-  rev: e49d6c2459e0f5569ff2d533b4df995dd7f98313
+  rev: ca58a2d886cc18734c90c9665da4775d444b0c04
 
 git module vim-undotree:
   url: https://github.com/mbbill/undotree
-  rev: cdbb9022b8972d3e156b8d60af33bf795625b058
+  rev: be23eacb2a63380bd79e207a738c728214ecc9d3
 
 git module vim-unimpaired:
   url: https://github.com/tpope/vim-unimpaired.git
-  rev: bacf1543cc957d47aa70c1dc0bcf99392925b008
+  rev: e77923053fbce11323194ed04113b8d966be959c
 
 git module vim-yankstack:
   url: https://github.com/maxbrunsfeld/vim-yankstack.git
