@@ -25,6 +25,7 @@ alias fromhex="python3 -c 'import sys, binascii; sys.stdout.buffer.write(binasci
 alias yolo="yay -Syu --noconfirm"
 alias scu="systemctl --user"
 alias jcu="journalctl --user"
+alias timestamp="date +%Y-%m-%d-%H:%M:%S"
 
 # git aliases
 alias git="noglob git" # zsh likes to swallow ^ characters
