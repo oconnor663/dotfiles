@@ -165,9 +165,6 @@ bindkey '^x^e' edit-command-line
 # file rename magick
 bindkey "^[m" copy-prev-shell-word
 
-# print time for commands that take more than 5 seconds
-REPORTTIME=5
-
 # get shared history all working properly
 HISTFILE=$HOME/.zsh_history
 HISTSIZE=100000
