@@ -1,5 +1,9 @@
 #! /usr/bin/env python3
 
+### NOTE TO ANYONE USING THIS
+# As of June 2019, `cargo +nightly build --offline` does a better job than this
+# script. We don't need these hacks anymore :) Thanks Cargo Team!
+
 from pathlib import Path
 
 PACKAGE = """\
