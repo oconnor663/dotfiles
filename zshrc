@@ -4,7 +4,7 @@ emulate sh
 source ~/.profile
 emulate zsh
 
-if [[ $TERM != linux ]] ; then
+if [[ $XDG_SESSION_TYPE != tty ]] ; then
   export SOLARIZED=1
 fi
 
@@ -207,7 +207,12 @@ key[Delete]=${terminfo[kdch1]}
 [[ -n "${key[Delete]}"  ]]  && bindkey  "${key[Delete]}"  delete-char
 
 setopt prompt_subst
-export PROMPT='%(?..%F{red}%? )%F{cyan}%M %F{blue}%~ %F{yellow}$(__git_ps1 "%s ")%f'
+if [[ -n $SOLARIZED ]] ; then
+  export PROMPT='%(?..%F{red}%? )%F{cyan}%M %F{blue}%~ %F{yellow}$(__git_ps1 "%s ")%f'
+else
+  # Bold blue is more visible in the Linux console.
+  export PROMPT='%(?..%F{red}%? )%F{cyan}%M %B%F{blue}%~%b %F{yellow}$(__git_ps1 "%s ")%f'
+fi
 
 # defines __git_prompt for the prompt above
 # Note: It doesn't generally work to source random files from oh-my-zsh, since
