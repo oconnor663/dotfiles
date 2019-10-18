@@ -27,6 +27,9 @@ alias scu="systemctl --user"
 alias jcu="journalctl --user"
 alias timestamp="date +%Y-%m-%d-%H:%M:%S"
 
+# Global founder alias
+alias -g F='"$(founder)"'
+
 # git aliases
 alias git="noglob git" # zsh likes to swallow ^ characters
 alias gs='git status'

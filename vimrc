@@ -123,8 +123,16 @@ if has("gui_running")
   set background=light
 endif
 
-" FZF settings
+" Founder/FZF settings
 nnoremap <C-p> :AllFiles<CR>
+function OpenFounder()
+  let l:filepath = system("founder")
+  if v:shell_error == 0
+    execute "e ".fnameescape(l:filepath)
+  endif
+endfunction
+nnoremap <C-t> :call OpenFounder()<CR>
+autocmd BufNewFile,BufRead * call system("founder --add " . @%)  " bad whitespace handling
 
 " yankstack settings
 let g:yankstack_map_keys = 0 " our mappings only
