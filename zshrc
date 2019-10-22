@@ -229,6 +229,26 @@ source "$DOTFILES/oh-my-zsh/plugins/safe-paste/safe-paste.plugin.zsh"
 # Load work settings.
 source "$DOTFILES/zshrc.keybase"
 
+# FZF/Founder file finder binding to Ctrl-T
+# Adapted from https://github.com/junegunn/fzf/blob/master/shell/key-bindings.zsh
+__fsel() {
+  setopt localoptions pipefail no_aliases 2> /dev/null
+  FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} --reverse $FZF_DEFAULT_OPTS $FZF_CTRL_T_OPTS" founder | while read item; do
+    echo -n "${(q)item} "
+  done
+  local ret=$?
+  echo
+  return $ret
+}
+founder-file-widget() {
+  LBUFFER="${LBUFFER}$(__fsel)"
+  local ret=$?
+  zle reset-prompt
+  return $ret
+}
+zle     -N   founder-file-widget
+bindkey '^T' founder-file-widget
+
 # Load settings specific to this machine.
 local_zshrc="$HOME/.zshrc.local"
 if [ -e "$local_zshrc" ] ; then
