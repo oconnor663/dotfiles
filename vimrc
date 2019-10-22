@@ -126,7 +126,8 @@ endif
 " Founder/FZF settings
 nnoremap <C-p> :AllFiles<CR>
 function OpenFounder()
-  let l:filepath = system("founder")
+  " Strip off the newline.
+  let l:filepath = system("founder")[:-2]
   if v:shell_error == 0
     execute "e ".fnameescape(l:filepath)
   endif
