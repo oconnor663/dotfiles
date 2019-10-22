@@ -126,8 +126,7 @@ endif
 " Founder/FZF settings
 nnoremap <C-p> :AllFiles<CR>
 function OpenFounder()
-  " Strip off the newline.
-  let l:filepath = system("founder")[:-2]
+  let l:filepath = system("founder --tmux --no-newline")
   if v:shell_error == 0
     execute "e ".fnameescape(l:filepath)
   endif
