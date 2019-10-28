@@ -164,8 +164,7 @@ let g:omni_sql_no_default_maps = 1
 " Rust
 let g:rustfmt_autosave = 1
 let g:rust_recommended_style = 0  " avoid setting tw=99
-let g:rust_cargo_check_all_targets = 1
-let g:rust_cargo_check_all_features = 1
+let g:rust_cargo_check_tests = 1
 
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#sources#rust#racer_binary='/usr/bin/racer'
