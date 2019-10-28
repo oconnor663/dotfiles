@@ -134,6 +134,30 @@ newrust() {
   "$EDITOR" src/main.rs
 }
 
+cbturbo() {
+  if [[ "$(cat /sys/devices/system/cpu/intel_pstate/no_turbo)" != 0 ]] ; then
+    echo "TurboBoost is already off." 1>&2
+    return 1
+  fi
+  BUILD_ARGS=()
+  for arg in "$@" ; do
+    if [[ "$arg" = --features* || "$arg" = --all-features || "$arg" = --no-default-features ]] ; then
+      BUILD_ARGS+=("$arg")
+    fi
+  done
+  cargo +nightly build --benches --release "$BUILD_ARGS[@]" || return $?
+  restore() {
+    if [[ "$(cat /sys/devices/system/cpu/intel_pstate/no_turbo)" != 0 ]] ; then
+      echo 0 | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo > /dev/null
+      echo "--- TurboBoost on. ---"
+    fi
+  }
+  trap restore EXIT INT TERM
+  echo "--- TurboBoost off. ---"
+  echo 1 | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo > /dev/null
+  cargo +nightly bench "$@"
+}
+
 # ack is called ack-grep in ubuntu
 if (( ! $+commands[ack] )) && (( $+commands[ack-grep]))
 then
