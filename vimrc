@@ -124,7 +124,6 @@ if has("gui_running")
 endif
 
 " Founder/FZF settings
-" nnoremap <C-p> :AllFiles<CR>
 function OpenFounder()
   let l:filepath = system("founder --tmux --no-newline")
   if v:shell_error == 0
