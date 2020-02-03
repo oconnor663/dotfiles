@@ -27,19 +27,20 @@ function link {
   ln -sfn "$HERE/$src" "$dest"
 }
 
-link ackrc        ~/.ackrc
-link gitconfig    ~/.gitconfig
-link hgrc         ~/.hgrc
-link makepkg.conf ~/.makepkg.conf
-link profile      ~/.profile
-link tmux.conf    ~/.tmux.conf
-link tmux.desktop ~/.local/share/applications/tmux.desktop
-link yaourtrc     ~/.yaourtrc
-link vim          ~/.vim
-link vim          ~/.config/nvim
-link vimrc        ~/.vimrc
-link vimrc        ~/.config/nvim/init.vim
-link zshrc        ~/.zshrc
+link ackrc         ~/.ackrc
+link alacritty.yml ~/.config/alacritty/alacritty.yml
+link gitconfig     ~/.gitconfig
+link hgrc          ~/.hgrc
+link makepkg.conf  ~/.makepkg.conf
+link profile       ~/.profile
+link tmux.conf     ~/.tmux.conf
+link tmux.desktop  ~/.local/share/applications/tmux.desktop
+link yaourtrc      ~/.yaourtrc
+link vim           ~/.vim
+link vim           ~/.config/nvim
+link vimrc         ~/.vimrc
+link vimrc         ~/.config/nvim/init.vim
+link zshrc         ~/.zshrc
 
 link keybindings.json ~/.config/Code/User/keybindings.json
 link settings.json    ~/.config/Code/User/settings.json
