@@ -132,7 +132,7 @@ function OpenFounder()
   endif
 endfunction
 nnoremap <C-t> :call OpenFounder()<CR>
-autocmd BufNewFile,BufRead * call system("founder add " . @%)  " bad whitespace handling
+autocmd BufEnter * call system("founder add " . @%)  " bad whitespace handling
 
 " yankstack settings
 let g:yankstack_map_keys = 0 " our mappings only
