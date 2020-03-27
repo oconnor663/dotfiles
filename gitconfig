@@ -13,6 +13,7 @@
 [alias]
   pick = cherry-pick
   co = checkout
+  ff = pull --ff-only
 [merge]
   conflictstyle = diff3
 [core]
