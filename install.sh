@@ -4,6 +4,8 @@ set -e
 
 HERE=$(cd $(dirname "$BASH_SOURCE"); pwd)
 
+cd "$HERE"
+
 # Source the profile file immediately, for e.g. peru settings.
 source "$HERE/profile"
 
