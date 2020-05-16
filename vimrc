@@ -17,7 +17,6 @@ set expandtab
 set list
 set listchars=tab:»\ ,trail:·
 set mouse=a
-set wildmode=list:longest,list:full
 set colorcolumn=80
 set nojoinspaces  " Join sentences with one space, not two.
 set noswapfile
