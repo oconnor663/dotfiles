@@ -115,6 +115,10 @@ if $SOLARIZED == '1'
   set background=dark
 endif
 
+" For some reason, the above command makes the git-gutter background color too
+" light. Doing this afterwards fixes it.
+highlight! link SignColumn LineNr
+
 " Solarized color scheme in the gui
 set guifont=Ubuntu\ Mono\ 15
 if has("gui_running")
