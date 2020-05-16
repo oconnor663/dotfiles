@@ -34,11 +34,11 @@ imports:
 
 git module dircolors-solarized:
   url: https://github.com/seebi/dircolors-solarized
-  rev: c8b07046acdfe4c07fa3bbafb0dd41327dc4e357
+  rev: 5fb86a3f947f0e8b3005871c2f97df80e80f3016
 
 git module oh-my-zsh:
   url: https://github.com/robbyrussell/oh-my-zsh
-  rev: e363109a6d3367d8be1dd66f05a38eb38b4257d7
+  rev: fd786291bab7468c7cdd5066ac436218a1fba9e2
 
 git module tmux-sensible:
   url: https://github.com/tmux-plugins/tmux-sensible
@@ -62,15 +62,15 @@ git module vim-colors-solarized:
 
 git module vim-commentary:
   url: https://github.com/tpope/vim-commentary.git
-  rev: 62b68aecec2de531bc3978bfb9c07d3b6759ce0e
+  rev: f8238d70f873969fb41bf6a6b07ca63a4c0b82b1
 
 git module vim-deoplete:
   url: https://github.com/Shougo/deoplete.nvim
-  rev: ff09a7ab58e5271053c59825895d607316657023
+  rev: cb9212d4a1840a7a03453b6e33bd52f87378ae93
 
 git module vim-deoplete-go:
   url: https://github.com/zchee/deoplete-go
-  rev: fa73f06f2e62ca58093eb02edc6134f002f27df4
+  rev: 4f1ccd2ed70211fd025d052ec725c0b835bea487
 
 git module vim-deoplete-rust:
   url: https://github.com/sebastianmarkow/deoplete-rust
@@ -78,59 +78,59 @@ git module vim-deoplete-rust:
 
 git module vim-easymotion:
   url: https://github.com/Lokaltog/vim-easymotion.git
-  rev: 85e90c9759e14633d878ed534ef313876ab96555
+  rev: dd7b4b526775bc8553e16bc402020573b04a948c
 
 git module vim-fugitive:
   url: https://github.com/tpope/vim-fugitive.git
-  rev: f6acae50ea4d8ec1bb1497cb886d80298b54831b
+  rev: caf3b1d5696e8d39a905e48f1e89d8c0c565168c
 
 git module vim-fzf:
   url: https://github.com/junegunn/fzf.vim
-  rev: 359a80e3a34aacbd5257713b6a88aa085337166f
+  rev: a74605b81d0dc2b28d35d9a1ab414dbdcbe3f45b
 
 git module vim-fzf-base:
   url: https://github.com/junegunn/fzf
   pick:
     - doc
     - plugin
-  rev: 391669a451c4eedd74dd6e1794601d2ca793340c
+  rev: d631c76e8d2dd18876a09d2c0919ece1a42a8721
 
 git module vim-gitgutter:
   url: https://github.com/airblade/vim-gitgutter
-  rev: af20a9fcfff9b5277fc8482e802c4dec291ea589
+  rev: b356cc9a7da08ebeb919cd04b2831dad71a34d38
 
 git module vim-go:
   url: https://github.com/fatih/vim-go
-  rev: 2f7a00e9f2ac4ec3c49bfe6234ccd290bfb782ac
+  rev: d8bbc29e8315289e5a88f7d47a4b64243dd9701f
 
 git module vim-pathogen:
   url: https://github.com/tpope/vim-pathogen.git
   export: autoload/
-  rev: e9fb0914dba5bdfe2feaa364dda2e9495c5620a2
+  rev: c6bc42404597c718e4a032a98e21e63321cbb05a
 
 git module vim-repeat:
   url: https://github.com/tpope/vim-repeat.git
-  rev: ae361bea990e27d5beade3a8d9fa22e25cec3100
+  rev: c947ad2b6a16983724a0153bdf7f66d7a80a32ca
 
 git module vim-rsi:
   url: https://github.com/tpope/vim-rsi.git
-  rev: 8b7abe2d470b7fffac6562818468e14594735564
+  rev: ad8ba6beae8e82339479104b914214a868c9f1fe
 
 git module vim-rust:
   url: https://github.com/rust-lang/rust.vim
-  rev: 97fdc4e4975515d8e8a5a82380dd85628d59a005
+  rev: 953b10061f595496b35aec84b75c413ee5751a23
 
 git module vim-sensible:
   url: https://github.com/tpope/vim-sensible.git
-  rev: 4a7159a30061b26aec9ac367823094e7fd0f6a5b
+  rev: 2d9f34c09f548ed4df213389caa2882bfe56db58
 
 git module vim-syntastic:
   url: https://github.com/scrooloose/syntastic.git
-  rev: 28bb72adbe5c610bdc07407ddb83898919e4645c
+  rev: b3e2d8470fddc7f2b598f09023ebc5045a3fb1fd
 
 git module vim-surround:
   url: https://github.com/tpope/vim-surround.git
-  rev: fab8621670f71637e9960003af28365129b1dfd0
+  rev: f51a26d3710629d031806305b6c8727189cd1935
 
 git module vim-undotree:
   url: https://github.com/mbbill/undotree
@@ -138,7 +138,7 @@ git module vim-undotree:
 
 git module vim-unimpaired:
   url: https://github.com/tpope/vim-unimpaired.git
-  rev: ab7082c0e89df594a5ba111e18af17b3377d216d
+  rev: 4afbe5ebf32ad85341b4c02b0e1d8ca96a64c561
 
 git module vim-yankstack:
   url: https://github.com/maxbrunsfeld/vim-yankstack.git
@@ -147,4 +147,4 @@ git module vim-yankstack:
 git module vim-yapf:
   url: https://github.com/google/yapf
   export: plugins/vim
-  rev: 126fc7eb85dec8fe34104ff15ed64c3a23c9534a
+  rev: 51ffe2d07930a509ecb2ef454a7b251eeeac0a59
