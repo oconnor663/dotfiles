@@ -62,6 +62,11 @@ noremap <leader>c "+y
 noremap <leader>v :set paste<CR>"+p:set nopaste<CR>
 noremap <leader>V :set paste<CR>"+P:set nopaste<CR>
 
+command WQ wq
+command Wq wq
+command W w
+command Q q
+
 " Limit line length in arc files like we do in git commits.
 autocmd BufRead new-commit set textwidth=72
 
