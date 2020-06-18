@@ -66,6 +66,7 @@ command WQ wq
 command Wq wq
 command W w
 command Q q
+command E e
 
 " Limit line length in arc files like we do in git commits.
 autocmd BufRead new-commit set textwidth=72
