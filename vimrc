@@ -1,3 +1,6 @@
+" remap backspace to last file
+nnoremap <BS> <C-^>
+
 " Founder/FZF settings
 function OpenFounder()
   let l:filepath = system("founder --tmux --no-newline")
