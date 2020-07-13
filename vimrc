@@ -10,6 +10,10 @@ noremap <Space> <Nop>
 " remap backspace to last file
 nnoremap <BS> <C-^>
 
+" clear the search highlight with Ctrl-L
+nnoremap <silent> <C-l> :nohlsearch<CR>
+imap <C-l> <Esc><C-l>a
+
 " Founder/FZF settings
 function OpenFounder()
   let l:filepath = system("founder --tmux --no-newline")
@@ -22,7 +26,7 @@ autocmd BufEnter * call system("founder add " . fnameescape(@%))
 
 " EasyMotion settings
 let g:EasyMotion_do_mapping = 0 " Disable default mappings
-map <Leader>w <Plug>(easymotion-bd-w)
+nmap <Leader>w <Plug>(easymotion-bd-w)
 
 """""""""""""" CoC settings """""""""""""""""""""""
 
