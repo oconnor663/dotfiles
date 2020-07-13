@@ -1,4 +1,6 @@
 set number
+set ignorecase
+set smartcase
 set termguicolors
 set background=dark
 colorscheme solarized8
