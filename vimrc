@@ -7,6 +7,13 @@ set termguicolors
 set background=dark
 colorscheme solarized8
 
+" common typos
+command WQ wq
+command Wq wq
+command W w
+command Q q
+command E e
+
 " Leader key is space.
 let mapleader = " "
 noremap <Space> <Nop>
