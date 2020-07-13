@@ -1,6 +1,8 @@
 set number
 set ignorecase
 set smartcase
+set list
+set listchars=tab:»\ ,trail:·
 set termguicolors
 set background=dark
 colorscheme solarized8
