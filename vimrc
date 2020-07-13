@@ -1,3 +1,8 @@
+set number
+set termguicolors
+set background=dark
+colorscheme solarized8
+
 " remap backspace to last file
 nnoremap <BS> <C-^>
 
