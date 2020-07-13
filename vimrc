@@ -20,6 +20,10 @@ endfunction
 nnoremap <C-t> :call OpenFounder()<CR>
 autocmd BufEnter * call system("founder add " . fnameescape(@%))
 
+" EasyMotion settings
+let g:EasyMotion_do_mapping = 0 " Disable default mappings
+map <Leader>w <Plug>(easymotion-bd-w)
+
 """""""""""""" CoC settings """""""""""""""""""""""
 
 " TextEdit might fail if hidden is not set.

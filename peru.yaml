@@ -7,6 +7,7 @@ imports:
   tmux-sensible:         tmux/sensible
 
   vim-coc: vim_pack/coc/start/coc
+  vim-easymotion: vim_pack/easymotion/start/easymotion
   vim-solarized8: vim_pack/solarized8/start/solarized8
 
 git module dircolors-solarized:
@@ -28,6 +29,10 @@ git module tmux-colors-solarized:
 git module vim-coc:
   url: https://github.com/neoclide/coc.nvim
   rev: 449dcad0b20080c4f58ae827146fc700287e4141
+
+git module vim-easymotion:
+  url: https://github.com/easymotion/vim-easymotion
+  rev: dd7b4b526775bc8553e16bc402020573b04a948c
 
 git module vim-solarized8:
   url: https://github.com/lifepillar/vim-solarized8
