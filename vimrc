@@ -3,6 +3,10 @@ set termguicolors
 set background=dark
 colorscheme solarized8
 
+" Leader key is space.
+let mapleader = " "
+noremap <Space> <Nop>
+
 " remap backspace to last file
 nnoremap <BS> <C-^>
 
