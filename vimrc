@@ -39,6 +39,9 @@ autocmd BufEnter * call system("founder add " . fnameescape(@%))
 let g:EasyMotion_do_mapping = 0 " Disable default mappings
 nmap <Leader>w <Plug>(easymotion-bd-w)
 
+" Prefer // over /*...*/. Used by vim-commentary.
+autocmd FileType c,cpp,cs,java setlocal commentstring=//\ %s
+
 """""""""""""" CoC settings """""""""""""""""""""""
 
 " TextEdit might fail if hidden is not set.

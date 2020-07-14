@@ -9,6 +9,7 @@ imports:
   vim-airline: vim_pack/airline/start/airline
   vim-airline-themes: vim_pack/airline_themes/start/airline_themes
   vim-coc: vim_pack/coc/start/coc
+  vim-commentary: vim_pack/commentary/start/commentary
   vim-easymotion: vim_pack/easymotion/start/easymotion
   vim-solarized8: vim_pack/solarized8/start/solarized8
 
@@ -39,6 +40,10 @@ git module vim-airline-themes:
 git module vim-coc:
   url: https://github.com/neoclide/coc.nvim
   rev: 449dcad0b20080c4f58ae827146fc700287e4141
+
+git module vim-commentary:
+  url: https://github.com/tpope/vim-commentary.git
+  rev: f8238d70f873969fb41bf6a6b07ca63a4c0b82b1
 
 git module vim-easymotion:
   url: https://github.com/easymotion/vim-easymotion
