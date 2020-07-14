@@ -11,6 +11,7 @@ imports:
   vim-coc: vim_pack/coc/start/coc
   vim-commentary: vim_pack/commentary/start/commentary
   vim-easymotion: vim_pack/easymotion/start/easymotion
+  vim-fugitive: vim_pack/fugitive/start/fugitive
   vim-solarized8: vim_pack/solarized8/start/solarized8
 
 git module dircolors-solarized:
@@ -48,6 +49,10 @@ git module vim-commentary:
 git module vim-easymotion:
   url: https://github.com/easymotion/vim-easymotion
   rev: dd7b4b526775bc8553e16bc402020573b04a948c
+
+git module vim-fugitive:
+  url: https://github.com/tpope/vim-fugitive
+  rev: 1da7c133b109cd329060174a104e325e4d6bcc82
 
 git module vim-solarized8:
   url: https://github.com/lifepillar/vim-solarized8
