@@ -235,9 +235,6 @@ key[Delete]=${terminfo[kdch1]}
 # Starship command prompt
 eval "$(starship init zsh)"
 
-# Load work settings.
-source "$DOTFILES/zshrc.keybase"
-
 # Load settings specific to this machine.
 local_zshrc="$HOME/.zshrc.local"
 if [ -e "$local_zshrc" ] ; then

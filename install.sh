@@ -44,9 +44,6 @@ link vimrc         ~/.config/nvim/init.vim
 link vim_pack      ~/.local/share/nvim/site/pack
 link zshrc         ~/.zshrc
 
-link keybindings.json ~/.config/Code/User/keybindings.json
-link settings.json    ~/.config/Code/User/settings.json
-
 for script in $(ls bin); do
   link "bin/$script" ~/bin/"$script"
 done
