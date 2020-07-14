@@ -42,6 +42,10 @@ nmap <Leader>w <Plug>(easymotion-bd-w)
 " Prefer // over /*...*/. Used by vim-commentary.
 autocmd FileType c,cpp,cs,java setlocal commentstring=//\ %s
 
+" coc-git bindings
+nmap <Leader>hu :CocCommand git.chunkUndo<CR>
+nmap <Leader>hs :CocCommand git.chunkStage<CR>
+
 """""""""""""" CoC settings """""""""""""""""""""""
 
 " TextEdit might fail if hidden is not set.
