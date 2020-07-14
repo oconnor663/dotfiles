@@ -232,9 +232,6 @@ key[Delete]=${terminfo[kdch1]}
 [[ -n "${key[Insert]}"  ]]  && bindkey  "${key[Insert]}"  overwrite-mode
 [[ -n "${key[Delete]}"  ]]  && bindkey  "${key[Delete]}"  delete-char
 
-# Safe paste: give me a chance to edit multi-line commands that I paste in.
-source "$DOTFILES/oh-my-zsh/plugins/safe-paste/safe-paste.plugin.zsh"
-
 # Starship command prompt
 eval "$(starship init zsh)"
 

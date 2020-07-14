@@ -1,8 +1,6 @@
 imports:
   dircolors-solarized: dircolors-solarized
 
-  oh-my-zsh: oh-my-zsh
-
   tmux-colors-solarized: tmux/solarized
   tmux-sensible:         tmux/sensible
 
@@ -17,10 +15,6 @@ imports:
 git module dircolors-solarized:
   url: https://github.com/seebi/dircolors-solarized
   rev: 5fb86a3f947f0e8b3005871c2f97df80e80f3016
-
-git module oh-my-zsh:
-  url: https://github.com/robbyrussell/oh-my-zsh
-  rev: fd786291bab7468c7cdd5066ac436218a1fba9e2
 
 git module tmux-sensible:
   url: https://github.com/tmux-plugins/tmux-sensible
