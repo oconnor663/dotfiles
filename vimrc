@@ -51,6 +51,20 @@ nmap <Leader>hs :CocCommand git.chunkStage<CR>
 " vim-airline settings
 let g:airline_powerline_fonts = 1
 
+" insert line mappings adapted from vim-unimpaired
+function! s:BlankUp(count) abort
+  put!=repeat(nr2char(10), a:count)
+  ']+1
+  silent! call repeat#set("\<Plug>unimpairedBlankUp", a:count)
+endfunction
+function! s:BlankDown(count) abort
+  put =repeat(nr2char(10), a:count)
+  '[-1
+  silent! call repeat#set("\<Plug>unimpairedBlankDown", a:count)
+endfunction
+nnoremap <silent> [<Space> :<C-U>call <SID>BlankUp(v:count1)<CR>
+nnoremap <silent> ]<Space> :<C-U>call <SID>BlankDown(v:count1)<CR>
+
 """""""""""""" CoC settings """""""""""""""""""""""
 
 " TextEdit might fail if hidden is not set.
