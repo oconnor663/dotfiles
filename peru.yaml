@@ -10,6 +10,7 @@ imports:
   vim-commentary: vim_pack/commentary/start/commentary
   vim-easymotion: vim_pack/easymotion/start/easymotion
   vim-fugitive: vim_pack/fugitive/start/fugitive
+  vim-rust: vim_pack/rust/start/rust
   vim-solarized8: vim_pack/solarized8/start/solarized8
 
 git module dircolors-solarized:
@@ -47,6 +48,10 @@ git module vim-easymotion:
 git module vim-fugitive:
   url: https://github.com/tpope/vim-fugitive
   rev: 1da7c133b109cd329060174a104e325e4d6bcc82
+
+git module vim-rust:
+  url: https://github.com/rust-lang/rust.vim
+  rev: 0d8ce07aaa3b95e61bf319b25bb3b1a4ecc780c2
 
 git module vim-solarized8:
   url: https://github.com/lifepillar/vim-solarized8
