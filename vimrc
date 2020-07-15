@@ -8,9 +8,11 @@ set background=dark
 colorscheme solarized8
 
 " common typos
+command W w
 command WQ wq
 command Wq wq
-command W w
+command WA wa
+command Wa wa
 command Q q
 command E e
 
