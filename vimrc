@@ -1,3 +1,4 @@
+set hidden
 set number
 set ignorecase
 set smartcase
@@ -68,7 +69,7 @@ nnoremap <silent> ]<Space> :<C-U>call <SID>BlankDown(v:count1)<CR>
 """""""""""""" CoC settings """""""""""""""""""""""
 
 " TextEdit might fail if hidden is not set.
-set hidden
+" set hidden
 
 " Some servers have issues with backup files, see #649.
 set nobackup
