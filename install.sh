@@ -31,19 +31,20 @@ function link {
   ln -sfn "$HERE/$src" "$dest"
 }
 
-link ackrc         ~/.ackrc
-link alacritty.yml ~/.config/alacritty/alacritty.yml
-link gitconfig     ~/.gitconfig
-link hgrc          ~/.hgrc
-link makepkg.conf  ~/.makepkg.conf
-link profile       ~/.profile
-link starship.toml ~/.config/starship.toml
-link tmux.conf     ~/.tmux.conf
-link tmux.desktop  ~/.local/share/applications/tmux.desktop
-link yaourtrc      ~/.yaourtrc
-link vimrc         ~/.config/nvim/init.vim
-link vim_pack      ~/.local/share/nvim/site/pack
-link zshrc         ~/.zshrc
+link ackrc             ~/.ackrc
+link alacritty.yml     ~/.config/alacritty/alacritty.yml
+link coc-settings.json ~/.config/nvim/coc-settings.json
+link gitconfig         ~/.gitconfig
+link hgrc              ~/.hgrc
+link makepkg.conf      ~/.makepkg.conf
+link profile           ~/.profile
+link starship.toml     ~/.config/starship.toml
+link tmux.conf         ~/.tmux.conf
+link tmux.desktop      ~/.local/share/applications/tmux.desktop
+link yaourtrc          ~/.yaourtrc
+link vimrc             ~/.config/nvim/init.vim
+link vim_pack          ~/.local/share/nvim/site/pack
+link zshrc             ~/.zshrc
 
 for script in $(ls bin); do
   link "bin/$script" ~/bin/"$script"
