@@ -232,25 +232,8 @@ key[Delete]=${terminfo[kdch1]}
 [[ -n "${key[Insert]}"  ]]  && bindkey  "${key[Insert]}"  overwrite-mode
 [[ -n "${key[Delete]}"  ]]  && bindkey  "${key[Delete]}"  delete-char
 
-setopt prompt_subst
-if [[ -n $SOLARIZED ]] ; then
-  export PROMPT='%(?..%F{red}%? )%F{cyan}%M %F{blue}%~ %F{yellow}$(__git_ps1 "%s ")%f'
-else
-  # Bold blue is more visible in the Linux console.
-  export PROMPT='%(?..%F{red}%? )%F{cyan}%M %B%F{blue}%~%b %F{yellow}$(__git_ps1 "%s ")%f'
-fi
-
-# defines __git_prompt for the prompt above
-# Note: It doesn't generally work to source random files from oh-my-zsh, since
-# they often depend on definitions from lib/, and we don't source those. This
-# file is fine though -- it's copied from the core git project.
-source "$DOTFILES/oh-my-zsh/plugins/gitfast/git-prompt.sh"
-
-# Safe paste: give me a chance to edit multi-line commands that I paste in.
-source "$DOTFILES/oh-my-zsh/plugins/safe-paste/safe-paste.plugin.zsh"
-
-# Load work settings.
-source "$DOTFILES/zshrc.keybase"
+# Starship command prompt
+eval "$(starship init zsh)"
 
 # Load settings specific to this machine.
 local_zshrc="$HOME/.zshrc.local"

@@ -1,0 +1,25 @@
+[directory]
+truncation_length = 0
+truncate_to_repo = false
+style = "bold blue"
+
+[character]
+use_symbol_for_status = true
+
+[git_branch]
+symbol = " "
+
+[golang]
+symbol = " "
+
+[nodejs]
+symbol = " "
+
+[package]
+symbol = " "
+
+[python]
+symbol = " "
+
+[rust]
+symbol = " "

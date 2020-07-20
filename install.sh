@@ -22,6 +22,8 @@ fi
 
 peru sync
 
+(cd vim_pack/coc/start/coc && yarn install --frozen-lockfile)
+
 function link {
   local src="$1"
   local dest="$2"
@@ -29,26 +31,20 @@ function link {
   ln -sfn "$HERE/$src" "$dest"
 }
 
-link ackrc         ~/.ackrc
-link alacritty.yml ~/.config/alacritty/alacritty.yml
-link gitconfig     ~/.gitconfig
-link hgrc          ~/.hgrc
-link makepkg.conf  ~/.makepkg.conf
-link profile       ~/.profile
-link tmux.conf     ~/.tmux.conf
-link tmux.desktop  ~/.local/share/applications/tmux.desktop
-link yaourtrc      ~/.yaourtrc
-link vim           ~/.vim
-link vim           ~/.config/nvim
-link vimrc         ~/.vimrc
-link vimrc         ~/.config/nvim/init.vim
-link zshrc         ~/.zshrc
-
-link keybindings.json ~/.config/Code/User/keybindings.json
-link settings.json    ~/.config/Code/User/settings.json
-
-# Doing this in .vimrc is unnecessarily hard.
-mkdir -p ~/.vim-tmp
+link ackrc             ~/.ackrc
+link alacritty.yml     ~/.config/alacritty/alacritty.yml
+link coc-settings.json ~/.config/nvim/coc-settings.json
+link gitconfig         ~/.gitconfig
+link hgrc              ~/.hgrc
+link makepkg.conf      ~/.makepkg.conf
+link profile           ~/.profile
+link starship.toml     ~/.config/starship.toml
+link tmux.conf         ~/.tmux.conf
+link tmux.desktop      ~/.local/share/applications/tmux.desktop
+link yaourtrc          ~/.yaourtrc
+link vimrc             ~/.config/nvim/init.vim
+link vim_pack          ~/.local/share/nvim/site/pack
+link zshrc             ~/.zshrc
 
 for script in $(ls bin); do
   link "bin/$script" ~/bin/"$script"
