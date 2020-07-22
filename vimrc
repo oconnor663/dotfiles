@@ -1,11 +1,12 @@
+set background=dark
 set hidden
-set number
 set ignorecase
-set smartcase
 set list
 set listchars=tab:»\ ,trail:·
+set number
+set smartcase
 set termguicolors
-set background=dark
+
 colorscheme solarized8
 
 " common typos
