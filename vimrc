@@ -5,6 +5,7 @@ set ignorecase
 set list
 set listchars=tab:»\ ,trail:·
 set number
+set scrolloff=2
 set smartcase
 set termguicolors
 
