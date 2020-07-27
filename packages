@@ -17,7 +17,7 @@ python-neovim
 ripgrep
 rustup
 rust-analyzer
-starship
+starship-bin
 tmux
 tree
 yarn
