@@ -1,12 +1,15 @@
 set background=dark
 set cursorline
+set expandtab
 set hidden
 set ignorecase
 set list
 set listchars=tab:»\ ,trail:·
 set number
 set scrolloff=2
+set shiftwidth=4
 set smartcase
+set tabstop=4
 set termguicolors
 
 colorscheme solarized8
