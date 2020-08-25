@@ -53,14 +53,5 @@ done
 
 # For Gnome, set terminal preferences and remap caps lock.
 if which dconf &> /dev/null ; then
-  dpi_setting="/org/gnome/settings-daemon/plugins/xsettings/overrides"
-  dpi_value="'Gdk/WindowScalingFactor': <2>"
-  if dconf read "$dpi_setting" | grep "$dpi_value" > /dev/null ; then
-    echo "2x DPI scaling detected. Using smaller terminal font size."
-    font_size=12
-  else
-    echo "No DPI scaling detected. Using larger terminal font size."
-    font_size=15
-  fi
-  sed "s/@@FONTSIZE@@/$font_size/" $HERE/gnome-dconf-settings.template | dconf load /
+  dconf load / < "$HERE/gnome-dconf-settings"
 fi
