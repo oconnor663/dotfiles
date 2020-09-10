@@ -5,6 +5,7 @@ set hidden
 set ignorecase
 set list
 set listchars=tab:»\ ,trail:·
+set nojoinspaces
 set number
 set scrolloff=2
 set shiftwidth=4
