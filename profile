@@ -11,7 +11,6 @@ export PATH="$HOME/bin:$HOME/.local/bin:$HOME/.cargo/bin:$GOPATH/bin:$PATH"
 export PERU_CACHE_DIR="$HOME/.peru-cache"
 
 export DOTFILES="$HOME/dotfiles"
-export PYTHONSTARTUP="$DOTFILES/startup.py"
 
 export BAT_THEME="Solarized (dark)"
 
