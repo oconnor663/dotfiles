@@ -4,7 +4,6 @@ else
   export EDITOR=vim
 fi
 
-export RUST_SRC_PATH="$HOME/rust/src"
 export GOPATH=~/go
 export PATH="$HOME/bin:$HOME/.local/bin:$HOME/.cargo/bin:$GOPATH/bin:$PATH"
 
