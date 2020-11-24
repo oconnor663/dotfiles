@@ -39,9 +39,9 @@ alias gca="gcamend -a"
 alias gcff="git clean -dffx"
 alias grh='git reset --hard'
 alias gpr='git pull --rebase'
-alias gfra='git fetch && git rebase --autostash origin/master'
-alias gout='git log origin/master.. --oneline'
-alias goutp='git log origin/master.. -p'
+alias gfra='git fetch && git rebase --autostash "$(git_main_branch_name)"'
+alias gout='git log "$(git_main_branch_name)".. --oneline'
+alias goutp='git log "$(git_main_branch_name)".. -p'
 alias ginit='git init && git add -A && git commit -m "first commit"'
 alias glog='git log --oneline --decorate --graph'
 alias gloga='git log --oneline --decorate --graph --all'
@@ -65,8 +65,8 @@ function gpo() {
 }
 function gup() {
   git fetch && \
-  if [[ -n "$(git log HEAD..origin/master -1)" ]] ; then
-    git rebase origin/master --autostash
+  if [[ -n "$(git log HEAD.."$(git_main_branch_name)" -1)" ]] ; then
+    git rebase "$(git_main_branch_name)" --autostash
   else
     echo Up to date.
   fi
@@ -81,6 +81,18 @@ function c() {
 function hl() {
   # https://unix.stackexchange.com/a/367/23305
   grep --color -E "$1|$" "${@:2}"
+}
+function git_main_branch_name() {
+    if git rev-parse origin/master > /dev/null 2>&1 ; then
+        echo origin/master
+        return 0
+    elif git rev-parse origin/main > /dev/null 2>&1 ; then
+        echo origin/main
+        return 0
+    else
+        echo "Can't figure out main branch name."
+        return 1
+    fi
 }
 alias ct='tmux show-buffer | c'
 alias v='xclip -o -selection clipboard'
