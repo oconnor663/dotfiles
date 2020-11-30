@@ -2,6 +2,7 @@ clang
 fd
 fzf
 git
+htop
 ipython
 mosh-git
 ncdu
