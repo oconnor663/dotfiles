@@ -28,15 +28,15 @@ git module tmux-colors-solarized:
 
 git module vim-airline:
   url: https://github.com/vim-airline/vim-airline
-  rev: 8608270bd39e9aa31bbdb8cd22b2ba776037feb6
+  rev: 17bf22e6fb4f8492c95b96538283413bd3c1175a
 
 git module vim-airline-themes:
   url: https://github.com/vim-airline/vim-airline-themes
-  rev: e1b0d9f86cf89e84b15c459683fd72730e51a054
+  rev: 8f1aa2c7fa44bf33b1fd4678f9c7b40c126b0e2b
 
 git module vim-coc:
   url: https://github.com/neoclide/coc.nvim
-  rev: d3293597d194cd376c567453cb230bffcd96eb43
+  rev: cf0e8400a4c07507590226f64dc7a631f36edf27
 
 git module vim-commentary:
   url: https://github.com/tpope/vim-commentary.git
@@ -44,11 +44,11 @@ git module vim-commentary:
 
 git module vim-easymotion:
   url: https://github.com/easymotion/vim-easymotion
-  rev: 6c9c0547bfcca6a059dfaaf39dcac1b8c4e814c4
+  rev: d75d9591e415652b25d9e0a3669355550325263d
 
 git module vim-fugitive:
   url: https://github.com/tpope/vim-fugitive
-  rev: 89e6b5e4e1d8152bfc3c26aa2655c0342d0809d1
+  rev: bebe504e38d0a20c30d6dd666c4c793b3cc66104
 
 git module vim-rust:
   url: https://github.com/rust-lang/rust.vim
