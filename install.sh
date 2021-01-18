@@ -37,6 +37,8 @@ link coc-settings.json  ~/.config/nvim/coc-settings.json
 link docker_config.json ~/.docker/config.json
 link gitconfig          ~/.gitconfig
 link hgrc               ~/.hgrc
+link kakrc              ~/.config/kak/kakrc
+link kak-autoload       ~/.config/kak/autoload
 link makepkg.conf       ~/.makepkg.conf
 link profile            ~/.profile
 link starship.toml      ~/.config/starship.toml
