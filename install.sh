@@ -39,6 +39,7 @@ link gitconfig          ~/.gitconfig
 link hgrc               ~/.hgrc
 link kakrc              ~/.config/kak/kakrc
 link kak-autoload       ~/.config/kak/autoload
+link kitty.conf         ~/.config/kitty/kitty.conf
 link makepkg.conf       ~/.makepkg.conf
 link profile            ~/.profile
 link starship.toml      ~/.config/starship.toml
