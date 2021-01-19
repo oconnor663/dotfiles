@@ -1,7 +1,7 @@
-if which nvim > /dev/null ; then
-  export EDITOR=nvim
+if which kak > /dev/null ; then
+  export EDITOR=kak
 else
-  export EDITOR=vim
+  export EDITOR=vi
 fi
 
 export GOPATH=~/go

@@ -98,6 +98,8 @@ alias ct='tmux show-buffer | c'
 alias v='xclip -o -selection clipboard'
 alias ri='rg -i'
 alias gi='grep -i'
+alias vim='echo use kak'
+alias nvim='echo use kak'
 
 # State-saving commands for git. The `git clean` at the end of the last two is
 # to handle a weird bug where inner git directories aren't removed (though the
