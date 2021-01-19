@@ -1,9 +1,4 @@
 imports:
-  dircolors-solarized: dircolors-solarized
-
-  tmux-colors-solarized: tmux/solarized
-  tmux-sensible:         tmux/sensible
-
   vim-airline: vim_pack/airline/start/airline
   vim-airline-themes: vim_pack/airline_themes/start/airline_themes
   vim-coc: vim_pack/coc/start/coc
@@ -13,18 +8,6 @@ imports:
   vim-rust: vim_pack/rust/start/rust
   vim-solarized8: vim_pack/solarized8/start/solarized8
   vim-surround: vim_pack/surround/start/surround
-
-git module dircolors-solarized:
-  url: https://github.com/seebi/dircolors-solarized
-  rev: 65d4d595ceca96166139862131a006fa3079e00a
-
-git module tmux-sensible:
-  url: https://github.com/tmux-plugins/tmux-sensible
-  rev: e91b178ff832b7bcbbf4d99d9f467f63fd1b76b5
-
-git module tmux-colors-solarized:
-  url: https://github.com/seebi/tmux-colors-solarized
-  rev: e5e7b4f1af37f8f3fc81ca17eadee5ae5d82cd09
 
 git module vim-airline:
   url: https://github.com/vim-airline/vim-airline
