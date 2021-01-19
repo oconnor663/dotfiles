@@ -3,7 +3,7 @@ Name=Tmux
 Keywords=shell;prompt;command;commandline;
 # Force the shell to be interactive, so that color settings
 # get sourced and tmux itself runs with the right env vars.
-Exec=gnome-terminal -e "zsh -i -c tmux"
+Exec=alacritty -e tmux
 Icon=utilities-terminal
 Type=Application
 Categories=GNOME;GTK;System;TerminalEmulator;
