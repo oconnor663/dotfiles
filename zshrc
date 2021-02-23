@@ -109,7 +109,9 @@ alias deflate='python3 -c "import zlib,sys;sys.stdout.buffer.write(zlib.compress
 alias inflate='python3 -c "import zlib,sys;sys.stdout.buffer.write(zlib.decompress(sys.stdin.buffer.read()))"'
 
 venv() {
-  dir="$(mktemp -d)"
+  dir="$(mktemp -d --tmpdir venv.XXX)"
+  echo "$dir (/tmp/venv)"
+  ln -snf "$dir" /tmp/venv
   target_python="${1:-python}"
   real_python="$(basename "$(realpath "$(which "$target_python")")")"
   virtualenv "$dir" -p "$real_python" --prompt "[$real_python] "
