@@ -1,4 +1,4 @@
-if which nvim > /dev/null ; then
+if which nvim > /dev/null 2> /dev/null; then
   export EDITOR=nvim
 else
   export EDITOR=vim
