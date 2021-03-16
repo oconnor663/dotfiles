@@ -18,3 +18,5 @@
   conflictstyle = diff3
 [core]
   pager = $HOME/dotfiles/git_pager.sh
+[pull]
+	ff = only
