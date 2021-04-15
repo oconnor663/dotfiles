@@ -16,11 +16,11 @@ imports:
 
 git module dircolors-solarized:
   url: https://github.com/seebi/dircolors-solarized
-  rev: 65d4d595ceca96166139862131a006fa3079e00a
+  rev: 03393f25e241e45fe9341d7baaa2507fd9741a53
 
 git module tmux-sensible:
   url: https://github.com/tmux-plugins/tmux-sensible
-  rev: e91b178ff832b7bcbbf4d99d9f467f63fd1b76b5
+  rev: 989d09249e9389604a68d281c999978f6231431b
 
 git module tmux-colors-solarized:
   url: https://github.com/seebi/tmux-colors-solarized
@@ -28,19 +28,19 @@ git module tmux-colors-solarized:
 
 git module vim-airline:
   url: https://github.com/vim-airline/vim-airline
-  rev: 17bf22e6fb4f8492c95b96538283413bd3c1175a
+  rev: 4a64fbfc4bdb2cf91b2b50ca3f41b852061d614e
 
 git module vim-airline-themes:
   url: https://github.com/vim-airline/vim-airline-themes
-  rev: 8f1aa2c7fa44bf33b1fd4678f9c7b40c126b0e2b
+  rev: 531bcc9e5a4cb1b1fb4dec8face230bf3d205ac7
 
 git module vim-coc:
   url: https://github.com/neoclide/coc.nvim
-  rev: cf0e8400a4c07507590226f64dc7a631f36edf27
+  rev: 971c5f81b4564bbcb1f3d34e23149bd070dff127
 
 git module vim-commentary:
   url: https://github.com/tpope/vim-commentary.git
-  rev: f8238d70f873969fb41bf6a6b07ca63a4c0b82b1
+  rev: 349340debb34f6302931f0eb7139b2c11dfdf427
 
 git module vim-easymotion:
   url: https://github.com/easymotion/vim-easymotion
@@ -48,15 +48,15 @@ git module vim-easymotion:
 
 git module vim-fugitive:
   url: https://github.com/tpope/vim-fugitive
-  rev: bebe504e38d0a20c30d6dd666c4c793b3cc66104
+  rev: c926aadfaf2cff0c684d305c8ff1a59378e7d7f5
 
 git module vim-rust:
   url: https://github.com/rust-lang/rust.vim
-  rev: 96e79e397126be1a64fb53d8e3656842fe1a4532
+  rev: 87c745d8d506fc1eecc1d81df15d5bde1658a2fc
 
 git module vim-solarized8:
   url: https://github.com/lifepillar/vim-solarized8
-  rev: 7b6399093c090ef931e9a4ba031bff90fb7c8de1
+  rev: 28b81a4263054f9584a98f94cca3e42815d44725
 
 git module vim-surround:
   url: https://github.com/tpope/vim-surround

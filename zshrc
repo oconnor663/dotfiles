@@ -117,6 +117,7 @@ venv() {
   virtualenv "$dir" -p "$real_python" --prompt "[$real_python] "
   source "$dir/bin/activate"
 }
+alias vact="source /tmp/venv/bin/activate"
 
 newgo() {
   dir="$(mktemp -d)"
