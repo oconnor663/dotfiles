@@ -35,6 +35,7 @@ link ackrc              ~/.ackrc
 link alacritty.yml      ~/.config/alacritty/alacritty.yml
 link coc-settings.json  ~/.config/nvim/coc-settings.json
 link docker_config.json ~/.docker/config.json
+link gdbinit            ~/.gdbinit
 link gitconfig          ~/.gitconfig
 link hgrc               ~/.hgrc
 link kakrc              ~/.config/kak/kakrc
