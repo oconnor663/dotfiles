@@ -146,6 +146,36 @@ newrust() {
   "$EDITOR" src/main.rs
 }
 
+newcpp() {
+  dir="$(mktemp -d)"
+  ln -sfn "$dir" /tmp/lastcpp
+  cd "$dir"
+  ln -sfn "$DOTFILES/clang-format" .clang-format
+  cat << EOF > scratch.cpp
+#include <iostream>
+
+using namespace std;
+
+int main() {
+  cout << "hello" << endl;
+}
+EOF
+  cat << EOF > Makefile
+run: scratch
+	./scratch
+
+scratch: scratch.cpp
+	g++ \$^ -o \$@ -std=c++20 -fsanitize=undefined,address
+
+clean:
+	rm scratch
+EOF
+  git init
+  git add -A
+  git commit -m "first"
+  "$EDITOR" scratch.cpp
+}
+
 cbturbo() {
   if [[ "$(cat /sys/devices/system/cpu/intel_pstate/no_turbo)" != 0 ]] ; then
     echo "TurboBoost is already off." 1>&2
