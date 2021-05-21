@@ -83,11 +83,11 @@ function hl() {
   grep --color -E "$1|$" "${@:2}"
 }
 function git_main_branch_name() {
-    if git rev-parse origin/master > /dev/null 2>&1 ; then
-        echo origin/master
-        return 0
-    elif git rev-parse origin/main > /dev/null 2>&1 ; then
+    if git rev-parse origin/main > /dev/null 2>&1 ; then
         echo origin/main
+        return 0
+    elif git rev-parse origin/master > /dev/null 2>&1 ; then
+        echo origin/master
         return 0
     else
         echo "Can't figure out main branch name."
