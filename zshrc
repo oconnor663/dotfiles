@@ -154,6 +154,8 @@ newcpp() {
   ln -sfn "$DOTFILES/clang-format" .clang-format
   cat << EOF > scratch.cpp
 #include <iostream>
+#include <string>
+#include <vector>
 
 using namespace std;
 
