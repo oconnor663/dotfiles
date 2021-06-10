@@ -1,0 +1,47 @@
+#! /usr/bin/env python3
+
+import binascii
+import io
+import json
+import saltpack
+import sys
+import umsgpack
+
+
+def json_repr(obj):
+    # We need to repr everything that JSON doesn't directly support,
+    # particularly bytes.
+    def _recurse_repr(obj):
+        if isinstance(obj, (list, tuple)):
+            return [_recurse_repr(x) for x in obj]
+        elif isinstance(obj, dict):
+            return {_recurse_repr(key): _recurse_repr(val)
+                    for key, val in obj.items()}
+        elif isinstance(obj, bytes):
+            try:
+                obj.decode('utf8')
+                return repr(obj)
+            except UnicodeDecodeError:
+                return binascii.hexlify(obj).decode()
+        else:
+            return obj
+    return json.dumps(_recurse_repr(obj), indent='  ')
+
+
+def main():
+    dearmored = saltpack.armor.dearmor(sys.stdin.read())
+    bio = io.BytesIO(dearmored)
+
+    print("# header")
+    # The header packet is double encoded.
+    print(json_repr(umsgpack.unpackb(umsgpack.unpack(bio))))
+
+    n = 0
+    while bio.tell() < len(dearmored):
+        print("# body packet", n)
+        n += 1
+        print(json_repr(umsgpack.unpack(bio)))
+
+
+if __name__ == "__main__":
+    main()
