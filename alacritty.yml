@@ -15,6 +15,9 @@ window:
     y: 3
   decorations: full
 
+mouse:
+  hide_when_typing: true
+
 # https://github.com/eendroroy/alacritty-theme/blob/master/themes/solarized_light.yaml
 colors:
   primary:
