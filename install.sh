@@ -43,7 +43,6 @@ link profile            ~/.profile
 link starship.toml      ~/.config/starship.toml
 link tmux.conf          ~/.tmux.conf
 link tmux.desktop       ~/.local/share/applications/tmux.desktop
-link yaourtrc           ~/.yaourtrc
 link vimrc              ~/.config/nvim/init.vim
 link vim_pack           ~/.local/share/nvim/site/pack
 link zshrc              ~/.zshrc
