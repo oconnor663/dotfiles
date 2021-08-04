@@ -1,6 +1,9 @@
 font:
   normal:
     family: UbuntuMono Nerd Font
+  bold:
+    family: UbuntuMono Nerd Font
+    style: regular
   size: 20
 key_bindings:
   - { key: N, mods: Control|Shift, action: SpawnNewInstance }
