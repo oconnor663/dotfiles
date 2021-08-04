@@ -54,8 +54,3 @@ link zshrc              ~/.zshrc
 for script in $(ls bin); do
   link "bin/$script" ~/bin/"$script"
 done
-
-# For Gnome, set terminal preferences and remap caps lock.
-if which dconf &> /dev/null ; then
-  dconf load / < "$HERE/gnome-dconf-settings"
-fi
