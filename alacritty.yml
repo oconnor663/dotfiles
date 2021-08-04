@@ -6,7 +6,8 @@ font:
     style: regular
   size: 20
 key_bindings:
-  - { key: N, mods: Control|Shift, action: SpawnNewInstance }
+  - { key: N,   mods: Control|Shift, action: SpawnNewInstance }
+  - { key: F11,                      action: ToggleFullscreen }
 
 window:
   padding:
