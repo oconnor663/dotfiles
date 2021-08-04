@@ -1,4 +1,5 @@
 set background=light
+set clipboard=unnamed,unnamedplus
 set cursorline
 set expandtab
 set hidden
