@@ -31,7 +31,6 @@ function link {
   ln -sfn "$HERE/$src" "$dest"
 }
 
-link ackrc              ~/.ackrc
 link alacritty.yml      ~/.config/alacritty/alacritty.yml
 link coc-settings.json  ~/.config/nvim/coc-settings.json
 link docker_config.json ~/.docker/config.json
