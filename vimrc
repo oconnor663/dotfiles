@@ -1,4 +1,4 @@
-set background=dark
+set background=light
 set cursorline
 set expandtab
 set hidden
