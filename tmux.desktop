@@ -1,10 +1,16 @@
 [Desktop Entry]
-Name=Tmux
-Keywords=shell;prompt;command;commandline;
-# Force the shell to be interactive, so that color settings
-# get sourced and tmux itself runs with the right env vars.
-Exec=gnome-terminal -e "zsh -i -c tmux"
-Icon=utilities-terminal
 Type=Application
-Categories=GNOME;GTK;System;TerminalEmulator;
-StartupNotify=true
+Exec=env WAYLAND_DISPLAY= alacritty --class AlacrittyTmux --command tmux
+Icon=Alacritty
+Terminal=false
+Categories=System;TerminalEmulator;
+
+Name=Tmux
+StartupWMClass=AlacrittyTmux
+Actions=New;
+
+X-Desktop-File-Install-Version=0.26
+
+[Desktop Action New]
+Name=New Terminal
+Exec=env WAYLAND_DISPLAY= alacritty --class AlacrittyTmux --command tmux
