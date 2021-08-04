@@ -38,8 +38,6 @@ link docker_config.json ~/.docker/config.json
 link gdbinit            ~/.gdbinit
 link gitconfig          ~/.gitconfig
 link hgrc               ~/.hgrc
-link kakrc              ~/.config/kak/kakrc
-link kak-autoload       ~/.config/kak/autoload
 link kitty.conf         ~/.config/kitty/kitty.conf
 link makepkg.conf       ~/.makepkg.conf
 link profile            ~/.profile
