@@ -35,7 +35,7 @@ git module vim-easymotion:
 
 git module vim-fugitive:
   url: https://github.com/tpope/vim-fugitive
-  rev: c926aadfaf2cff0c684d305c8ff1a59378e7d7f5
+  rev: ebc828ef7cd9bc19004bf961105b7b0e6417bc8a
 
 git module vim-lspconfig:
   url: https://github.com/neovim/nvim-lspconfig
