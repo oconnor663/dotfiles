@@ -22,8 +22,6 @@ fi
 
 peru sync
 
-(cd vim_pack/coc/start/coc && yarn install --frozen-lockfile)
-
 function link {
   local src="$1"
   local dest="$2"
@@ -32,7 +30,6 @@ function link {
 }
 
 link alacritty.yml      ~/.config/alacritty/alacritty.yml
-link coc-settings.json  ~/.config/nvim/coc-settings.json
 link docker_config.json ~/.docker/config.json
 link gdbinit            ~/.gdbinit
 link gitconfig          ~/.gitconfig

@@ -6,7 +6,6 @@ imports:
 
   vim-airline: vim_pack/airline/start/airline
   vim-airline-themes: vim_pack/airline_themes/start/airline_themes
-  vim-coc: vim_pack/coc/start/coc
   vim-commentary: vim_pack/commentary/start/commentary
   vim-easymotion: vim_pack/easymotion/start/easymotion
   vim-fugitive: vim_pack/fugitive/start/fugitive
@@ -34,10 +33,6 @@ git module vim-airline:
 git module vim-airline-themes:
   url: https://github.com/vim-airline/vim-airline-themes
   rev: 531bcc9e5a4cb1b1fb4dec8face230bf3d205ac7
-
-git module vim-coc:
-  url: https://github.com/neoclide/coc.nvim
-  rev: 971c5f81b4564bbcb1f3d34e23149bd070dff127
 
 git module vim-commentary:
   url: https://github.com/tpope/vim-commentary.git

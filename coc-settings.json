@@ -1,4 +1,0 @@
-{
-    "rust-analyzer.serverPath": "/usr/bin/rust-analyzer",
-    "coc.preferences.formatOnSaveFiletypes": ["rust", "go", "python", "c", "cpp"]
-}
