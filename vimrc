@@ -11,6 +11,7 @@ set nojoinspaces
 set number
 set scrolloff=2
 set shiftwidth=4
+set signcolumn=number
 set smartcase
 set tabstop=4
 set termguicolors
