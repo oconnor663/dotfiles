@@ -35,7 +35,7 @@ nnoremap <BS> <C-^>
 
 " clear the search highlight with Ctrl-L
 nnoremap <silent> <C-l> :nohlsearch<CR>
-imap <C-l> <Esc><C-l>a
+imap <C-l> <C-o><C-l>
 
 " Founder/FZF settings
 function OpenFounder()
