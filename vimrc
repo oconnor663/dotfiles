@@ -67,3 +67,9 @@ function! s:BlankDown(count) abort
 endfunction
 nnoremap <silent> [<Space> :<C-U>call <SID>BlankUp(v:count1)<CR>
 nnoremap <silent> ]<Space> :<C-U>call <SID>BlankDown(v:count1)<CR>
+
+" bindings for miniyank
+map p <Plug>(miniyank-autoput)
+map P <Plug>(miniyank-autoPut)
+map <leader>p <Plug>(miniyank-cycle)
+map <leader>P <Plug>(miniyank-cycleback)
