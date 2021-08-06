@@ -8,6 +8,7 @@ imports:
   vim-compe: vim_pack/compe/start/compe
   vim-easymotion: vim_pack/easymotion/start/easymotion
   vim-fugitive: vim_pack/fugitive/start/fugitive
+  vim-gitgutter: vim_pack/gitgutter/start/gitgutter
   vim-lspconfig: vim_pack/lspconfig/start/lspconfig
   vim-miniyank: vim_pack/miniyank/start/miniyank
   vim-repeat: vim_pack/repeat/start/repeat
@@ -41,6 +42,10 @@ git module vim-easymotion:
 git module vim-fugitive:
   url: https://github.com/tpope/vim-fugitive
   rev: ebc828ef7cd9bc19004bf961105b7b0e6417bc8a
+
+git module vim-gitgutter:
+  url: https://github.com/airblade/vim-gitgutter
+  rev: 549fb96d5890d5225afda070ca041468c2c770e5
 
 git module vim-lspconfig:
   url: https://github.com/neovim/nvim-lspconfig

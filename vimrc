@@ -12,10 +12,11 @@ set nojoinspaces
 set number
 set scrolloff=2
 set shiftwidth=4
-set signcolumn=number
+set signcolumn=auto:9 " allows gitgutter and LSP symbols to coexist
 set smartcase
 set tabstop=4
 set termguicolors
+set updatetime=100 " reduces gitgutter lag
 
 colorscheme solarized8
 
