@@ -79,6 +79,9 @@ lua << EOF
 require'lspconfig'.rust_analyzer.setup{}
 EOF
 
+" auto-format on save
+autocmd BufWritePre * lua vim.lsp.buf.formatting_sync(nil, 1000)
+
 " Neovim LSP
 " Adapted from: https://github.com/neovim/nvim-lspconfig#keybindings-and-completion
 lua << EOF
