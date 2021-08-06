@@ -4,8 +4,6 @@ imports:
   tmux-colors-solarized: tmux/solarized
   tmux-sensible:         tmux/sensible
 
-  vim-airline: vim_pack/airline/start/airline
-  vim-airline-themes: vim_pack/airline_themes/start/airline_themes
   vim-commentary: vim_pack/commentary/start/commentary
   vim-easymotion: vim_pack/easymotion/start/easymotion
   vim-fugitive: vim_pack/fugitive/start/fugitive
@@ -25,14 +23,6 @@ git module tmux-sensible:
 git module tmux-colors-solarized:
   url: https://github.com/seebi/tmux-colors-solarized
   rev: e5e7b4f1af37f8f3fc81ca17eadee5ae5d82cd09
-
-git module vim-airline:
-  url: https://github.com/vim-airline/vim-airline
-  rev: 4a64fbfc4bdb2cf91b2b50ca3f41b852061d614e
-
-git module vim-airline-themes:
-  url: https://github.com/vim-airline/vim-airline-themes
-  rev: 531bcc9e5a4cb1b1fb4dec8face230bf3d205ac7
 
 git module vim-commentary:
   url: https://github.com/tpope/vim-commentary.git

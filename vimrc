@@ -54,9 +54,6 @@ nmap <Leader>w <Plug>(easymotion-bd-w)
 " Prefer // over /*...*/. Used by vim-commentary.
 autocmd FileType c,cpp,cs,java setlocal commentstring=//\ %s
 
-" vim-airline settings
-let g:airline_powerline_fonts = 1
-
 " insert line mappings adapted from vim-unimpaired
 function! s:BlankUp(count) abort
   put!=repeat(nr2char(10), a:count)
