@@ -5,6 +5,7 @@ imports:
   tmux-sensible:         tmux/sensible
 
   vim-commentary: vim_pack/commentary/start/commentary
+  vim-compe: vim_pack/compe/start/compe
   vim-easymotion: vim_pack/easymotion/start/easymotion
   vim-fugitive: vim_pack/fugitive/start/fugitive
   vim-lspconfig: vim_pack/lspconfig/start/lspconfig
@@ -24,6 +25,10 @@ git module tmux-sensible:
 git module tmux-colors-solarized:
   url: https://github.com/seebi/tmux-colors-solarized
   rev: e5e7b4f1af37f8f3fc81ca17eadee5ae5d82cd09
+
+git module vim-compe:
+  url: https://github.com/hrsh7th/nvim-compe
+  rev: 73529ce61611c9ee3821e18ecc929c422416c462
 
 git module vim-commentary:
   url: https://github.com/tpope/vim-commentary.git
