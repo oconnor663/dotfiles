@@ -20,6 +20,10 @@ set updatetime=100 " reduces gitgutter lag
 
 colorscheme solarized8
 
+" remain in visual mode when indenting or dedenting
+vmap < <gv
+vmap > >gv
+
 " common typos
 command W w
 command WQ wq
