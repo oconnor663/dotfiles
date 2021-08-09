@@ -17,7 +17,7 @@ set tabstop=4
 set termguicolors
 set updatetime=100 " reduces gitgutter lag
 
-colorscheme solarized8
+colorscheme solarized
 
 " remain in visual mode when indenting or dedenting
 vnoremap < <gv

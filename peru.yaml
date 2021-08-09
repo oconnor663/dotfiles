@@ -9,12 +9,11 @@ imports:
   vim-easymotion: vim_pack/easymotion/start/easymotion
   vim-fugitive: vim_pack/fugitive/start/fugitive
   vim-gitgutter: vim_pack/gitgutter/start/gitgutter
-  vim-lsp-colors: vim_pack/lsp-colors/start/lsp-colors
   vim-lspconfig: vim_pack/lspconfig/start/lspconfig
   vim-miniyank: vim_pack/miniyank/start/miniyank
   vim-repeat: vim_pack/repeat/start/repeat
   vim-rsi: vim_pack/rsi/start/rsi
-  vim-solarized8: vim_pack/solarized8/start/solarized8
+  vim-solarized: vim_pack/solarized/start/solarized
   vim-surround: vim_pack/surround/start/surround
 
 git module dircolors-solarized:
@@ -49,11 +48,6 @@ git module vim-gitgutter:
   url: https://github.com/airblade/vim-gitgutter
   rev: 549fb96d5890d5225afda070ca041468c2c770e5
 
-git module vim-lsp-colors:
-  url: https://github.com/folke/lsp-colors.nvim
-  reup: main
-  rev: 00b40add53f2f6bd249932d0c0cd25a42ce7a2fc
-
 git module vim-lspconfig:
   url: https://github.com/neovim/nvim-lspconfig
   rev: 8b1e79a1d04e4b077aab1706891ed48e397bcaea
@@ -70,9 +64,9 @@ git module vim-rsi:
   url: https://github.com/tpope/vim-rsi
   rev: e181883a0932d9315cceb96b5fffb5e2ec67068e
 
-git module vim-solarized8:
-  url: https://github.com/lifepillar/vim-solarized8
-  rev: 28b81a4263054f9584a98f94cca3e42815d44725
+git module vim-solarized:
+  url: https://github.com/ishan9299/nvim-solarized-lua
+  rev: fa437ae65a6c1239525e4ec7f4cbf4671eaa55ba
 
 git module vim-surround:
   url: https://github.com/tpope/vim-surround
