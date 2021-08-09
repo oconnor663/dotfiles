@@ -12,6 +12,7 @@ imports:
   vim-lspconfig: vim_pack/lspconfig/start/lspconfig
   vim-miniyank: vim_pack/miniyank/start/miniyank
   vim-repeat: vim_pack/repeat/start/repeat
+  vim-rsi: vim_pack/rsi/start/rsi
   vim-solarized8: vim_pack/solarized8/start/solarized8
   vim-surround: vim_pack/surround/start/surround
 
@@ -29,7 +30,7 @@ git module tmux-colors-solarized:
 
 git module vim-compe:
   url: https://github.com/hrsh7th/nvim-compe
-  rev: 73529ce61611c9ee3821e18ecc929c422416c462
+  rev: 8ed6999e005015251b6b05cb5c0bfe857785b1d4
 
 git module vim-commentary:
   url: https://github.com/tpope/vim-commentary.git
@@ -41,7 +42,7 @@ git module vim-easymotion:
 
 git module vim-fugitive:
   url: https://github.com/tpope/vim-fugitive
-  rev: ebc828ef7cd9bc19004bf961105b7b0e6417bc8a
+  rev: 4adf054a3f6f6ecad303e3e90c169cdf37f6c0e9
 
 git module vim-gitgutter:
   url: https://github.com/airblade/vim-gitgutter
@@ -58,6 +59,10 @@ git module vim-miniyank:
 git module vim-repeat:
   url: https://github.com/tpope/vim-repeat
   rev: 24afe922e6a05891756ecf331f39a1f6743d3d5a
+
+git module vim-rsi:
+  url: https://github.com/tpope/vim-rsi
+  rev: e181883a0932d9315cceb96b5fffb5e2ec67068e
 
 git module vim-solarized8:
   url: https://github.com/lifepillar/vim-solarized8
