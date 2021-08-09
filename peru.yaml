@@ -9,6 +9,7 @@ imports:
   vim-easymotion: vim_pack/easymotion/start/easymotion
   vim-fugitive: vim_pack/fugitive/start/fugitive
   vim-gitgutter: vim_pack/gitgutter/start/gitgutter
+  vim-lsp-colors: vim_pack/lsp-colors/start/lsp-colors
   vim-lspconfig: vim_pack/lspconfig/start/lspconfig
   vim-miniyank: vim_pack/miniyank/start/miniyank
   vim-repeat: vim_pack/repeat/start/repeat
@@ -47,6 +48,11 @@ git module vim-fugitive:
 git module vim-gitgutter:
   url: https://github.com/airblade/vim-gitgutter
   rev: 549fb96d5890d5225afda070ca041468c2c770e5
+
+git module vim-lsp-colors:
+  url: https://github.com/folke/lsp-colors.nvim
+  reup: main
+  rev: 00b40add53f2f6bd249932d0c0cd25a42ce7a2fc
 
 git module vim-lspconfig:
   url: https://github.com/neovim/nvim-lspconfig
