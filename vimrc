@@ -26,6 +26,10 @@ vnoremap > >gv
 " copy yanked text to the system clipboard
 vnoremap y y:let @+=@"<CR>
 
+" map Ctrl-J to Escape in all modes
+noremap <C-j> <Esc>
+noremap! <C-j> <Esc>
+
 " common typos
 command W w
 command WQ wq
