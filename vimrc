@@ -1,5 +1,4 @@
 set background=light
-set clipboard=unnamed,unnamedplus
 set completeopt=menuone,noselect " needed by nvim-compe
 set cursorline
 set expandtab
@@ -21,8 +20,11 @@ set updatetime=100 " reduces gitgutter lag
 colorscheme solarized8
 
 " remain in visual mode when indenting or dedenting
-vmap < <gv
-vmap > >gv
+vnoremap < <gv
+vnoremap > >gv
+
+" copy yanked text to the system clipboard
+vnoremap y y:let @+=@"<CR>
 
 " common typos
 command W w
