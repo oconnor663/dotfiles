@@ -12,7 +12,7 @@ export PERU_CACHE_DIR="$HOME/.peru-cache"
 
 export DOTFILES="$HOME/dotfiles"
 
-export BAT_THEME="Solarized (dark)"
+export BAT_THEME="Solarized (light)"
 
 if [ -e ~/.profile.local ] ; then
     source ~/.profile.local
