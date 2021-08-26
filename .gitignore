@@ -1,9 +1,8 @@
-vim_pack
-
 .peru
+Cargo.lock
+target
 
 # Things fetched by peru
 dircolors-solarized/
-oh-my-zsh/
 tmux/
-vim/
+vim_pack/

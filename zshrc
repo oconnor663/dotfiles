@@ -4,6 +4,11 @@ emulate sh
 source ~/.profile
 emulate zsh
 
+# Configure the prompt, which is implemented in Rust in this repo.
+setopt PROMPT_SUBST
+# Pass the exit status of the previous command as an argument.
+PROMPT='$("$DOTFILES/prompt/target/release/prompt" $?)'
+
 if [[ $XDG_SESSION_TYPE != tty ]] ; then
   export SOLARIZED=1
 fi
@@ -277,9 +282,6 @@ key[Delete]=${terminfo[kdch1]}
 [[ -n "${key[End]}"     ]]  && bindkey  "${key[End]}"     end-of-line
 [[ -n "${key[Insert]}"  ]]  && bindkey  "${key[Insert]}"  overwrite-mode
 [[ -n "${key[Delete]}"  ]]  && bindkey  "${key[Delete]}"  delete-char
-
-# Starship command prompt
-eval "$(starship init zsh)"
 
 # Load settings specific to this machine.
 local_zshrc="$HOME/.zshrc.local"

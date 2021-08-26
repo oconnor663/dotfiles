@@ -22,6 +22,9 @@ fi
 
 peru sync
 
+echo Building prompt...
+(cd prompt && cargo build --release)
+
 function link {
   local src="$1"
   local dest="$2"
@@ -36,7 +39,6 @@ link gitconfig          ~/.gitconfig
 link hgrc               ~/.hgrc
 link makepkg.conf       ~/.makepkg.conf
 link profile            ~/.profile
-link starship.toml      ~/.config/starship.toml
 link tmux.conf          ~/.tmux.conf
 link tmux.desktop       ~/.local/share/applications/tmux.desktop
 link vimrc              ~/.config/nvim/init.vim

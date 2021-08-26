@@ -1,0 +1,9 @@
+[package]
+name = "prompt"
+version = "0.0.0"
+edition = "2018"
+
+[dependencies]
+dirs = "3.0.2"
+duct = "0.13.5"
+gethostname = "0.2.1"
