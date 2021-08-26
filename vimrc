@@ -65,6 +65,9 @@ let g:EasyMotion_do_mapping = 0 " Disable default mappings
 nmap <Leader>w <Plug>(easymotion-bd-w)
 
 " Prefer // over /*...*/. Used by vim-commentary.
+" See https://stackoverflow.com/a/68813146/823869 for why we need to do
+" 'filetype plugin indent on' first.
+filetype plugin indent on
 autocmd FileType c,cpp,cs,java setlocal commentstring=//\ %s
 
 " insert line mappings adapted from vim-unimpaired
