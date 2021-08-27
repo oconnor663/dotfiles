@@ -21,67 +21,68 @@ pub const BLUE: Color = (38, 139, 210);
 pub const CYAN: Color = (42, 161, 152);
 pub const GREEN: Color = (133, 153, 0);
 
-const ARROW: &str = "";
-
 // This helps Zsh cursor control understand that color codes don't take up space.
 // https://superuser.com/a/893926/93400
-fn zsh_escape_code_start() {
-    print!("%{{");
-}
+const ZSH_ESCAPE_CODE_START: &str = "%{";
+const ZSH_ESCAPE_CODE_END: &str = "%}";
 
-fn zsh_escape_code_end() {
-    print!("%}}");
-}
-
-fn color_reset() {
-    zsh_escape_code_start();
-    print!("\x1b[0m");
-    zsh_escape_code_end();
+fn color_reset() -> String {
+    format!("{}\x1b[0m{}", ZSH_ESCAPE_CODE_START, ZSH_ESCAPE_CODE_END)
 }
 
 // https://chrisyeh96.github.io/2020/03/28/terminal-colors.html
-fn fg_color((r, g, b): Color) {
-    zsh_escape_code_start();
-    print!("\x1b[38;2;{};{};{}m", r, g, b);
-    zsh_escape_code_end();
+fn fg_color((r, g, b): Color) -> String {
+    format!(
+        "{}\x1b[38;2;{};{};{}m{}",
+        ZSH_ESCAPE_CODE_START, r, g, b, ZSH_ESCAPE_CODE_END,
+    )
 }
 
-fn bg_color((r, g, b): Color) {
-    zsh_escape_code_start();
-    print!("\x1b[48;2;{};{};{}m", r, g, b);
-    zsh_escape_code_end();
+fn bg_color((r, g, b): Color) -> String {
+    format!(
+        "{}\x1b[48;2;{};{};{}m{}",
+        ZSH_ESCAPE_CODE_START, r, g, b, ZSH_ESCAPE_CODE_END,
+    )
 }
 
-fn error_code() {
+fn error_code() -> Option<String> {
     if let Some(code) = std::env::args().skip(1).next() {
         if code != "0" {
-            fg_color(RED);
-            print!("{} ", code);
+            return Some(format!("{}{}", fg_color(RED), code));
         }
     }
+    None
 }
 
-fn host() {
+fn host() -> Option<String> {
     if std::env::var_os("SSH_CONNECTION").is_some() {
-        fg_color(VIOLET);
-        print!("{} ", gethostname::gethostname().to_string_lossy());
+        Some(format!(
+            "{}{}",
+            fg_color(VIOLET),
+            gethostname::gethostname().to_string_lossy(),
+        ))
+    } else {
+        None
     }
 }
 
-fn path() {
+fn path() -> Option<String> {
     let cwd = std::env::current_dir().unwrap();
     let home = dirs::home_dir().unwrap();
-    fg_color(BLUE);
     if cwd == home {
-        print!("~ ");
+        Some(format!("{}~", fg_color(BLUE)))
     } else if cwd.starts_with(&home) {
-        print!("~/{} ", cwd.strip_prefix(&home).unwrap().to_string_lossy());
+        Some(format!(
+            "{}~/{}",
+            fg_color(BLUE),
+            cwd.strip_prefix(&home).unwrap().to_string_lossy(),
+        ))
     } else {
-        print!("{} ", cwd.to_string_lossy());
+        Some(format!("{}{}", fg_color(BLUE), cwd.to_string_lossy()))
     }
 }
 
-fn git() {
+fn git() -> Option<String> {
     let toplevel = cmd!("git", "rev-parse", "--show-toplevel")
         .stderr_null()
         .unchecked()
@@ -89,42 +90,41 @@ fn git() {
         .unwrap();
     if toplevel.is_empty() {
         // Not in a git repo.
-        return;
+        return None;
     }
-    fg_color(YELLOW);
-    let branch = cmd!("git", "branch", "--show-current").read().unwrap();
-    if !branch.is_empty() {
-        // Got a branch name.
-        print!("{} ", branch);
-    } else {
+    let mut branch = cmd!("git", "branch", "--show-current").read().unwrap();
+    if branch.is_empty() {
         // No branch name. Print the current rev.
-        let rev = cmd!("git", "rev-parse", "--short", "HEAD").read().unwrap();
-        print!("({}) ", rev);
+        branch = cmd!("git", "rev-parse", "--short", "HEAD").read().unwrap();
     }
     let git_dir = Path::new(&toplevel).join(".git");
     // https://stackoverflow.com/a/67245016/823869
     if git_dir.join("rebase-merge").exists() || git_dir.join("rebase-apply").exists() {
-        print!("REBASE ");
+        branch += "REBASE";
     }
     if git_dir.join("MERGE_HEAD").exists() {
-        print!("MERGE ");
+        branch += "MERGE"
     }
     if git_dir.join("CHERRY_PICK_HEAD").exists() {
-        print!("PICK ");
+        branch += "PICK";
     }
+    Some(format!("{}{}", fg_color(YELLOW), branch))
 }
 
 fn main() {
     let background = BASE2;
-    bg_color(background);
-    print!(" ");
-    error_code();
-    host();
-    path();
-    git();
-    color_reset();
-    fg_color(background);
-    print!("{}", ARROW);
-    color_reset();
-    print!(" ");
+    print!("{}{}", fg_color(background), bg_color(background));
+    let components = vec![error_code(), host(), path(), git()];
+    for (i, s) in components.into_iter().flatten().enumerate() {
+        if i > 0 {
+            print!(" ");
+        }
+        print!("{}", s);
+    }
+    print!(
+        "{}{}{} ",
+        color_reset(),
+        fg_color(background),
+        color_reset(),
+    );
 }
