@@ -88,20 +88,21 @@ fn git() -> Option<(String, Color)> {
     let mut branch = cmd!("git", "branch", "--show-current").read().unwrap();
     if branch.is_empty() {
         // No branch name. Print the current rev.
-        branch = cmd!("git", "rev-parse", "--short", "HEAD").read().unwrap();
+        let rev = cmd!("git", "rev-parse", "--short", "HEAD").read().unwrap();
+        branch = format!("({})", rev);
     }
     let git_dir = Path::new(&toplevel).join(".git");
     // https://stackoverflow.com/a/67245016/823869
     if git_dir.join("rebase-merge").exists() || git_dir.join("rebase-apply").exists() {
-        branch += "REBASE";
+        branch += " REBASE";
     }
     if git_dir.join("MERGE_HEAD").exists() {
-        branch += "MERGE"
+        branch += " MERGE"
     }
     if git_dir.join("CHERRY_PICK_HEAD").exists() {
-        branch += "PICK";
+        branch += " PICK";
     }
-    Some((branch, YELLOW))
+    Some((branch, CYAN))
 }
 
 fn main() {
