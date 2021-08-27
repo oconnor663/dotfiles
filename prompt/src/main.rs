@@ -45,44 +45,37 @@ fn bg_color((r, g, b): Color) -> String {
     )
 }
 
-fn error_code() -> Option<String> {
+fn error_code() -> Option<(String, Color)> {
     if let Some(code) = std::env::args().skip(1).next() {
         if code != "0" {
-            return Some(format!("{}{}", fg_color(RED), code));
+            return Some((code, RED));
         }
     }
     None
 }
 
-fn host() -> Option<String> {
+fn host() -> Option<(String, Color)> {
     if std::env::var_os("SSH_CONNECTION").is_some() {
-        Some(format!(
-            "{}{}",
-            fg_color(VIOLET),
-            gethostname::gethostname().to_string_lossy(),
-        ))
+        Some((gethostname::gethostname().to_string_lossy().into(), VIOLET))
     } else {
         None
     }
 }
 
-fn path() -> Option<String> {
+fn path() -> Option<(String, Color)> {
     let cwd = std::env::current_dir().unwrap();
     let home = dirs::home_dir().unwrap();
-    if cwd == home {
-        Some(format!("{}~", fg_color(BLUE)))
+    let path: String = if cwd == home {
+        "~".into()
     } else if cwd.starts_with(&home) {
-        Some(format!(
-            "{}~/{}",
-            fg_color(BLUE),
-            cwd.strip_prefix(&home).unwrap().to_string_lossy(),
-        ))
+        format!("~/{}", cwd.strip_prefix(&home).unwrap().to_string_lossy())
     } else {
-        Some(format!("{}{}", fg_color(BLUE), cwd.to_string_lossy()))
-    }
+        cwd.to_string_lossy().into()
+    };
+    Some((path, BLUE))
 }
 
-fn git() -> Option<String> {
+fn git() -> Option<(String, Color)> {
     let toplevel = cmd!("git", "rev-parse", "--show-toplevel")
         .stderr_null()
         .unchecked()
@@ -108,23 +101,41 @@ fn git() -> Option<String> {
     if git_dir.join("CHERRY_PICK_HEAD").exists() {
         branch += "PICK";
     }
-    Some(format!("{}{}", fg_color(YELLOW), branch))
+    Some((branch, YELLOW))
 }
 
 fn main() {
-    let background = BASE2;
-    print!("{}{}", fg_color(background), bg_color(background));
-    let components = vec![error_code(), host(), path(), git()];
-    for (i, s) in components.into_iter().flatten().enumerate() {
-        if i > 0 {
-            print!(" ");
+    let text_color = BASE2;
+    print!("{}", fg_color(text_color));
+    let components: Vec<(String, Color)> = vec![error_code(), host(), path(), git()]
+        .into_iter()
+        .flatten()
+        .collect();
+    for i in 0..components.len() {
+        let &(ref string, color) = &components[i];
+        if i == 0 {
+            print!(
+                "{}{}{}",
+                fg_color(color),
+                fg_color(text_color),
+                bg_color(color),
+            );
+        } else {
+            let &(_, prev_color) = &components[i - 1];
+            print!(
+                "{}{}{} ",
+                bg_color(color),
+                fg_color(prev_color),
+                fg_color(text_color)
+            );
         }
-        print!("{}", s);
+        print!("{}", string);
     }
+    let &(_, last_color) = components.last().unwrap();
     print!(
         "{}{}{} ",
         color_reset(),
-        fg_color(background),
+        fg_color(last_color),
         color_reset(),
     );
 }
