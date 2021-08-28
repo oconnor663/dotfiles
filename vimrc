@@ -70,6 +70,11 @@ nmap <Leader>w <Plug>(easymotion-bd-w)
 filetype plugin indent on
 autocmd FileType c,cpp,cs,java setlocal commentstring=//\ %s
 
+" Disable tab highlights in Go files.
+autocmd FileType go setlocal list&
+" Disable annoying red highlight on new lines.
+highlight! link goSpaceError NONE
+
 " insert line mappings adapted from vim-unimpaired
 function! s:BlankUp(count) abort
   put!=repeat(nr2char(10), a:count)
@@ -89,10 +94,6 @@ map p <Plug>(miniyank-autoput)
 map P <Plug>(miniyank-autoPut)
 map <leader>p <Plug>(miniyank-cycle)
 map <leader>P <Plug>(miniyank-cycleback)
-
-lua << EOF
-require'lspconfig'.rust_analyzer.setup{}
-EOF
 
 " auto-format on save
 autocmd BufWritePre * lua vim.lsp.buf.formatting_sync(nil, 1000)
@@ -137,7 +138,7 @@ end
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = { 'clangd', 'rust_analyzer' }
+local servers = { 'clangd', 'rust_analyzer', 'gopls' }
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {
     on_attach = on_attach,
