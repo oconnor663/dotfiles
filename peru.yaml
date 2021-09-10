@@ -4,6 +4,7 @@ imports:
   tmux-colors-solarized: tmux/solarized
   tmux-sensible:         tmux/sensible
 
+  vim-black:      vim_pack/black/start/black
   vim-commentary: vim_pack/commentary/start/commentary
   vim-compe:      vim_pack/compe/start/compe
   vim-easymotion: vim_pack/easymotion/start/easymotion
@@ -27,6 +28,10 @@ git module tmux-sensible:
 git module tmux-colors-solarized:
   url: https://github.com/seebi/tmux-colors-solarized
   rev: e5e7b4f1af37f8f3fc81ca17eadee5ae5d82cd09
+
+git module vim-black:
+  url: https://github.com/psf/black
+  rev: 0fd353f1639c580c32599bf435902d08dbd9a560
 
 git module vim-compe:
   url: https://github.com/hrsh7th/nvim-compe

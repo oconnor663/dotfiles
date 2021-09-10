@@ -98,6 +98,10 @@ map <leader>P <Plug>(miniyank-cycleback)
 " auto-format on save
 autocmd BufWritePre * lua vim.lsp.buf.formatting_sync(nil, 1000)
 
+" auto-format on save for Python using Black
+" https://black.readthedocs.io/en/stable/integrations/editors.html#vim
+autocmd BufWritePre *.py execute ':Black'
+
 " Neovim LSP
 " Adapted from: https://github.com/neovim/nvim-lspconfig#keybindings-and-completion
 lua << EOF
