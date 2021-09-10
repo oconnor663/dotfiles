@@ -33,6 +33,7 @@ function link {
 }
 
 link alacritty.yml      ~/.config/alacritty/alacritty.yml
+link bare.desktop       ~/.local/share/applications/bare.desktop
 link docker_config.json ~/.docker/config.json
 link gdbinit            ~/.gdbinit
 link gitconfig          ~/.gitconfig

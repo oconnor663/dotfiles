@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Exec=env WAYLAND_DISPLAY= alacritty --class AlacrittyTmux
+Icon=Alacritty
+Terminal=false
+Categories=System;TerminalEmulator;
+
+Name=Bare Terminal
+StartupWMClass=AlacrittyTmux
+
+X-Desktop-File-Install-Version=0.26
