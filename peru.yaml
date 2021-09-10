@@ -5,16 +5,16 @@ imports:
   tmux-sensible:         tmux/sensible
 
   vim-commentary: vim_pack/commentary/start/commentary
-  vim-compe: vim_pack/compe/start/compe
+  vim-compe:      vim_pack/compe/start/compe
   vim-easymotion: vim_pack/easymotion/start/easymotion
-  vim-fugitive: vim_pack/fugitive/start/fugitive
-  vim-gitgutter: vim_pack/gitgutter/start/gitgutter
-  vim-lspconfig: vim_pack/lspconfig/start/lspconfig
-  vim-miniyank: vim_pack/miniyank/start/miniyank
-  vim-repeat: vim_pack/repeat/start/repeat
-  vim-rsi: vim_pack/rsi/start/rsi
-  vim-solarized: vim_pack/solarized/start/solarized
-  vim-surround: vim_pack/surround/start/surround
+  vim-fugitive:   vim_pack/fugitive/start/fugitive
+  vim-gitgutter:  vim_pack/gitgutter/start/gitgutter
+  vim-lspconfig:  vim_pack/lspconfig/start/lspconfig
+  vim-miniyank:   vim_pack/miniyank/start/miniyank
+  vim-repeat:     vim_pack/repeat/start/repeat
+  vim-rsi:        vim_pack/rsi/start/rsi
+  vim-solarized:  vim_pack/solarized/start/solarized
+  vim-surround:   vim_pack/surround/start/surround
 
 git module dircolors-solarized:
   url: https://github.com/seebi/dircolors-solarized
