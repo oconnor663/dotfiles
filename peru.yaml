@@ -30,11 +30,11 @@ git module tmux-colors-solarized:
 
 git module vim-compe:
   url: https://github.com/hrsh7th/nvim-compe
-  rev: dc39f945e54b4547c998dc9e686df419d1077b60
+  rev: 980357a9eeabe84f29c96d38421c9bff321a2bc8
 
 git module vim-commentary:
   url: https://github.com/tpope/vim-commentary.git
-  rev: 349340debb34f6302931f0eb7139b2c11dfdf427
+  rev: 627308e30639be3e2d5402808ce18690557e8292
 
 git module vim-easymotion:
   url: https://github.com/easymotion/vim-easymotion
@@ -42,15 +42,15 @@ git module vim-easymotion:
 
 git module vim-fugitive:
   url: https://github.com/tpope/vim-fugitive
-  rev: 4ff2c8ce3080bdd5c576bc035bba881fb3d69a32
+  rev: 194d63da4f7111c156109375e8ca153f19b245cb
 
 git module vim-gitgutter:
   url: https://github.com/airblade/vim-gitgutter
-  rev: 549fb96d5890d5225afda070ca041468c2c770e5
+  rev: 256702dd1432894b3607d3de6cd660863b331818
 
 git module vim-lspconfig:
   url: https://github.com/neovim/nvim-lspconfig
-  rev: 7c5ce01c20adb707ca9f13f3a60d1d3915905bc3
+  rev: a7df46eead286734203b1f7b71141fb131743d40
 
 git module vim-miniyank:
   url: https://github.com/bfredl/nvim-miniyank
