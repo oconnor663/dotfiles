@@ -39,6 +39,9 @@ command Wa wa
 command Q q
 command E e
 
+" a keybinding to insert a [hyper](link) in markdown
+vnoremap <C-k> <Esc>`>a]()<Esc>`<i[<Esc>/()<CR>a
+
 " Leader key is space.
 let mapleader = " "
 noremap <Space> <Nop>
