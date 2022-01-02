@@ -40,7 +40,7 @@ command Q q
 command E e
 
 " a keybinding to insert a [hyper](link) in markdown
-vnoremap <C-k> <Esc>`>a]()<Esc>`<i[<Esc>/()<CR>a
+vnoremap <C-k> <Esc>`>a]()<Esc>`<i[<Esc>/()<CR>:nohlsearch<CR>a
 
 " Leader key is space.
 let mapleader = " "
