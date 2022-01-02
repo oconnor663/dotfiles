@@ -44,9 +44,9 @@ alias gca="gcamend -a"
 alias gcff="git clean -dffx"
 alias grh='git reset --hard'
 alias gpr='git pull --rebase'
-alias gfra='git fetch && git rebase --autostash "$(git_main_branch_name)"'
-alias gout='git log "$(git_main_branch_name)".. --oneline'
-alias goutp='git log "$(git_main_branch_name)".. -p'
+alias gfra='git fetch && git rebase --autostash "$(git_upstream_branch_name)"'
+alias gout='git log "$(git_upstream_branch_name)".. --oneline'
+alias goutp='git log "$(git_upstream_branch_name)".. -p'
 alias ginit='git init && git add -A && git commit -m "first commit"'
 alias glog='git log --oneline --decorate --graph'
 alias gloga='git log --oneline --decorate --graph --all'
@@ -57,21 +57,21 @@ alias bad='git bisect bad'
 alias grecent='git for-each-ref --sort=-committerdate refs/heads/ --format="%(refname:short) (%(committerdate:relative))"'
 function gdrop() {
   local current_branch="$(git symbolic-ref --short HEAD)" &&
-  git checkout master &&
+  git checkout "$(git_main_branch_name)" &&
   git branch -D "$current_branch" &&
 }
 function gpo() {
   branch="$(git name-rev --name-only HEAD)"
-  if [[ "$branch" = master ]] ; then
-    echo "BLERG! Did you mean to run this on master?"
+  if [[ "$branch" = "$(git_main_branch_name)" ]] ; then
+    echo "BLERG! Did you mean to run this on $(git_main_branch_name)?"
     return 1
   fi
   git push origin "$(git name-rev --name-only HEAD)" "$@"
 }
 function gup() {
   git fetch && \
-  if [[ -n "$(git log HEAD.."$(git_main_branch_name)" -1)" ]] ; then
-    git rebase "$(git_main_branch_name)" --autostash
+  if [[ -n "$(git log HEAD.."$(git_upstream_branch_name)" -1)" ]] ; then
+    git rebase "$(git_upstream_branch_name)" --autostash
   else
     echo Up to date.
   fi
@@ -89,15 +89,18 @@ function hl() {
 }
 function git_main_branch_name() {
     if git rev-parse origin/main > /dev/null 2>&1 ; then
-        echo origin/main
+        echo main
         return 0
     elif git rev-parse origin/master > /dev/null 2>&1 ; then
-        echo origin/master
+        echo master
         return 0
     else
         echo "Can't figure out main branch name."
         return 1
     fi
+}
+function git_upstream_branch_name() {
+    echo "origin/$(git_main_branch_name)"
 }
 alias ct='tmux show-buffer | c'
 alias v='xclip -o -selection clipboard'
