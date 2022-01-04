@@ -2,6 +2,23 @@
 
 set -e -u -o pipefail
 
+function git_main_branch_name() {
+    if git rev-parse origin/main > /dev/null 2>&1 ; then
+        echo main
+        return 0
+    elif git rev-parse origin/master > /dev/null 2>&1 ; then
+        echo master
+        return 0
+    else
+        echo "Can't figure out main branch name."
+        return 1
+    fi
+}
+
+function git_upstream_branch_name() {
+    echo "origin/$(git_main_branch_name)"
+}
+
 if [[ -n "$(git status --porcelain --untracked-files=no)" ]] ; then
   echo error: repo is dirty
   exit 1
@@ -9,32 +26,32 @@ fi
 
 branch="$(git symbolic-ref --short HEAD)"
 
-if [[ "$branch" = "master" ]] ; then
-  echo error: trying to land master on itself
+if [[ "$branch" = "$(git_main_branch_name)" ]] ; then
+  echo error: trying to land "$(git_main_branch_name)" on itself
   exit 1
 fi
 
 echo fetching origin
 git fetch origin
 
-echo rebasing on origin/master
-git rebase origin/master
+echo rebasing on "$(git_upstream_branch_name)"
+git rebase "$(git_upstream_branch_name)"
 
 # This step helps GitHub realize that a PR is landing.
 echo force pushing to "origin/$branch"
 git push --force origin "$branch"
 
-echo pushing to origin/master
-git push origin "$branch:master"
+echo pushing to "$(git_upstream_branch_name)"
+git push origin "$branch:$(git_main_branch_name)"
 
 echo deleting branch origin/"$branch"
 git push --delete origin "$branch"
 
-echo checking out master
-git checkout master
+echo checking out "$(git_main_branch_name)"
+git checkout "$(git_main_branch_name)"
 
-echo fast-forwarding master
-git merge --ff-only origin/master
+echo fast-forwarding "$(git_main_branch_name)"
+git merge --ff-only "$(git_upstream_branch_name)"
 
 echo deleting branch "$branch"
 git branch --delete "$branch"
