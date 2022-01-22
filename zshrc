@@ -187,6 +187,20 @@ EOF
   "$EDITOR" scratch.cpp
 }
 
+newzig() {
+  dir="$(mktemp -d)"
+  ln -sfn "$dir" /tmp/lastzig
+  cd "$dir"
+  cat << EOF > test.zig
+const std = @import("std");
+
+pub fn main() !void {
+    std.debug.print("hello\n", .{});
+}
+EOF
+  "$EDITOR" test.zig
+}
+
 cbturbo() {
   if [[ "$(cat /sys/devices/system/cpu/intel_pstate/no_turbo)" != 0 ]] ; then
     echo "TurboBoost is already off." 1>&2
