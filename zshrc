@@ -176,7 +176,7 @@ run: scratch
 	./scratch
 
 scratch: scratch.cpp Makefile
-	g++ scratch.cpp -o scratch -std=c++20 -fsanitize=undefined,address
+	g++ scratch.cpp -o scratch -g -std=c++20 -fsanitize=undefined,address
 
 clean:
 	rm scratch
