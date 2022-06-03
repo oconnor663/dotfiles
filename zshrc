@@ -142,6 +142,9 @@ func main() {
 	fmt.Println("hello")
 }
 EOF
+  cat << EOF > go.mod
+module test
+EOF
   "$EDITOR" test.go
 }
 
