@@ -20,3 +20,5 @@
   pager = $HOME/dotfiles/git_pager.sh
 [pull]
 	ff = only
+[init]
+	defaultBranch = main
