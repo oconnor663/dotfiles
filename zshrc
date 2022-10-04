@@ -158,6 +158,16 @@ newrust() {
   "$EDITOR" src/main.rs
 }
 
+newrustlib() {
+  crate="$(mktemp -d)"/scratch
+  ln -sfn "$crate" /tmp/lastrust
+  cargo new --lib "$crate"
+  cd "$crate"
+  git add -A
+  git commit -m "first"
+  "$EDITOR" src/lib.rs
+}
+
 newcpp() {
   dir="$(mktemp -d)"
   ln -sfn "$dir" /tmp/lastcpp
