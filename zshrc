@@ -32,6 +32,7 @@ alias scu="systemctl --user"
 alias jcu="journalctl --user"
 alias timestamp="date +%Y-%m-%d-%H:%M:%S"
 alias dr="docker run --tty --interactive --rm"
+alias new="ls -lht --color=always | grep -Ev '^total' | head"
 
 # git aliases
 alias git="noglob git" # zsh likes to swallow ^ characters
