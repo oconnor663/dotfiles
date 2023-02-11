@@ -37,6 +37,7 @@ link bare.desktop       ~/.local/share/applications/bare.desktop
 link docker_config.json ~/.docker/config.json
 link gdbinit            ~/.gdbinit
 link gitconfig          ~/.gitconfig
+link helix              ~/.config/helix
 link hgrc               ~/.hgrc
 link makepkg.conf       ~/.makepkg.conf
 link profile            ~/.profile

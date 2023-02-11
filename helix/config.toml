@@ -1,0 +1,24 @@
+theme = "solarized_light"
+
+[editor.cursor-shape]
+insert = "bar"
+
+[editor.lsp]
+display-messages = true
+
+[keys.normal]
+"X" = "extend_line_above"
+"C-c" = "no_op"
+"C-7" = "toggle_comments" # in Alacritty, this is how I map C-/
+
+[keys.normal.g]
+q = ":reflow"
+
+[keys.select]
+"C-c" = "normal_mode"
+
+[keys.select.g]
+q = ":reflow"
+
+[keys.insert]
+"C-c" = "normal_mode"
