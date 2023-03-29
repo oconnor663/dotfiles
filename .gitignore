@@ -1,6 +1,7 @@
 .peru
 Cargo.lock
 target
+helix/runtime
 
 # Things fetched by peru
 dircolors-solarized/
