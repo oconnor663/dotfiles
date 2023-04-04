@@ -1,10 +1,20 @@
 theme = "solarized_light"
 
+[editor]
+color-modes = true
+cursorline = true
+
 [editor.cursor-shape]
 insert = "bar"
 
 [editor.lsp]
 display-messages = true
+
+[editor.whitespace.render]
+tab = "all"
+
+[editor.whitespace.characters]
+tab = "»"
 
 [keys.normal]
 "x" = ["select_mode", "extend_line_below"]
@@ -17,6 +27,7 @@ display-messages = true
 [keys.select]
 "x" = ["extend_line_below"]
 "X" = ["extend_line_above"]
+"o" = ["flip_selections"]
 "esc" = ["normal_mode", "keep_primary_selection", "collapse_selection"]
 "C-c" = ["normal_mode", "keep_primary_selection", "collapse_selection"]
 
