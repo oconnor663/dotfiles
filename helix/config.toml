@@ -22,7 +22,8 @@ tab = "»"
 "esc" = ["keep_primary_selection", "collapse_selection"]
 "C-c" = ["keep_primary_selection", "collapse_selection"]
 "C-7" = "toggle_comments" # in Alacritty, this is how I map C-/
-"L" = ["extend_to_line_end", "change_selection"]
+"L" = ["collapse_selection", "extend_to_line_end", "change_selection"]
+"C-l" = ["goto_first_nonwhitespace", "extend_to_line_end", "change_selection"]
 
 [keys.select]
 "x" = ["extend_line_below"]
@@ -30,9 +31,13 @@ tab = "»"
 "o" = ["flip_selections"]
 "esc" = ["normal_mode", "keep_primary_selection", "collapse_selection"]
 "C-c" = ["normal_mode", "keep_primary_selection", "collapse_selection"]
+"C-7" = "toggle_comments" # in Alacritty, this is how I map C-/
 
 [keys.select.g]
 q = ":reflow"
+
+[keys.normal.space]
+o = ":reload"
 
 [keys.insert]
 "C-c" = "normal_mode"
