@@ -47,6 +47,7 @@ nnoremap <leader>o <cmd>Telescope oldfiles<cr>
 nnoremap <leader>g <cmd>Telescope live_grep<cr>
 nnoremap <leader>b <cmd>Telescope buffers<cr>
 nnoremap <leader>s <cmd>Telescope lsp_dynamic_workspace_symbols<cr>
+nnoremap <leader>d <cmd>Telescope diagnostics<cr>
 nnoremap gr <cmd>Telescope lsp_references<cr>
 nnoremap gi <cmd>Telescope lsp_implementations<cr>
 
