@@ -3,11 +3,14 @@ colorscheme solarized
 set background=light
 
 set cursorline
+set expandtab
 set ignorecase
 set list
 set listchars=tab:»\ ,trail:·
 set number
+set shiftwidth=4
 set smartcase
+set tabstop=4
 set updatetime=100 " reduces gitgutter lag
 
 " Leader key is space.
