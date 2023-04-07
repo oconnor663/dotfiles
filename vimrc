@@ -14,12 +14,15 @@ set updatetime=100 " reduces gitgutter lag
 let mapleader = " "
 noremap <space> <nop>
 
+" remain in visual mode when indenting or dedenting
+vnoremap < <gv
+vnoremap > >gv
+
 " remap backspace to last file
 nnoremap <bs> <c-^>
 
-" clear the search highlight with Ctrl-L
-nnoremap <silent> <c-l> :nohlsearch<cr>
-imap <c-l> <c-o><c-l>
+" a keybinding to insert a [hyper](link) in markdown
+vnoremap <C-k> <Esc>`>a]()<Esc>`<i[<Esc>/()<CR>:nohlsearch<CR>a
 
 " common typos
 command W w
@@ -28,6 +31,12 @@ command WQ wq
 command Wq wq
 command WA wa
 command Wa wa
+
+" Prefer // over /*...*/. Used by vim-commentary.
+" See https://stackoverflow.com/a/68813146/823869 for why we need to do
+" 'filetype plugin indent on' first.
+filetype plugin indent on
+autocmd FileType c,cpp,cs,java setlocal commentstring=//\ %s
 
 " Telescope bindings
 nnoremap <leader>f <cmd>Telescope find_files<cr>
