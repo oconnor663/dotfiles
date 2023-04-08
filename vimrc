@@ -74,6 +74,13 @@ lspconfig.rust_analyzer.setup {
   settings = {
     ['rust-analyzer'] = {},
   },
+  on_attach = function(client, bufnr)
+    -- Disable semantic syntax highlighting. The only visual difference
+    -- between this and Tree-sitter that I know of is that this makes all
+    -- variables blue, which I don't like. Also this takes a few seconds to
+    -- load. Maybe give it another shot in the future.
+    client.server_capabilities.semanticTokensProvider = nil
+  end,
 }
 lspconfig.clangd.setup{}
 lspconfig.gopls.setup{}
