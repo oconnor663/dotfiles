@@ -1,16 +1,10 @@
 [Desktop Entry]
 Type=Application
-Exec=env WAYLAND_DISPLAY= alacritty --class AlacrittyTmux --command tmux
-Icon=Alacritty
+Exec=kitty tmux
+Icon=kitty
 Terminal=false
 Categories=System;TerminalEmulator;
 
-Name=Tmux
-StartupWMClass=AlacrittyTmux
-Actions=NewBare;
-
 X-Desktop-File-Install-Version=0.26
 
-[Desktop Action NewBare]
-Name=New Bare Terminal
-Exec=env WAYLAND_DISPLAY= alacritty --class AlacrittyBare
+Name=Tmux
