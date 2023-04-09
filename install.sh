@@ -39,6 +39,7 @@ link gdbinit            ~/.gdbinit
 link gitconfig          ~/.gitconfig
 link helix              ~/.config/helix
 link hgrc               ~/.hgrc
+link kitty.conf         ~/.config/kitty/kitty.conf
 link makepkg.conf       ~/.makepkg.conf
 link profile            ~/.profile
 link tmux.conf          ~/.tmux.conf
