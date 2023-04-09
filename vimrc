@@ -7,6 +7,7 @@ set expandtab
 set ignorecase
 set list
 set listchars=tab:»\ ,trail:·
+set notimeout " for example between <leader> and the rest of a mapping
 set number
 set shiftwidth=4
 set smartcase
