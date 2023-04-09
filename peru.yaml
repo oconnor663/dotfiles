@@ -48,7 +48,7 @@ git module vim-hop:
 
 git module vim-lspconfig:
   url: https://github.com/neovim/nvim-lspconfig
-  rev: e683951a35ade60f9e1768ef770bb42ffcc1d2b7
+  rev: 27e9e1d2638ffd133b06f314a49ac55825cb1017
 
 # dependency of vim-telescope
 git module vim-plenary:
@@ -73,11 +73,11 @@ git module vim-surround:
 
 git module vim-telescope:
   url: https://github.com/nvim-telescope/telescope.nvim
-  rev: 942fe5faef47b21241e970551eba407bc10d9547
+  rev: 7141515a7cabde46449675a403ed564416363887
 
 git module vim-treesitter:
   url: https://github.com/nvim-treesitter/nvim-treesitter
-  rev: a57d2a599b57a619f58a5c91c89d9bf12f8977b2
+  rev: fa9fe9a95ba481e26e11eede4657f8c5350a0eaa
 
 git module vim-unimpaired:
   url: https://github.com/tpope/vim-unimpaired

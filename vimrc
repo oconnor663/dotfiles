@@ -50,7 +50,7 @@ nnoremap <leader>fo <cmd>Telescope oldfiles<cr>
 nnoremap <leader>fa <cmd>lua require('telescope.builtin').find_files({hidden=1, no_ignore=1})<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fs <cmd>Telescope lsp_dynamic_workspace_symbols<cr>
-nnoremap <leader>fd <cmd>Telescope diagnostics<cr>
+nnoremap <leader>fd <cmd>lua require('telescope.builtin').diagnostics({severity_limit="warn"})<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 " goto lists on the symbol under the cursor
 nnoremap <leader>gr <cmd>Telescope lsp_references<cr>
@@ -73,11 +73,11 @@ nnoremap <leader>/ :HopChar1<cr>
 " TreeSitter configs
 lua <<END
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = { "c", "cpp", "rust", "python", "go", "vim", "lua" },
-  auto_install = true,
-  highlight = {
-    enable = true,
-  },
+    ensure_installed = { "c", "cpp", "rust", "python", "go", "vim", "lua" },
+    auto_install = true,
+    highlight = {
+        enable = true,
+    },
 }
 END
 
@@ -85,43 +85,51 @@ END
 lua <<END
 local lspconfig = require('lspconfig')
 lspconfig.rust_analyzer.setup {
-  settings = {
-    ['rust-analyzer'] = {},
-  },
-  on_attach = function(client, bufnr)
-    -- Disable semantic syntax highlighting. The only visual difference
-    -- between this and Tree-sitter that I know of is that this makes all
-    -- variables blue, which I don't like. Also this takes a few seconds to
-    -- load. Maybe give it another shot in the future.
-    client.server_capabilities.semanticTokensProvider = nil
-  end,
+    settings = {
+        ['rust-analyzer'] = {},
+    },
+    on_attach = function(client, bufnr)
+        -- Disable semantic syntax highlighting. The only visual difference
+        -- between this and Tree-sitter that I know of is that this makes all
+        -- variables blue, which I don't like. Also this takes a few seconds to
+        -- load. Maybe give it another shot in the future.
+        client.server_capabilities.semanticTokensProvider = nil
+    end,
 }
 lspconfig.clangd.setup{}
 lspconfig.gopls.setup{}
+
 -- Global mappings.
--- See `:help vim.diagnostic.*` for documentation on any of the below functions
-vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
-vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
-vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
-vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist)
+vim.keymap.set('n', ']d', function()
+    vim.diagnostic.goto_next({
+        severity = { min = vim.diagnostic.severity.WARN },
+    })
+end)
+vim.keymap.set('n', '[d', function()
+    vim.diagnostic.goto_prev({
+        severity = { min = vim.diagnostic.severity.WARN },
+    })
+end)
+
 -- Use LspAttach autocommand to only map the following keys
 -- after the language server attaches to the current buffer
 vim.api.nvim_create_autocmd('LspAttach', {
-  group = vim.api.nvim_create_augroup('UserLspConfig', {}),
-  callback = function(ev)
-    -- Enable completion triggered by <c-x><c-o>
-    vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
-    -- Buffer local mappings.
-    -- See `:help vim.lsp.*` for documentation on any of the below functions
-    local opts = { buffer = ev.buf }
-    vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
-    vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
-    vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
-    vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, opts)
-    vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, opts)
-    vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, opts)
-  end,
+    group = vim.api.nvim_create_augroup('UserLspConfig', {}),
+    callback = function(ev)
+        -- Enable completion triggered by <c-x><c-o>
+        vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
+        -- Buffer local mappings.
+        local opts = { buffer = ev.buf }
+        vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
+        vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
+        vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
+        vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, opts)
+        vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, opts)
+        vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, opts)
+    end,
 })
+
+-- format on save
 vim.api.nvim_create_autocmd("BufWritePre", {
     buffer = buffer,
     callback = function()
