@@ -53,6 +53,12 @@ nnoremap <leader>gi <cmd>Telescope lsp_implementations<cr>
 nnoremap <leader>rg <cmd>Telescope live_grep<cr>
 nnoremap <leader>ra <cmd>lua require('telescope.builtin').live_grep({additional_args={"--hidden", "--no-ignore"}})<cr>
 
+" Bindings for opening new tmux windows in the current file's parent directory.
+map <leader>t :let $VIM_DIR=expand('%:p:h')<cr>:silent exec "!tmux new-window -c $VIM_DIR"<cr>
+" Note that tmux's notion of vertical/horizontal is opposite Vim's, and I prefer Vim's.
+map <leader>ht :let $VIM_DIR=expand('%:p:h')<cr>:silent exec "!tmux split-window -v -c $VIM_DIR"<cr>
+map <leader>vt :let $VIM_DIR=expand('%:p:h')<cr>:silent exec "!tmux split-window -h -c $VIM_DIR"<cr>
+
 " Hop bindings
 lua require'hop'.setup()
 nnoremap <leader>w :HopWord<cr>
