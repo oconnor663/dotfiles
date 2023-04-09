@@ -136,4 +136,7 @@ vim.api.nvim_create_autocmd("BufWritePre", {
         vim.lsp.buf.format { async = false }
     end
 })
+
+-- Show diagnostics in severity order (i.e. errors on top of warnings).
+vim.diagnostic.config({ severity_sort = true })
 END
