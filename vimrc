@@ -25,7 +25,7 @@ vnoremap > >gv
 nnoremap <bs> <c-^>
 
 " a keybinding to insert a [hyper](link) in markdown
-vnoremap <C-k> <Esc>`>a]()<Esc>`<i[<Esc>/()<CR>:nohlsearch<CR>a
+vnoremap <c-k> <esc>`>a]()<esc>`<i[<esc>/()<cr>:nohlsearch<cr>a
 
 " common typos
 command W w
@@ -42,14 +42,18 @@ filetype plugin indent on
 autocmd FileType c,cpp,cs,java setlocal commentstring=//\ %s
 
 " Telescope bindings
-nnoremap <leader>f <cmd>Telescope find_files<cr>
-nnoremap <leader>o <cmd>Telescope oldfiles<cr>
-nnoremap <leader>a <cmd>lua require('telescope.builtin').find_files({hidden=1, no_ignore=1})<cr>
-nnoremap <leader>b <cmd>Telescope buffers<cr>
-nnoremap <leader>s <cmd>Telescope lsp_dynamic_workspace_symbols<cr>
-nnoremap <leader>d <cmd>Telescope diagnostics<cr>
+nnoremap <c-t> <cmd>Telescope find_files<cr>
+" finders
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fo <cmd>Telescope oldfiles<cr>
+nnoremap <leader>fa <cmd>lua require('telescope.builtin').find_files({hidden=1, no_ignore=1})<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fs <cmd>Telescope lsp_dynamic_workspace_symbols<cr>
+nnoremap <leader>fd <cmd>Telescope diagnostics<cr>
+" goto lists on the symbol under the cursor
 nnoremap <leader>gr <cmd>Telescope lsp_references<cr>
 nnoremap <leader>gi <cmd>Telescope lsp_implementations<cr>
+" live ripgrep
 nnoremap <leader>rg <cmd>Telescope live_grep<cr>
 nnoremap <leader>ra <cmd>lua require('telescope.builtin').live_grep({additional_args={"--hidden", "--no-ignore"}})<cr>
 
