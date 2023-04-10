@@ -84,18 +84,7 @@ END
 " LSP configs
 lua <<END
 local lspconfig = require('lspconfig')
-lspconfig.rust_analyzer.setup {
-    settings = {
-        ['rust-analyzer'] = {},
-    },
-    on_attach = function(client, bufnr)
-        -- Disable semantic syntax highlighting. The only visual difference
-        -- between this and Tree-sitter that I know of is that this makes all
-        -- variables blue, which I don't like. Also this takes a few seconds to
-        -- load. Maybe give it another shot in the future.
-        client.server_capabilities.semanticTokensProvider = nil
-    end,
-}
+lspconfig.rust_analyzer.setup{}
 lspconfig.clangd.setup{}
 lspconfig.gopls.setup{}
 
@@ -139,4 +128,26 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 
 -- Show diagnostics in severity order (i.e. errors on top of warnings).
 vim.diagnostic.config({ severity_sort = true })
+
+-- Work around the colorscheme's lack of support for semantic highlighting.
+-- https://old.reddit.com/r/neovim/comments/12gvms4/this_is_why_your_higlights_look_different_in_90/
+local links = {
+    ['@lsp.type.namespace'] = '@namespace',
+    ['@lsp.type.type'] = '@type',
+    ['@lsp.type.class'] = '@type',
+    ['@lsp.type.enum'] = '@type',
+    ['@lsp.type.interface'] = '@type',
+    ['@lsp.type.struct'] = '@structure',
+    ['@lsp.type.parameter'] = '@parameter',
+    ['@lsp.type.variable'] = '@variable',
+    ['@lsp.type.property'] = '@property',
+    ['@lsp.type.enumMember'] = '@constant',
+    ['@lsp.type.function'] = '@function',
+    ['@lsp.type.method'] = '@method',
+    ['@lsp.type.macro'] = '@macro',
+    ['@lsp.type.decorator'] = '@function',
+}
+for newgroup, oldgroup in pairs(links) do
+    vim.api.nvim_set_hl(0, newgroup, { link = oldgroup, default = true })
+end
 END
