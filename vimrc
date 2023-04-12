@@ -45,6 +45,7 @@ autocmd FileType c,cpp,cs,java setlocal commentstring=//\ %s
 " Telescope bindings
 " most important shortcuts
 nnoremap <c-t> <cmd>Telescope find_files<cr>
+nnoremap g<c-t> <cmd>Telescope resume<cr>
 nnoremap <c-p> <cmd>Telescope oldfiles<cr>
 " general finders
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
