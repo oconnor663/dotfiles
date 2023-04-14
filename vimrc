@@ -171,6 +171,7 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 vim.diagnostic.config({ severity_sort = true })
 
 -- Work around the colorscheme's lack of support for semantic highlighting.
+-- https://gist.github.com/swarn/fb37d9eefe1bc616c2a7e476c0bc0316
 -- https://old.reddit.com/r/neovim/comments/12gvms4/this_is_why_your_higlights_look_different_in_90/
 local links = {
     ['@lsp.type.namespace'] = '@namespace',
