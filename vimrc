@@ -54,6 +54,7 @@ nnoremap <leader>faf <cmd>lua require('telescope.builtin').find_files({hidden=1,
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fs <cmd>Telescope lsp_dynamic_workspace_symbols<cr>
 nnoremap <leader>fd <cmd>lua require('telescope.builtin').diagnostics({severity_limit="warn"})<cr>
+nnoremap <leader>fc <cmd>Telescope command_history<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 " finders based on the symbol under the cursor
 nnoremap <leader>gr <cmd>Telescope lsp_references<cr>
