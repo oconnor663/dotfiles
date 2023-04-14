@@ -12,7 +12,6 @@ set number
 set shiftwidth=4
 set smartcase
 set tabstop=4
-set updatetime=100 " reduces gitgutter lag
 
 " Leader key is space.
 let mapleader = " "
@@ -75,6 +74,15 @@ map <leader>vt :let $VIM_DIR=expand('%:p:h')<cr>:silent exec "!tmux split-window
 lua require'hop'.setup()
 nnoremap <leader>w :HopWord<cr>
 nnoremap <leader>/ :HopChar1<cr>
+
+" gitgutter configs
+set updatetime=100 " reduces lag
+let g:gitgutter_sign_added = '┃'
+let g:gitgutter_sign_modified = '│'
+let g:gitgutter_sign_removed = '▁'
+let g:gitgutter_sign_removed_first_line = '▔'
+let g:gitgutter_sign_removed_above_and_below = '▁▔'
+let g:gitgutter_sign_modified_removed   = '│▁'
 
 " TreeSitter configs
 lua <<END
