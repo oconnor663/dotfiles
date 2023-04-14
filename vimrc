@@ -63,6 +63,33 @@ nnoremap <leader>gaw <cmd>lua require('telescope.builtin').grep_string({addition
 " live ripgrep
 nnoremap <leader>rg <cmd>Telescope live_grep<cr>
 nnoremap <leader>rag <cmd>lua require('telescope.builtin').live_grep({additional_args={"--hidden", "--no-ignore"}})<cr>
+" key bindings within Telescope
+lua << END
+require('telescope').setup{
+    defaults = {
+        mappings = {
+            i = {
+                ["<c-j>"] = "move_selection_next",
+                ["<c-k>"] = "move_selection_previous",
+                -- default mappings
+                -- ["<c-c>"] = "close",
+                -- ["<c-n>"] = "move_selection_next",
+                -- ["<c-p>"] = "move_selection_previous",
+            },
+            n = {
+                ["<c-c>"] = "close",
+                ["<c-j>"] = "move_selection_next",
+                ["<c-k>"] = "move_selection_previous",
+                ["<c-n>"] = "move_selection_next",
+                ["<c-p>"] = "move_selection_previous",
+                ["k"] = "cycle_history_prev",
+                ["j"] = "cycle_history_next",
+            },
+        },
+    },
+}
+END
+
 
 " Bindings for opening new tmux windows in the current file's parent directory.
 map <leader>t :let $VIM_DIR=expand('%:p:h')<cr>:silent exec "!tmux new-window -c $VIM_DIR"<cr>

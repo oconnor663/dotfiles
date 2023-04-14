@@ -36,7 +36,7 @@ git module vim-commentary:
 
 git module vim-fugitive:
   url: https://github.com/tpope/vim-fugitive
-  rev: ef99f1d90cdb33a52931aed5868785b51fb9411d
+  rev: e6651a79facf5cc2b7c554fdc19eb8a9fe89602c
 
 git module vim-gitgutter:
   url: https://github.com/airblade/vim-gitgutter
@@ -48,7 +48,7 @@ git module vim-hop:
 
 git module vim-lspconfig:
   url: https://github.com/neovim/nvim-lspconfig
-  rev: 10fa01d553ce10646350461ac5ddc71f189e9d1a
+  rev: e52efca5d4f5536533d447ec0d97e4d525b37ace
 
 # dependency of vim-telescope
 git module vim-plenary:
@@ -77,7 +77,7 @@ git module vim-telescope:
 
 git module vim-treesitter:
   url: https://github.com/nvim-treesitter/nvim-treesitter
-  rev: a82501244a75b3d59cdc42496e5ad841f31e4d6d
+  rev: f7e8b7420ccf8bc61534ea6155db03d62c7ff571
 
 git module vim-unimpaired:
   url: https://github.com/tpope/vim-unimpaired
