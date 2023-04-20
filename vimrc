@@ -67,6 +67,7 @@ nnoremap <leader>rag <cmd>lua require('telescope.builtin').live_grep({additional
 lua << END
 require('telescope').setup{
     defaults = {
+        path_display = {"truncate"},
         mappings = {
             i = {
                 ["<c-j>"] = "move_selection_next",
