@@ -1,24 +1,30 @@
 [color]
-  ui = true
+    ui = true
 [color "diff"]
-  meta = yellow
-  frag = blue
+    meta = yellow
+    frag = blue
 [user]
-  name = Jack O'Connor
-  email = oconnor663@gmail.com
+    name = Jack O'Connor
+    email = oconnor663@gmail.com
 [include]
-  path = ~/.gitconfig.local
+    path = ~/.gitconfig.local
 [push]
-  default = simple
+    default = simple
 [alias]
-  pick = cherry-pick
-  co = checkout
-  ff = pull --ff-only
+    pick = cherry-pick
+    co = checkout
+    ff = pull --ff-only
 [merge]
-  conflictstyle = diff3
-[core]
-  pager = $HOME/dotfiles/git_pager.sh
+    conflictstyle = diff3
 [pull]
-	ff = only
+    ff = only
 [init]
-	defaultBranch = main
+    defaultBranch = main
+[core]
+    pager = delta
+[delta]
+    navigate = true
+[merge]
+    conflictstyle = diff3
+[diff]
+    colorMoved = default
