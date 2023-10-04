@@ -130,6 +130,7 @@ local lspconfig = require('lspconfig')
 lspconfig.rust_analyzer.setup{}
 lspconfig.clangd.setup{}
 lspconfig.gopls.setup{}
+lspconfig.pyright.setup{}
 
 -- Global mappings.
 vim.keymap.set('n', ']d', function()
