@@ -11,7 +11,7 @@
 [push]
     default = simple
 [alias]
-    pick = cherry-pick
+    pick = cherry-pick --ff
     co = checkout
     ff = pull --ff-only
 [merge]
