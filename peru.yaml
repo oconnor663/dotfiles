@@ -21,7 +21,7 @@ imports:
 
 git module dircolors-solarized:
   url: https://github.com/seebi/dircolors-solarized
-  rev: 31b262c99a81bd8e3bbba03ff35d8dfa6db73a08
+  rev: 664dd4e91ff9600a8e8640ef59bc45dd7c86f18f
 
 git module tmux-sensible:
   url: https://github.com/tmux-plugins/tmux-sensible
@@ -41,7 +41,7 @@ git module vim-commentary:
 
 git module vim-fugitive:
   url: https://github.com/tpope/vim-fugitive
-  rev: 99db68d9b3304580bd383da7aaee05c7a954a344
+  rev: cbe9dfa162c178946afa689dd3f42d4ea8bf89c1
 
 git module vim-gitgutter:
   url: https://github.com/airblade/vim-gitgutter
@@ -53,12 +53,12 @@ git module vim-hop:
 
 git module vim-lspconfig:
   url: https://github.com/neovim/nvim-lspconfig
-  rev: bfdf2e91e7297a54bcc09d3e092a12bff69a1cf4
+  rev: 6428fcab6f3c09e934bc016c329806314384a41e
 
 # dependency of vim-telescope
 git module vim-plenary:
   url: https://github.com/nvim-lua/plenary.nvim
-  rev: 9ce85b0f7dcfe5358c0be937ad23e456907d410b
+  rev: 50012918b2fc8357b87cff2a7f7f0446e47da174
 
 git module vim-repeat:
   url: https://github.com/tpope/vim-repeat
@@ -78,11 +78,11 @@ git module vim-surround:
 
 git module vim-telescope:
   url: https://github.com/nvim-telescope/telescope.nvim
-  rev: 84d53dfdbefbdf84e861a288abc71ef8ccafd04e
+  rev: 4522d7e3ea75ffddabdc39957168a8a7060b5df0
 
 git module vim-treesitter:
   url: https://github.com/nvim-treesitter/nvim-treesitter
-  rev: cb139d880bcf9b3a6f29f2bd088a7491d1662918
+  rev: 107e61afb7129d637ea6c3c68b97a22194b0bf16
 
 git module vim-unimpaired:
   url: https://github.com/tpope/vim-unimpaired
