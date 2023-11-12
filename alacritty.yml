@@ -14,6 +14,7 @@ window:
     x: 3
     y: 3
   decorations: full
+  option_as_alt: Both
 
 mouse:
   hide_when_typing: true
