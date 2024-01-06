@@ -14,10 +14,10 @@ if [[ "$HERE" != "$HOME/dotfiles" ]] ; then
   exit 1
 fi
 
-newshell=/bin/zsh
-if [ $SHELL != $newshell ]; then
-  echo Switching default shell from $SHELL to $newshell...
-  chsh -s $newshell
+newshell="/bin/zsh"
+if [[ ! "$SHELL" =~ "zsh" ]]; then
+  echo "Switching default shell from $SHELL to $newshell..."
+  chsh -s "$newshell"
 fi
 
 peru sync
