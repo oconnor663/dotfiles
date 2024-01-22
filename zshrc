@@ -348,3 +348,6 @@ _gen_fzf_default_opts() {
   "
 }
 _gen_fzf_default_opts
+
+# FZF keybinds (particularly ctrl-r for history search)
+source "$DOTFILES/fzf/shell/key-bindings.zsh"
