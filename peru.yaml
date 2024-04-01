@@ -23,7 +23,7 @@ imports:
 
 git module dircolors-solarized:
   url: https://github.com/seebi/dircolors-solarized
-  rev: 4c878a8b107a991c9247f11b2db3de6626bbb80a
+  rev: 6714ca06aa98befd7d732e90bcf10bdcb3ea224e
 
 git module tmux-sensible:
   url: https://github.com/tmux-plugins/tmux-sensible
@@ -31,7 +31,7 @@ git module tmux-sensible:
 
 git module fzf:
   url: https://github.com/junegunn/fzf
-  rev: 3a4c3d3e58691beec3a6aff34e5b80fde541e13d
+  rev: c30e486b648c1540a660802a5015aeca208274fa
 
 git module tmux-colors-solarized:
   url: https://github.com/seebi/tmux-colors-solarized
@@ -47,7 +47,7 @@ git module vim-commentary:
 
 git module vim-fugitive:
   url: https://github.com/tpope/vim-fugitive
-  rev: 854a8df0d06b8d3fcb30fa7f2b08c62b553eee3b
+  rev: c0b03f1cac242d96837326d300f42a660306fc1a
 
 git module vim-gitgutter:
   url: https://github.com/airblade/vim-gitgutter
@@ -59,12 +59,12 @@ git module vim-hop:
 
 git module vim-lspconfig:
   url: https://github.com/neovim/nvim-lspconfig
-  rev: 8917d2c830e04bf944a699b8c41f097621283828
+  rev: f4619ab31fc4676001ea05ae8200846e6e7700c7
 
 # dependency of vim-telescope
 git module vim-plenary:
   url: https://github.com/nvim-lua/plenary.nvim
-  rev: 663246936325062427597964d81d30eaa42ab1e4
+  rev: 8aad4396840be7fc42896e3011751b7609ca4119
 
 git module vim-repeat:
   url: https://github.com/tpope/vim-repeat
@@ -76,7 +76,7 @@ git module vim-rsi:
 
 git module vim-solarized:
   url: https://github.com/ishan9299/nvim-solarized-lua
-  rev: 7bd46fa036bde6b4483fb7403b0a7b0754faeeaa
+  rev: d69a263c97cbc765ca442d682b3283aefd61d4ac
 
 git module vim-surround:
   url: https://github.com/tpope/vim-surround
@@ -84,11 +84,11 @@ git module vim-surround:
 
 git module vim-telescope:
   url: https://github.com/nvim-telescope/telescope.nvim
-  rev: 20efb3864903fb854a85faf57513ffd80582275b
+  rev: 1bb28df3cfc241b961331f00dcb8d5b45fe3e4f0
 
 git module vim-treesitter:
   url: https://github.com/nvim-treesitter/nvim-treesitter
-  rev: 94bd4bcc5bbce8334303727627b628ece72e798d
+  rev: d31eb5442deb4940a98b5573b78eb822b74fbcea
 
 git module vim-unimpaired:
   url: https://github.com/tpope/vim-unimpaired
