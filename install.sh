@@ -32,7 +32,7 @@ function link {
   ln -sfn "$HERE/$src" "$dest"
 }
 
-link alacritty.yml      ~/.config/alacritty/alacritty.yml
+link alacritty.toml     ~/.config/alacritty/alacritty.toml
 link bare.desktop       ~/.local/share/applications/bare.desktop
 link docker_config.json ~/.docker/config.json
 link gdbinit            ~/.gdbinit
