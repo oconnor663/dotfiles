@@ -21,7 +21,7 @@
 [init]
     defaultBranch = main
 [core]
-    pager = delta
+    pager = delta --max-line-length 4096
 [interactive]
     diffFilter = delta --color-only
 [delta]
