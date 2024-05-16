@@ -178,14 +178,13 @@ newcpp() {
   cd "$dir"
   ln -sfn "$DOTFILES/clang-format" .clang-format
   cat << EOF > scratch.cpp
-#include <iostream>
+#include <cstdint>
+#include <cstdio>
 #include <string>
 #include <vector>
 
-using namespace std;
-
 int main() {
-  cout << "hello" << endl;
+  printf("hello\n");
 }
 EOF
   cat << EOF > Makefile
