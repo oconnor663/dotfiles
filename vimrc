@@ -42,6 +42,9 @@ command Wa wa
 filetype plugin indent on
 autocmd FileType c,cpp,cs,java setlocal commentstring=//\ %s
 
+" Use whole words when opening URLs with `gx`. https://vi.stackexchange.com/a/2980/1949
+let g:netrw_gx="<cWORD>"
+
 " Telescope bindings
 " most important shortcuts
 nnoremap <c-t> <cmd>Telescope find_files<cr>
