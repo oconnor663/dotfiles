@@ -31,7 +31,7 @@ git module tmux-sensible:
 
 git module fzf:
   url: https://github.com/junegunn/fzf
-  rev: c30e486b648c1540a660802a5015aeca208274fa
+  rev: 0994d9c881f8380997b96bb0a4a7416b50bc2b0d
 
 git module tmux-colors-solarized:
   url: https://github.com/seebi/tmux-colors-solarized
@@ -43,15 +43,15 @@ git module tmux-yank:
 
 git module vim-commentary:
   url: https://github.com/tpope/vim-commentary
-  rev: f67e3e67ea516755005e6cccb178bc8439c6d402
+  rev: c4b8f52cbb7142ec239494e5a2c4a512f92c4d07
 
 git module vim-fugitive:
   url: https://github.com/tpope/vim-fugitive
-  rev: c0b03f1cac242d96837326d300f42a660306fc1a
+  rev: 19ca61c78c86a2ce6a425aee9b1c6664e5149ea6
 
 git module vim-gitgutter:
   url: https://github.com/airblade/vim-gitgutter
-  rev: 67ef116100b40f9ca128196504a2e0bc0a2753b0
+  rev: e801371917e52805a4ceb1e93f55ed1fba712f82
 
 git module vim-hop:
   url: https://github.com/phaazon/hop.nvim
@@ -59,12 +59,12 @@ git module vim-hop:
 
 git module vim-lspconfig:
   url: https://github.com/neovim/nvim-lspconfig
-  rev: f4619ab31fc4676001ea05ae8200846e6e7700c7
+  rev: cee94b22adc96582d9136f85fb3b076feda8825c
 
 # dependency of vim-telescope
 git module vim-plenary:
   url: https://github.com/nvim-lua/plenary.nvim
-  rev: 8aad4396840be7fc42896e3011751b7609ca4119
+  rev: 08e301982b9a057110ede7a735dd1b5285eb341f
 
 git module vim-repeat:
   url: https://github.com/tpope/vim-repeat
@@ -84,11 +84,11 @@ git module vim-surround:
 
 git module vim-telescope:
   url: https://github.com/nvim-telescope/telescope.nvim
-  rev: 1bb28df3cfc241b961331f00dcb8d5b45fe3e4f0
+  rev: 52f500110bcf9190b44b4d8640162adc86772ec4
 
 git module vim-treesitter:
   url: https://github.com/nvim-treesitter/nvim-treesitter
-  rev: d31eb5442deb4940a98b5573b78eb822b74fbcea
+  rev: 8012b55eee65eba1d1ee4df0a186d30e72dcbe65
 
 git module vim-unimpaired:
   url: https://github.com/tpope/vim-unimpaired
