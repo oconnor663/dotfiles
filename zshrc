@@ -71,7 +71,7 @@ function gpo() {
   git push origin "$(git name-rev --name-only HEAD)" "$@"
 }
 function gup() {
-  git fetch && \
+  git fetch --all --tags --prune && \
   if [[ -n "$(git log HEAD.."$(git_upstream_branch_name)" -1)" ]] ; then
     git rebase "$(git_upstream_branch_name)" --autostash
   else
