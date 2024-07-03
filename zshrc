@@ -179,12 +179,12 @@ newcpp() {
   ln -sfn "$DOTFILES/clang-format" .clang-format
   cat << EOF > scratch.cpp
 #include <cstdint>
-#include <cstdio>
+#include <print>
 #include <string>
 #include <vector>
 
 int main() {
-  printf("hello\n");
+  std::println("{}", 42);
 }
 EOF
   cat << EOF > Makefile
@@ -192,7 +192,7 @@ run: scratch
 	./scratch
 
 scratch: scratch.cpp Makefile
-	g++ scratch.cpp -o scratch -g -std=c++20 -fsanitize=undefined,address
+	g++ scratch.cpp -o scratch -g -std=c++23 -fsanitize=undefined,address
 
 clean:
 	rm scratch
