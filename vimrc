@@ -67,7 +67,7 @@ nnoremap <leader>gw <cmd>Telescope grep_string<cr>
 nnoremap <leader>gaw <cmd>lua require('telescope.builtin').grep_string({additional_args={"--hidden", "--no-ignore"}})<cr>
 " live ripgrep
 nnoremap <leader>rg <cmd>Telescope live_grep<cr>
-nnoremap <leader>rag <cmd>lua require('telescope.builtin').live_grep({additional_args={"--hidden", "--no-ignore"}})<cr>
+nnoremap <leader>ra <cmd>lua require('telescope.builtin').live_grep({additional_args={"--hidden", "--no-ignore"}})<cr>
 " key bindings within Telescope
 lua << END
 require('telescope').setup{
