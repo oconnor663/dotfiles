@@ -131,9 +131,14 @@ venv() {
 }
 alias vact="source /tmp/venv/bin/activate"
 
+scratchdir() {
+    mkdir -p /tmp/scratch
+    mktemp -d --tmpdir="/tmp/scratch" "$1.XXX"
+}
+
 newgo() {
-  dir="$(mktemp -d)"
-  ln -sfn "$dir" /tmp/lastgo
+  dir="$(scratchdir go)"
+  ln -sfn "$dir" /tmp/scratch/lastgo
   cd "$dir"
   cat << EOF > test.go
 package main
@@ -153,28 +158,50 @@ EOF
 }
 
 newrust() {
-  crate="$(mktemp -d)"/scratch
-  ln -sfn "$crate" /tmp/lastrust
-  cargo new --bin "$crate"
+  crate="$(scratchdir rust)"
+  ln -sfn "$crate" /tmp/scratch/lastrust
   cd "$crate"
+  cargo init --bin --name scratch
   git add -A
   git commit -m "first"
   "$EDITOR" src/main.rs
 }
 
 newrustlib() {
-  crate="$(mktemp -d)"/scratch
-  ln -sfn "$crate" /tmp/lastrust
-  cargo new --lib "$crate"
+  crate="$(scratchdir rustlib)"
+  ln -sfn "$crate" /tmp/scratch/lastrustlib
   cd "$crate"
+  cargo init --lib --name scratch
   git add -A
   git commit -m "first"
   "$EDITOR" src/lib.rs
 }
 
+newtokio() {
+  crate="$(scratchdir tokio)"
+  ln -sfn "$crate" /tmp/scratch/lasttokio
+  cd "$crate"
+  cargo init --bin --name scratch
+  cargo add futures tokio --features tokio/full
+  cat << EOF > src/main.rs
+use tokio::time::{sleep, Duration};
+
+#[tokio::main]
+async fn main() {
+    sleep(Duration::from_secs(1)).await;
+    println!("done");
+}
+EOF
+  git add -A
+  git commit -m "first"
+  setopt LOCAL_OPTIONS NO_NOTIFY NO_MONITOR
+  cargo build > /dev/null 2>&1 &
+  "$EDITOR" src/main.rs
+}
+
 newcpp() {
-  dir="$(mktemp -d)"
-  ln -sfn "$dir" /tmp/lastcpp
+  dir="$(scratchdir cpp)"
+  ln -sfn "$crate" /tmp/scratch/lastcpp
   cd "$dir"
   ln -sfn "$DOTFILES/clang-format" .clang-format
   cat << EOF > scratch.cpp
@@ -201,20 +228,6 @@ EOF
   git add -A
   git commit -m "first"
   "$EDITOR" scratch.cpp
-}
-
-newzig() {
-  dir="$(mktemp -d)"
-  ln -sfn "$dir" /tmp/lastzig
-  cd "$dir"
-  cat << EOF > test.zig
-const std = @import("std");
-
-pub fn main() !void {
-    std.debug.print("hello\n", .{});
-}
-EOF
-  "$EDITOR" test.zig
 }
 
 cbturbo() {
