@@ -363,4 +363,3 @@ _gen_fzf_default_opts
 
 # FZF keybinds (particularly ctrl-r for history search)
 source "/usr/share/fzf/key-bindings.zsh"
-export LD_LIBRARY_PATH=/home/jacko/.local/lib/arch-mojo:$LD_LIBRARY_PATH
