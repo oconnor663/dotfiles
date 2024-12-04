@@ -1,6 +1,8 @@
 imports:
   dircolors-solarized: dircolors-solarized
 
+  fzf: fzf
+
   tmux-colors-solarized: tmux/solarized
   tmux-sensible:         tmux/sensible
   tmux-yank:             tmux/yank
@@ -22,6 +24,10 @@ imports:
 git module dircolors-solarized:
   url: https://github.com/seebi/dircolors-solarized
   rev: 8c361017afb3cadc7cf36d6b94d01b90ae3bc59f
+
+git module fzf:
+  url: https://github.com/junegunn/fzf
+  rev: a6957aba117bac5139f6cd408f1bd1bb89183f8a
 
 git module tmux-sensible:
   url: https://github.com/tmux-plugins/tmux-sensible

@@ -264,7 +264,7 @@ fi
 stty stop undef
 
 # colors for ls
-if [[ -n $SOLARIZED ]] ; then
+if [[ -n $SOLARIZED && -n "$(command -v dircolors)" ]] ; then
   eval $(dircolors "$DOTFILES/dircolors-solarized/dircolors.ansi-dark")
 fi
 if ls --color=auto > /dev/null 2>&1 ; then
@@ -362,4 +362,4 @@ _gen_fzf_default_opts() {
 _gen_fzf_default_opts
 
 # FZF keybinds (particularly ctrl-r for history search)
-source "/usr/share/fzf/key-bindings.zsh"
+source "$DOTFILES/fzf/shell/key-bindings.zsh"
