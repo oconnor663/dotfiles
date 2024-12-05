@@ -18,7 +18,9 @@ alias grep='grep --color=auto'
 alias i="ipython --no-confirm-exit"
 alias i2="ipython2 --no-confirm-exit"
 alias i3="ipython3 --no-confirm-exit"
-alias open="xdg-open"
+if [[ -z "$(command -v open)" ]] ; then
+  alias open="xdg-open"
+fi
 alias r='cd $(git rev-parse --show-toplevel || echo .)'
 alias rp='cd $(realpath .)'
 alias sz='source ~/.zshrc'
