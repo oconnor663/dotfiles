@@ -179,6 +179,34 @@ newrustlib() {
   "$EDITOR" src/lib.rs
 }
 
+newrustbench() {
+  crate="$(scratchdir rustbench)"
+  ln -sfn "$crate" /tmp/scratch/lastrustbench
+  cd "$crate"
+  cargo init --lib --name scratch
+  mkdir benches
+  cat /dev/null > src/lib.rs
+  cat > benches/bench.rs << EOF
+#![feature(test)]
+
+extern crate test;
+
+use test::Bencher;
+
+#[bench]
+fn bench(b: &mut Bencher) {
+    b.iter(|| 1 + 1);
+}
+EOF
+  cat > rust-toolchain.toml << EOF
+[toolchain]
+channel = "nightly"
+EOF
+  git add -A
+  git commit -m "first"
+  "$EDITOR" benches/bench.rs
+}
+
 newtokio() {
   crate="$(scratchdir tokio)"
   ln -sfn "$crate" /tmp/scratch/lasttokio
