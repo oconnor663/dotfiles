@@ -10,12 +10,13 @@
     path = ~/.gitconfig.local
 [push]
     default = simple
+    autoSetupRemote = true
 [alias]
     pick = cherry-pick --ff
     co = checkout
     ff = pull --ff-only
 [merge]
-    conflictstyle = diff3
+    conflictstyle = zdiff3
 [pull]
     ff = only
 [init]
@@ -29,4 +30,15 @@
 [merge]
     conflictstyle = diff3
 [diff]
-    colorMoved = default
+    algorithm = histogram
+    colorMoved = plain
+    mnemonicPrefix = true
+    renames = true
+[commit]
+    verbose = true
+[column]
+    ui = auto
+[branch]
+    sort = -committerdate
+[tag]
+    sort = version:refname
