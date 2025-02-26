@@ -241,7 +241,7 @@ newcpp() {
 #include <vector>
 
 int main() {
-  std::println("{}", 42);
+    std::println("{}", 42);
 }
 EOF
   cat << EOF > Makefile
