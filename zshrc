@@ -260,6 +260,14 @@ EOF
   "$EDITOR" scratch.cpp
 }
 
+newuv() {
+  dir="$(scratchdir python)"
+  ln -sfn "$dir" /tmp/scratch/lastpython
+  cd "$dir"
+  uv init --name scratch
+  "$EDITOR" main.py
+}
+
 cbturbo() {
   if [[ "$(cat /sys/devices/system/cpu/intel_pstate/no_turbo)" != 0 ]] ; then
     echo "TurboBoost is already off." 1>&2
