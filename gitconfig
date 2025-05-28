@@ -14,7 +14,7 @@
 [alias]
     pick = cherry-pick --ff
     co = checkout
-    ff = pull --ff-only
+    ff = "!git fetch origin && git merge --ff-only \"origin/$(git rev-parse --abbrev-ref HEAD)\""
 [merge]
     conflictstyle = zdiff3
 [pull]
