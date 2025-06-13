@@ -1,10 +1,10 @@
 [Desktop Entry]
 Type=Application
-Exec=kitty tmux
-Icon=kitty
+Exec=alacritty -e tmux
+Icon=Alacritty
 Terminal=false
 Categories=System;TerminalEmulator;
 
-X-Desktop-File-Install-Version=0.26
+X-Desktop-File-Install-Version=0.28
 
 Name=Tmux
