@@ -264,8 +264,8 @@ newuv() {
   dir="$(scratchdir python)"
   ln -sfn "$dir" /tmp/scratch/lastpython
   cd "$dir"
-  uv init --name scratch
-  "$EDITOR" main.py
+  uv init --package --name scratch
+  "$EDITOR" src/scratch/__init__.py
 }
 
 cbturbo() {
