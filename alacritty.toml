@@ -41,6 +41,26 @@ mods = "Control|Shift"
 action = "ToggleFullscreen"
 key = "F11"
 
+# Unbind Ctrl-Dash in favor of Ctrl-Shift-Dash, so that Tmux can take Ctrl-Dash
+# as an typo-friendly alternate for Ctrl-Prefix Dash. This also matches the
+# standard Chrome zoom shortcut.
+[[keyboard.bindings]]
+key = "-"
+mods = "Control"
+chars = "\u001f" # pass through Ctrl-Dash
+[[keyboard.bindings]]
+key = "_"
+mods = "Control|Shift"
+action = "DecreaseFontSize"
+[[keyboard.bindings]]
+key = "="
+mods = "Control"
+action = "None" # nothing needs this, and I'm not sure there's a correct byte
+[[keyboard.bindings]]
+key = "+"
+mods = "Control|Shift"
+action = "IncreaseFontSize"
+
 [mouse]
 hide_when_typing = true
 
