@@ -14,6 +14,9 @@ set shiftwidth=4
 set smartcase
 set tabstop=4
 
+" Keep 500 oldfiles
+set shada='500,<50,s10,h
+
 " Leader key is space.
 let mapleader = " "
 noremap <space> <nop>
