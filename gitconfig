@@ -40,5 +40,6 @@
     ui = auto
 [branch]
     sort = -committerdate
+    autoSetupMerge = false
 [tag]
     sort = version:refname
