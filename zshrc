@@ -34,7 +34,7 @@ alias timestamp="date +%Y-%m-%d-%H:%M:%S"
 alias dr="docker run --tty --interactive --rm"
 alias new="ls -lht --color=always | grep -Ev '^total' | head"
 alias fa="fd -i --hidden --no-ignore"
-alias ncdu="ncdu --color=dark"
+alias ncdu="ncdu --color=off"
 
 # git aliases
 alias git="noglob git" # zsh likes to swallow ^ characters
