@@ -59,6 +59,7 @@ alias gfp='git fetch --all --tags --prune'
 alias good='git bisect good'
 alias bad='git bisect bad'
 alias grecent='git for-each-ref --sort=-committerdate refs/heads/ --format="%(refname:short) (%(committerdate:relative))"'
+alias gri='git rebase --interactive "$(git merge-base "$(git_upstream_branch_name)" HEAD)"'
 function gdrop() {
   local current_branch="$(git symbolic-ref --short HEAD)" &&
   git checkout "$(git_main_branch_name)" &&
