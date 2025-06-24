@@ -39,15 +39,10 @@ alias ncdu="ncdu --color=off"
 # git aliases
 alias git="noglob git" # zsh likes to swallow ^ characters
 alias gs='git status'
-alias gsi='git status --ignored'
 alias gd='git diff'
-alias gb='git rev-parse --abbrev-ref HEAD'
-alias gcamend="git commit --amend --no-edit"
-alias gca="gcamend -a"
+alias gca="git commit --amend --no-edit --all"
 alias gcff="git clean -dffx"
 alias grh='git reset --hard'
-alias gpr='git pull --rebase'
-alias gfra='git fetch && git rebase --autostash "$(git_upstream_branch_name)"'
 alias gout='git log "$(git_upstream_branch_name)".. --oneline'
 alias goutp='git log "$(git_upstream_branch_name)".. -p'
 alias ginit='git init && git add -A && git commit -m "first commit"'
@@ -64,14 +59,6 @@ function gdrop() {
   local current_branch="$(git symbolic-ref --short HEAD)" &&
   git checkout "$(git_main_branch_name)" &&
   git branch -D "$current_branch" &&
-}
-function gpo() {
-  branch="$(git name-rev --name-only HEAD)"
-  if [[ "$branch" = "$(git_main_branch_name)" ]] ; then
-    echo "BLERG! Did you mean to run this on $(git_main_branch_name)?"
-    return 1
-  fi
-  git push origin "$(git name-rev --name-only HEAD)" "$@"
 }
 function gup() {
   git fetch --all --tags --prune && \
