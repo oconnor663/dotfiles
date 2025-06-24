@@ -33,7 +33,6 @@ function link {
 }
 
 link alacritty.toml     ~/.config/alacritty/alacritty.toml
-link bare.desktop       ~/.local/share/applications/bare.desktop
 link docker_config.json ~/.docker/config.json
 link gdbinit            ~/.gdbinit
 link gitconfig          ~/.gitconfig
