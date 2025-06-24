@@ -54,7 +54,7 @@ alias gfp='git fetch --all --tags --prune'
 alias good='git bisect good'
 alias bad='git bisect bad'
 alias grecent='git for-each-ref --sort=-committerdate refs/heads/ --format="%(refname:short) (%(committerdate:relative))"'
-alias gri='git rebase --interactive "$(git merge-base "$(git_upstream_branch_name)" HEAD)"'
+alias gri='git rebase --interactive --autostash --update-refs "$(git merge-base "$(git_upstream_branch_name)" HEAD)"'
 function gdrop() {
   local current_branch="$(git symbolic-ref --short HEAD)" &&
   git checkout "$(git_main_branch_name)" &&
@@ -63,7 +63,7 @@ function gdrop() {
 function gup() {
   git fetch --all --tags --prune && \
   if [[ -n "$(git log HEAD.."$(git_upstream_branch_name)" -1)" ]] ; then
-    git rebase "$(git_upstream_branch_name)" --autostash
+    git rebase "$(git_upstream_branch_name)" --autostash --update-refs
   else
     echo Up to date.
   fi
