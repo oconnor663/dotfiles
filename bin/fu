@@ -1,8 +1,0 @@
-#! /bin/bash
-
-# This could almost be just an alias, but I want it to work under `sudo`, so it
-# needs to be in my $PATH.
-
-set -e -u -o pipefail
-
-fusermount -u "$@"
