@@ -355,6 +355,9 @@ key[Delete]=${terminfo[kdch1]}
 [[ -n "${key[Insert]}"  ]]  && bindkey  "${key[Insert]}"  overwrite-mode
 [[ -n "${key[Delete]}"  ]]  && bindkey  "${key[Delete]}"  delete-char
 
+# Load work-related aliases and things.
+source "$DOTFILES/zshrc.work"
+
 # Load settings specific to this machine.
 local_zshrc="$HOME/.zshrc.local"
 if [ -e "$local_zshrc" ] ; then

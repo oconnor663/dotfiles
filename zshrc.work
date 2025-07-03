@@ -1,0 +1,49 @@
+fast() {
+    command="$1"
+    shift
+    CARGO_TARGET_X86_64_UNKNOWN_LINUX_GNU_LINKER=clang \
+        CARGO_TARGET_X86_64_UNKNOWN_LINUX_MUSL_LINKER=clang \
+        RUSTFLAGS="-C link-arg=-fuse-ld=/usr/bin/mold" \
+        cargo "$command" --profile fast-build "$@"
+}
+
+fastuv() {
+    (cd ~/astral/uv && fast build) && ~/astral/uv/target/fast-build/uv "$@"
+}
+
+fastuvx() {
+    (cd ~/astral/uv && fast build) && ~/astral/uv/target/fast-build/uvx "$@"
+}
+
+ft() {
+    CARGO_TARGET_X86_64_UNKNOWN_LINUX_GNU_LINKER=clang \
+        CARGO_TARGET_X86_64_UNKNOWN_LINUX_MUSL_LINKER=clang \
+        RUSTFLAGS="-C link-arg=-fuse-ld=/usr/bin/mold" \
+        cargo nextest run --cargo-profile fast-build --no-fail-fast "$@"
+}
+
+slowuv() {
+    (cd ~/astral/uv && cargo build) && ~/astral/uv/target/debug/uv "$@"
+}
+
+tyc () {
+    (
+        export CARGO_TARGET_X86_64_UNKNOWN_LINUX_GNU_LINKER=clang
+        export CARGO_TARGET_X86_64_UNKNOWN_LINUX_MUSL_LINKER=clang
+        export RUSTFLAGS="-C link-arg=-fuse-ld=/usr/bin/mold"
+        cd ~/astral/ruff
+        cargo build --bin ty --target-dir target-mold
+    ) && ~/astral/ruff/target-mold/debug/ty check "$@"
+}
+
+tyt () {
+    (
+        export CARGO_TARGET_X86_64_UNKNOWN_LINUX_GNU_LINKER=clang
+        export CARGO_TARGET_X86_64_UNKNOWN_LINUX_MUSL_LINKER=clang
+        export RUSTFLAGS="-C link-arg=-fuse-ld=/usr/bin/mold"
+        cd ~/astral/ruff
+        cargo nextest run --target-dir target-mold --no-fail-fast "$@"
+    )
+}
+
+export I_KNOW_TY_IS_PRE_RELEASE=1
