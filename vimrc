@@ -133,11 +133,10 @@ END
 
 " LSP configs
 lua <<END
-local lspconfig = require('lspconfig')
-lspconfig.rust_analyzer.setup{}
-lspconfig.clangd.setup{}
-lspconfig.gopls.setup{}
-lspconfig.pyright.setup{}
+vim.lsp.enable('rust_analyzer')
+vim.lsp.enable('clangd')
+vim.lsp.enable('gopls')
+vim.lsp.enable('ty')
 
 -- Global mappings.
 vim.keymap.set('n', ']d', function()

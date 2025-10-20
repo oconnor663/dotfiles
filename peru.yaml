@@ -59,7 +59,7 @@ git module vim-hop:
 
 git module vim-lspconfig:
   url: https://github.com/neovim/nvim-lspconfig
-  rev: ff6471d4f837354d8257dfa326b031dd8858b16e
+  rev: ac98db2f9f06a56498ec890a96928774eae412c3
 
 # dependency of vim-telescope
 git module vim-plenary:
