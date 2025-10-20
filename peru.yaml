@@ -8,6 +8,7 @@ imports:
   tmux-yank:             tmux/yank
 
   commentary: vim_pack/plugins/start/commentary
+  copilot:    vim_pack/plugins/start/copilot
   fugitive:   vim_pack/plugins/start/fugitive
   gitgutter:  vim_pack/plugins/start/gitgutter
   hop:        vim_pack/plugins/start/hop
@@ -48,6 +49,11 @@ git module tmux-yank:
 git module commentary:
   url: https://github.com/tpope/vim-commentary
   rev: 64a654ef4a20db1727938338310209b6a63f60c9
+
+git module copilot:
+  url: https://github.com/github/copilot.vim
+  reup: release
+  rev: da369d90cfd6c396b1d0ec259836a1c7222fb2ea
 
 git module fugitive:
   url: https://github.com/tpope/vim-fugitive
