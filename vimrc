@@ -21,6 +21,15 @@ set shada='500,<50,s10,h
 let mapleader = " "
 noremap <space> <nop>
 
+" Make Ctrl-C behave like Escape. Normally it doesn't fire InsertLeave, which
+" prevents things like Copilot from cleaning up after themselves.
+lua << END
+vim.keymap.set("i", "<C-c>", function()
+  vim.api.nvim_exec_autocmds("InsertLeave", {})
+  vim.cmd.stopinsert()
+end, { silent = true })
+END
+
 " remain in visual mode when indenting or dedenting
 vnoremap < <gv
 vnoremap > >gv
