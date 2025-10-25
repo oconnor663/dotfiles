@@ -72,6 +72,7 @@ nnoremap <leader>fd <cmd>lua require('telescope.builtin').diagnostics({severity_
 nnoremap <leader>fg <cmd>Telescope git_status<cr>
 nnoremap <leader>fc <cmd>Telescope command_history<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+nnoremap <leader>fm <cmd>Telescope marks<cr>
 " finders based on the symbol under the cursor
 nnoremap <leader>gr <cmd>Telescope lsp_references<cr>
 nnoremap <leader>gi <cmd>Telescope lsp_implementations<cr>
