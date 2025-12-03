@@ -139,6 +139,16 @@ require'nvim-treesitter.configs'.setup {
         enable = true,
     },
 }
+
+-- nvim-treesitter-context
+require'treesitter-context'.setup{
+  line_numbers = true,
+  multiline_threshold = 1, -- Maximum number of lines to show for a single context
+  mode = 'cursor',  -- Line used to calculate context. Choices: 'cursor', 'topline'
+}
+vim.keymap.set("n", "[c", function()
+  require("treesitter-context").go_to_context(vim.v.count1)
+end, { silent = true })
 END
 
 " LSP configs
