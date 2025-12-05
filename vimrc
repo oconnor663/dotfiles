@@ -142,10 +142,11 @@ require'nvim-treesitter.configs'.setup {
 
 -- nvim-treesitter-context
 require'treesitter-context'.setup{
+  max_lines = 2,
   line_numbers = true,
   multiline_threshold = 1, -- Maximum number of lines to show for a single context
   trim_scope = 'inner', -- Which context lines to discard if `max_lines` is exceeded. Choices: 'inner', 'outer'
-  mode = 'cursor',  -- Line used to calculate context. Choices: 'cursor', 'topline'
+  mode = 'topline',  -- Line used to calculate context. Choices: 'cursor', 'topline'
 }
 END
 
