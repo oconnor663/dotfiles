@@ -153,6 +153,17 @@ END
 " LSP configs
 lua <<END
 vim.lsp.enable('rust_analyzer')
+vim.lsp.config('rust_analyzer', {
+  settings = {
+    ['rust-analyzer'] = {
+      cargo = {
+        -- Use a separate target dir to avoid locking the main one.
+        -- https://rust-analyzer.github.io/book/configuration#cargo.targetDir
+        targetDir = true;
+      }
+    }
+  }
+})
 vim.lsp.enable('clangd')
 vim.lsp.enable('gopls')
 vim.lsp.enable('ty')
