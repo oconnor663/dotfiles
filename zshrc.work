@@ -28,21 +28,22 @@ slowuv() {
 
 tyc () {
     (
-        export CARGO_TARGET_X86_64_UNKNOWN_LINUX_GNU_LINKER=clang
-        export CARGO_TARGET_X86_64_UNKNOWN_LINUX_MUSL_LINKER=clang
-        export RUSTFLAGS="-C link-arg=-fuse-ld=/usr/bin/mold"
         cd ~/astral/ruff
-        cargo build --bin ty --target-dir target-mold
-    ) && ~/astral/ruff/target-mold/debug/ty check "$@"
+        cargo build --bin ty
+    ) && ~/astral/ruff/target/debug/ty check --ignore undefined-reveal "$@"
+}
+
+tycr () {
+    (
+        cd ~/astral/ruff
+        cargo build --profile profiling --bin ty
+    ) && ~/astral/ruff/target/profiling/ty check --ignore undefined-reveal "$@"
 }
 
 tyt () {
     (
-        export CARGO_TARGET_X86_64_UNKNOWN_LINUX_GNU_LINKER=clang
-        export CARGO_TARGET_X86_64_UNKNOWN_LINUX_MUSL_LINKER=clang
-        export RUSTFLAGS="-C link-arg=-fuse-ld=/usr/bin/mold"
         cd ~/astral/ruff
-        cargo nextest run --target-dir target-mold --no-fail-fast "$@"
+        cargo nextest run --no-fail-fast "$@"
     )
 }
 
