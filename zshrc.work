@@ -26,25 +26,18 @@ slowuv() {
     (cd ~/astral/uv && cargo build) && ~/astral/uv/target/debug/uv "$@"
 }
 
-tyc () {
-    (
-        cd ~/astral/ruff
-        cargo build --bin ty
-    ) && ~/astral/ruff/target/debug/ty check --ignore undefined-reveal "$@"
+_tyc_base () {
+    repo="$1"
+    profile="$2"
+    target_dir="$3"
+    shift 3
+    cargo build --manifest-path "$repo/Cargo.toml" --bin ty --profile "$profile" \
+        && "$repo/target/$target_dir/ty" check --ignore undefined-reveal "$@"
 }
 
-tycr () {
-    (
-        cd ~/astral/ruff
-        cargo build --profile profiling --bin ty
-    ) && ~/astral/ruff/target/profiling/ty check --ignore undefined-reveal "$@"
-}
-
-tyt () {
-    (
-        cd ~/astral/ruff
-        cargo nextest run --no-fail-fast "$@"
-    )
-}
-
-export I_KNOW_TY_IS_PRE_RELEASE=1
+alias tyc='_tyc_base ~/astral/ruff dev debug'
+alias tyc2='_tyc_base ~/astral/ruff2 dev debug'
+alias tyc3='_tyc_base ~/astral/ruff3 dev debug'
+alias tycr='_tyc_base ~/astral/ruff profiling profiling'
+alias tycr2='_tyc_base ~/astral/ruff2 profiling profiling'
+alias tycr3='_tyc_base ~/astral/ruff3 profiling profiling'
