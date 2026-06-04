@@ -200,7 +200,7 @@ newtokio() {
   ln -sfn "$crate" /tmp/scratch/lasttokio
   cd "$crate"
   cargo init --bin --name scratch
-  cargo add futures tokio --features tokio/full
+  cargo add futures tokio --features tokio/full tokio-stream
   cat << EOF > src/main.rs
 use tokio::time::{sleep, Duration};
 
