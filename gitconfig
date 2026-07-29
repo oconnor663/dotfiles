@@ -43,3 +43,5 @@
     autoSetupMerge = false
 [tag]
     sort = version:refname
+[submodule]
+    fetchJobs = 8
