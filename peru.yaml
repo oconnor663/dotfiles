@@ -69,8 +69,8 @@ git module gitgutter:
   rev: 21c977e8597c468c7dc76001389b0b430d46a4b0
 
 git module hop:
-  url: https://github.com/phaazon/hop.nvim
-  rev: 1a1eceafe54b5081eae4cb91c723abd1d450f34b
+  url: https://github.com/smoka7/hop.nvim
+  rev: 6e83486f351066e38c3ae9daad2a4f01dfb262ad
 
 git module lspconfig:
   url: https://github.com/neovim/nvim-lspconfig
